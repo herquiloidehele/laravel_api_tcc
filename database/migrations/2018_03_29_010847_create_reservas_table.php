@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateReservaTable extends Migration {
+class CreateReservasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateReservaTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('reserva', function(Blueprint $table)
+		Schema::create('reservas', function(Blueprint $table)
 		{
 			$table->integer('id', true);
 			$table->integer('revendedores_id')->index('fk_revendedores_has_oferta_revendedores1_idx');
@@ -31,7 +31,7 @@ class CreateReservaTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('reserva');
+		Schema::drop('reservas');
 	}
 
 }

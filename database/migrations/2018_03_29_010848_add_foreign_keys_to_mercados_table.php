@@ -14,7 +14,7 @@ class AddForeignKeysToMercadosTable extends Migration {
 	{
 		Schema::table('mercados', function(Blueprint $table)
 		{
-			$table->foreign('localizacao_id', 'fk_mercados_localizacao1')->references('id')->on('localizacao')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('localizacao_id', 'fk_mercados_localizacao1')->references('id')->on('localizacoes')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
 

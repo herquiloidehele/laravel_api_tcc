@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateDisponibilidadeTable extends Migration {
+class CreateDisponibilidadesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateDisponibilidadeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('disponibilidade', function(Blueprint $table)
+		Schema::create('disponibilidades', function(Blueprint $table)
 		{
 			$table->integer('id', true);
 			$table->integer('procura_id')->index('fk_procura_has_produtores_procura1_idx');
@@ -32,7 +32,7 @@ class CreateDisponibilidadeTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('disponibilidade');
+		Schema::drop('disponibilidades');
 	}
 
 }

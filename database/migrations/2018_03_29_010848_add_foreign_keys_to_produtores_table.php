@@ -14,7 +14,7 @@ class AddForeignKeysToProdutoresTable extends Migration {
 	{
 		Schema::table('produtores', function(Blueprint $table)
 		{
-			$table->foreign('localizacao_id', 'fk_produtores_localizacao1')->references('id')->on('localizacao')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('localizacao_id', 'fk_produtores_localizacao1')->references('id')->on('localizacoes')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('users_id', 'fk_produtores_users1')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}

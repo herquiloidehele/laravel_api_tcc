@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateProcuraTable extends Migration {
+class CreateProcurasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateProcuraTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('procura', function(Blueprint $table)
+		Schema::create('procuras', function(Blueprint $table)
 		{
 			$table->integer('id', true);
 			$table->integer('produtos_unidades_mendidas_id')->index('fk_produtos_unidades_mendidas_has_revendedores_produtos_uni_idx');
@@ -33,7 +33,7 @@ class CreateProcuraTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('procura');
+		Schema::drop('procuras');
 	}
 
 }

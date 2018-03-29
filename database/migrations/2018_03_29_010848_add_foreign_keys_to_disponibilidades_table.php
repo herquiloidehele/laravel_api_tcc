@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddForeignKeysToDisponibilidadeTable extends Migration {
+class AddForeignKeysToDisponibilidadesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class AddForeignKeysToDisponibilidadeTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('disponibilidade', function(Blueprint $table)
+		Schema::table('disponibilidades', function(Blueprint $table)
 		{
-			$table->foreign('procura_id', 'fk_procura_has_produtores_procura1')->references('id')->on('procura')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('procura_id', 'fk_procura_has_produtores_procura1')->references('id')->on('procuras')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('produtores_id', 'fk_procura_has_produtores_produtores1')->references('id')->on('produtores')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
@@ -27,7 +27,7 @@ class AddForeignKeysToDisponibilidadeTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('disponibilidade', function(Blueprint $table)
+		Schema::table('disponibilidades', function(Blueprint $table)
 		{
 			$table->dropForeign('fk_procura_has_produtores_procura1');
 			$table->dropForeign('fk_procura_has_produtores_produtores1');

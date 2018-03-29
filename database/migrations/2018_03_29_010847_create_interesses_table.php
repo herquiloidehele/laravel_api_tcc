@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateInteresseTable extends Migration {
+class CreateInteressesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class CreateInteresseTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('interesse', function(Blueprint $table)
+		Schema::create('interesses', function(Blueprint $table)
 		{
 			$table->integer('id', true);
 			$table->integer('revendedores_id')->index('fk_revendedores_has_produtos_unidades_mendidas_revendedores_idx');
@@ -31,7 +31,7 @@ class CreateInteresseTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('interesse');
+		Schema::drop('interesses');
 	}
 
 }
