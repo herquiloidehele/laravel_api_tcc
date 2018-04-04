@@ -14,7 +14,7 @@ class User extends Authenticatable
     protected $dates = ['deleted_at'];
 
     protected $table = 'users';
-    protected $fillable = ['username', 'senha', 'nome', 'foto', 'estado', 'remember_token'];
+    protected $fillable = ['username', 'password', 'nome', 'foto', 'estado', 'remember_token'];
     protected $hidden = ['senha', 'remember_token',];
 
 
@@ -28,6 +28,12 @@ class User extends Authenticatable
 
     public function cadastrador(){
         return $this->hasOne('App\Models\Cadastrador', 'users_id');
+    }
+
+
+
+    public function setPasswordAttribute($value){
+        $this->attributes['password']  = bcrypt($value);
     }
 
 
