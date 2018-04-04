@@ -5,12 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Produtor extends Model
+class Cadastrador extends Model
 {
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
 
-    protected $table = 'produtores';
-    protected $fillable = ['users_id', 'localizacoes_id'];
+    protected $table = 'cadastradores';
+    protected $fillable = ['users_id', 'telefone'];
+
+
+    public function user(){
+        return $this->belongsTo('App\User', 'users_id');
+    }
 }

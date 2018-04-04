@@ -13,4 +13,31 @@ class Produtor extends Model
 
     protected $table = 'produtores';
     protected $fillable = ['users_id', 'localizacoes_id'];
+
+
+    public function user(){
+        return $this->belongsTo('App\User', 'users_id');
+    }
+
+    public function telefones(){
+        return $this->hasMany('App\Models\TelefoneProdutor', 'produtores_id');
+    }
+
+    public function localizaco(){
+        return $this->belongsTo('App\Models\Localizacao','localizacoes_id');
+    }
+
+    public function produtosQueProduz(){
+        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'produz', 'produtores_id', 'produtos_unidades_medidas_id');
+    }
+
+    public function oferta(){
+        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'oferta',  'produtores_id','produtos_unidades_medidas_id');
+    }
+
+
+    public function procuras(){
+        return $this->belongsToMany('App\Models\Procura', 'disponibilidades', 'produtores_id', 'procuras_id');
+    }
+
 }

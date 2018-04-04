@@ -13,7 +13,16 @@ class Localizacao extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'localizacoes';
-    protected $fillable = ['endereco', 'latitude', 'logentude', ];
+    protected $fillable = ['poligono', 'latitude', 'logentude', ];
 
+
+
+    public function mercado(){
+        return $this->hasOne('App\Models\Mercado', 'localizacoes_id');
+    }
+
+    public function produtor(){
+        return $this->hasOne('App\Models\Produtor', 'localizacoes_id');
+    }
 
 }

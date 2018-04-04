@@ -13,4 +13,8 @@ class UnidadeMedida extends Model
 
     protected $table = 'unidades_medidas';
     protected $fillable = ['designacao', 'abreviatura'];
+
+    public function produtos(){
+        return $this->belongsToMany('App\Models\Produto', 'produtos_unidades_medidas', 'unidades_medidas_id', 'produtos_id');
+    }
 }

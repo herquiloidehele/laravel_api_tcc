@@ -9,8 +9,6 @@ use Illuminate\Http\Request;
 
 class  ModelController extends Controller implements InterfaceController
 {
-
-
     protected $object;
     protected $objectName;
     protected $objectNames;

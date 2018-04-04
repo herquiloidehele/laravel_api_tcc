@@ -13,4 +13,23 @@ class ProdutoUnidadeMedida extends Model
 
     protected $table = 'produtos_unidades_mendidadas';
     protected $fillable = ['produtos_id', 'unidades_medidadas_id'];
+
+
+    public function produzidosPor(){
+        return $this->belongsToMany('App\Models\Produtor', 'produz', 'produtos_unidades_medidas_id', 'produtores_id');
+    }
+
+    public function oferta(){
+        return $this->belongsToMany('App\Models\Produtor', 'oferta', 'produtos_unidades_medidas_id', 'produtores_id');
+    }
+
+
+    public function interesses(){
+        return $this->belongsToMany('App\Models\Revendedor', 'interesses', 'produtos_unidades_medidas_id', 'revededores_id');
+    }
+
+    public function procura(){
+        return $this->belongsToMany('App\Models\Revendedor', 'procuras', 'produtos_unidades_medidas_id', 'revededores_id');
+    }
+
 }

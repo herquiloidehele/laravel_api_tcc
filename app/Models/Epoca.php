@@ -12,5 +12,11 @@ class Epoca extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'epocas';
-    protected $fillable = ['mes_inicio', 'mes_fim' ];
+    protected $fillable = ['mes_inicio', 'mes_fim', 'produtos_id' ];
+
+
+
+    public function produto(){
+        return $this->belongsTo('App\Models\Produto', 'produtos_id');
+    }
 }

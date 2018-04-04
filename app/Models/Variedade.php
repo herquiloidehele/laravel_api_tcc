@@ -13,4 +13,10 @@ class Variedade extends Model
 
     protected $table = 'variedades';
     protected $fillable = ['designacao', 'produtos_id' ];
+
+
+    public function produto(){
+        return $this->belongsTo('App\Models\Produto', 'produtos_id');
+    }
+
 }

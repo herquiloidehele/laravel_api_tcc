@@ -14,10 +14,21 @@ class User extends Authenticatable
     protected $dates = ['deleted_at'];
 
     protected $table = 'users';
-    protected $fillable = ['username', 'senha', 'nome', 'foto', 'estado',];
+    protected $fillable = ['username', 'senha', 'nome', 'foto', 'estado', 'remember_token'];
     protected $hidden = ['senha', 'remember_token',];
 
 
+    public function revendedor(){
+        return $this->hasOne('App\Models\Revendedor', 'users_id');
+    }
+
+    public function produtor(){
+        return $this->hasOne('App\Models\Produtor', 'users_id');
+    }
+
+    public function cadastrador(){
+        return $this->hasOne('App\Models\Cadastrador', 'users_id');
+    }
 
 
 }

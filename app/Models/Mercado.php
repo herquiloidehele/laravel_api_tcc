@@ -14,4 +14,14 @@ class Mercado extends Model
     protected $table = 'mercados';
     protected $fillable = ['designacao',  'localizacoes_id'];
 
+
+    public function revendedores(){
+        return $this->hasMany('App\Models\Revendedor', 'revendedores_id');
+    }
+
+    public function localizacao(){
+        return $this->belongsTo('App\Models\Localizacao', 'localizacoes_id');
+    }
+
+
 }
