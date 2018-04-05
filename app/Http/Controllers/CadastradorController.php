@@ -11,6 +11,6 @@ class CadastradorController extends ModelController
         $this->object = new Cadastrador();
         $this->objectName = 'cadastrador';
         $this->objectNames = 'cadastrador';
-        $this->relactionships = [];
+        $this->relactionships = ['user'];
     }
 }

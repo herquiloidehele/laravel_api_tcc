@@ -23,7 +23,7 @@ class Produtor extends Model
         return $this->hasMany('App\Models\TelefoneProdutor', 'produtores_id');
     }
 
-    public function localizaco(){
+    public function localizacao(){
         return $this->belongsTo('App\Models\Localizacao','localizacoes_id');
     }
 
@@ -31,8 +31,8 @@ class Produtor extends Model
         return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'produz', 'produtores_id', 'produtos_unidades_medidas_id');
     }
 
-    public function oferta(){
-        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'oferta',  'produtores_id','produtos_unidades_medidas_id');
+    public function ofertas(){
+        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'ofertas',  'produtores_id','produtos_unidades_medidas_id');
     }
 
 

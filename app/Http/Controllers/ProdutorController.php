@@ -11,6 +11,6 @@ class ProdutorController extends ModelController
         $this->object = new Produtor();
         $this->objectName = 'produtor';
         $this->objectNames = 'produtores';
-        $this->relactionships = ['user', 'telefone', 'localizacao', 'produtosQueProduz', 'ofertas', 'procuras'];
+        $this->relactionships = ['user', 'telefones', 'localizacao', 'produtosQueProduz', 'ofertas', 'procuras'];
     }
 }

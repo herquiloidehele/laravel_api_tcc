@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Http\Controllers\interfaces\InterfaceController;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 
@@ -22,23 +23,13 @@ class  ModelController extends Controller implements InterfaceController
 
     public function getAll(Request $request) {
 
-        if($request->exists('pagination') and ($request->get('complete') == true)){
+        if ($request->exists('pagination') and $request->get('pagination') > 0){
             return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderBy('id','desc')
                 ->paginate($request->input('pagination')), 200);
         }
 
-        if ($request->input('complete') == 'true'){
-            return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderBy('id','desc')->get(), 200);
-        }
-
-
-        if ($request->exists('pagination') and $request->get('pagination') > 0){
-            return Auxiliar::retornarDados($this->objectNames, $this->object->orderBy('id','desc')
-                ->paginate($request->input('pagination')), 200);
-        }
-
         else
-            return Auxiliar::retornarDados($this->objectNames, $this->object->orderBy('id','desc')->get(), 200);
+            return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderBy('id','desc')->get(), 200);
     }
 
 
@@ -48,7 +39,7 @@ class  ModelController extends Controller implements InterfaceController
         if(!$id)
             return Auxiliar::retornarErros('id not found or undefined', 404);
         else{
-            if(!$objectEncontrado = $this->object->find($id))
+            if(!$objectEncontrado = $this->object->with($this->relactionships)->find($id))
                 return Auxiliar::retornarErros("object with id=$id does not exists", 404);
             else
                 return Auxiliar::retornarDados($this->objectName, $objectEncontrado, 200);
@@ -67,7 +58,7 @@ class  ModelController extends Controller implements InterfaceController
 
 
     public function update(Request $object, $id) {
-        $var_object = $this->object->find($id);
+        $var_object = $this->object->with($this->relactionships)->find($id);
         if (!$var_object)
             return Auxiliar::retornarErros($this->objectName.' not found', 404);
 
@@ -77,7 +68,11 @@ class  ModelController extends Controller implements InterfaceController
         }
     }
 
-    public function search($id, Request $completo) {
+    public function search(Request $request) {
+        return (['Metodo ainda por se implementar']);
+
+
+
         $var_objecto = $this->object->find($id);
         if (!$var_objecto)
             return Auxiliar::retornarErros($this->objectName.' not found', 404);

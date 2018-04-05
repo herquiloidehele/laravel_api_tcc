@@ -24,15 +24,14 @@ class UserController extends ModelController
     }
 
 
-
     public function login(Request $request){
 
         $this->validate($request, [
-            'email' => 'required',
+            'username' => 'required',
             'password' => 'required'
         ]);
 
-        $credencias = $request->only(['email', 'password']);
+        $credencias = $request->only(['username', 'password']);
 
         try{
             if(! $token = JWTAuth::attempt($credencias))
@@ -62,14 +61,15 @@ class UserController extends ModelController
 
 
     /**
-     * Return the user Kind of the user: Teacher or studant
+     * Return the user Kind of the user: Agricultor, Revendedor ou Cadastrador
      */
     private function getUserKind($user){
-        if($user->teacher)
-            return $user->teacher;
-        else
-            return $user->student;
-        return $user->id;
+        if($user->produtor)
+            return $user->produtor;
+        if($user->revendedor)
+            return $user->revendedor;
+        if ($this->cadastrador)
+            return $user->revendedor;
     }
 
 }
