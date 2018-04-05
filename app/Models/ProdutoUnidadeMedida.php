@@ -11,7 +11,7 @@ class ProdutoUnidadeMedida extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $table = 'produtos_unidades_mendidadas';
+    protected $table = 'produtos_unidades_medidas';
     protected $fillable = ['produtos_id', 'unidades_medidadas_id'];
 
 

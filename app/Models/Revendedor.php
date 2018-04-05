@@ -11,7 +11,7 @@ class Revendedor extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $table = 'revendoedores';
+    protected $table = 'revendedores';
     protected $fillable = ['user_id', 'mercados_id'];
 
 

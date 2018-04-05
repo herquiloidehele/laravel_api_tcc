@@ -4,16 +4,15 @@ use Faker\Generator as Faker;
 
 
 
-$faker->define(\App\Models\CategoriaProduto::class, function (Faker $faker){
+$factory->define(\App\Models\CategoriaProduto::class, function (Faker $faker) {
     return [
         'designacao' => $faker->text(30),
     ];
 });
 
 
-
 $unidadesMedidas = ['KG', 'Saco', 'Tonelada', 'Gramas'];
-$faker->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($unidadesMedidas){
+$factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($unidadesMedidas){
    return [
        'designacao' => $faker->unique()->randomElement($unidadesMedidas)
    ];
@@ -21,16 +20,24 @@ $faker->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($u
 
 //==================================++++++============================++++=============================
 
-$faker->define(\App\Models\Variedade::class, function (Faker $faker){
+
+$factory->define(\App\Models\Produto::class, function (Faker $faker){
+    return [
+        'designacao' => $faker->text(30),
+        'categoria_produtos_id' => $faker->numberBetween(1, \App\Models\CategoriaProduto::all()->count())
+    ] ;
+});
+
+$factory->define(\App\Models\Variedade::class, function (Faker $faker){
    return [
-      'designacao' => $faker->text(100),
+      'designacao' => $faker->text(30),
        'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count())
    ] ;
 });
 
 
 $meses = ['Janeiro', 'Fevereiro', 'Marco', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-$faker->define(\App\Models\Epoca::class, function (Faker $faker) use ($meses){
+$factory->define(\App\Models\Epoca::class, function (Faker $faker) use ($meses){
     return [
         'mes_inicio' => $faker->randomElement($meses),
         'mes_fim' => $faker->randomElement($meses),
@@ -39,44 +46,44 @@ $faker->define(\App\Models\Epoca::class, function (Faker $faker) use ($meses){
 });
 
 
-$faker->define(\App\Models\ProdutoUnidadeMedida::class, function (Faker $faker){
+$factory->define(\App\Models\ProdutoUnidadeMedida::class, function (Faker $faker){
     return [
         'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
-        'unidades_medidas' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count())
+        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count())
     ];
 });
 
 
-$faker->define(\App\Models\Oferta::class, function (Faker $faker){
+$factory->define(\App\Models\Oferta::class, function (Faker $faker){
     return [
         'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
-        'produtos_unidades_medidas' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'produtos_unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
         'preco' => $faker->numberBetween(1000, 50000),
         'quantidade' => $faker->randomNumber(2),
     ] ;
 });
 
-$faker->define(\App\Models\Produz::class, function (Faker $faker){
+$factory->define(\App\Models\Produz::class, function (Faker $faker){
     return [
         'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
-        'produtos_unidades_medidas' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
-        'quantidade' => $faker->randomNumber(2),
-    ] ;
-});
-
-
-$faker->define(\App\Models\Interesse::class, function (Faker $faker){
-    return [
-        'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
-        'produtos_unidades_medidas' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'produtos_unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
         'quantidade_media' => $faker->randomNumber(2),
     ] ;
 });
 
-$faker->define(\App\Models\Procura::class, function (Faker $faker){
+
+$factory->define(\App\Models\Interesse::class, function (Faker $faker){
     return [
         'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
-        'produtos_unidades_medidas' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'produtos_unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'quantidade_media' => $faker->randomNumber(2),
+    ] ;
+});
+
+$factory->define(\App\Models\Procura::class, function (Faker $faker){
+    return [
+        'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
+        'produtos_unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
         'quantidade' => $faker->randomNumber(2),
         'data_fim' => $faker->date(),
         'estado' => $faker->boolean(50),
@@ -84,7 +91,7 @@ $faker->define(\App\Models\Procura::class, function (Faker $faker){
 });
 
 
-$faker->define(\App\Models\Disponibilidade::class, function (Faker $faker){
+$factory->define(\App\Models\Disponibilidade::class, function (Faker $faker){
     return [
         'procuras_id' => $faker->numberBetween(1, \App\Models\Procura::all()->count()),
         'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
@@ -94,7 +101,7 @@ $faker->define(\App\Models\Disponibilidade::class, function (Faker $faker){
 });
 
 
-$faker->define(\App\Models\Reserva::class, function (Faker $faker){
+$factory->define(\App\Models\Reserva::class, function (Faker $faker){
     return [
         'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
         'ofertas_id' => $faker->numberBetween(1, \App\Models\Oferta::all()->count()),
@@ -108,15 +115,14 @@ $factory->define(\App\Models\Mercado::class, function (Faker $faker) use ($merca
 
     return [
         'designacao' => $faker->randomElement($mercados),
-        'localizaoes_id' => $faker->numberBetween(1, 10),
+        'localizacoes_id' => $faker->numberBetween(1, 10),
     ];
 });
 
 //=======================================================UTILIZADORES============================================
-
 $factory->define(App\User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'nome' => $faker->name,
         'username' => $faker->unique()->userName,
         'password' => '12345',
         'foto' => $faker->imageUrl(),
@@ -137,7 +143,7 @@ $factory->define(\App\Models\Cadastrador::class, function (Faker $faker){
 $factory->define(\App\Models\Revendedor::class, function (Faker $faker){
 
     return [
-        'users_id' => $faker->numberBetween(6, 20),
+        'users_id' => $faker->numberBetween(6, 30),
         'mercados_id' => $faker->numberBetween(1, \App\Models\Mercado::all()->count()),
     ];
 });
@@ -146,7 +152,7 @@ $factory->define(\App\Models\Revendedor::class, function (Faker $faker){
 $factory->define(\App\Models\Produtor::class, function (Faker $faker){
 
     return [
-        'users_id' => $faker->numberBetween(21, 40),
+        'users_id' => $faker->numberBetween(31, 60),
         'localizacoes_id' => $faker->numberBetween(11, \App\Models\Localizacao::all()->count()),
     ];
 });
