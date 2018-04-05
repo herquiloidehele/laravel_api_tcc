@@ -110,6 +110,7 @@ $factory->define(\App\Models\Reserva::class, function (Faker $faker){
 });
 
 
+
 $mercados = ['Zimpeto', 'Mercado 2', 'Mercado Municiapal', 'Mercado 4', 'Mercado 5'];
 $factory->define(\App\Models\Mercado::class, function (Faker $faker) use ($mercados){
 
