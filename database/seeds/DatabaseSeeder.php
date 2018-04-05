@@ -29,7 +29,8 @@ class DatabaseSeeder extends Seeder
          factory(\App\Models\Interesse::class, 60)->create();
          factory(\App\Models\Produz::class, 60)->create();
          factory(\App\Models\Disponibilidade::class, 20)->create();
-         factory(\App\Models\Reserva::class, 30)->create();
          factory(\App\Models\Oferta::class, 30)->create();
+         factory(\App\Models\Reserva::class, 30)->create();
+
     }
 }

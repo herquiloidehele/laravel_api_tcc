@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateTelefoneRevendedorsTable extends Migration {
+class CreateTelefoneRevendedoresTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -30,7 +30,7 @@ class CreateTelefoneRevendedorsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('telefone_revendedors');
+		Schema::drop('telefone_revendedores');
 	}
 
 }

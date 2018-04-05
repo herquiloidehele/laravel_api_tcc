@@ -16,7 +16,7 @@ class CreateProduzTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->integer('produtores_id')->index('fk_produtores_has_produtos_unidades_mendidas_produtores1_idx');
-			$table->integer('produtos_unidades_mendidas_id')->index('fk_produtores_has_produtos_unidades_mendidas_produtos_unida_idx');
+			$table->integer('produtos_unidades_medidas_id')->index('fk_produtores_has_produtos_unidades_mendidas_produtos_unida_idx');
 			$table->integer('quantidade_media')->nullable();
 			$table->timestamps();
 			$table->softDeletes();

@@ -15,8 +15,8 @@ class CreateReservasTable extends Migration {
 		Schema::create('reservas', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->integer('revendedores_id')->index('fk_revendedores_has_oferta_revendedores1_idx');
-			$table->integer('ofertas_id')->index('fk_revendedores_has_oferta_oferta1_idx');
+			$table->integer('ofertas_id')->index('fk_ofertas_has_revendedores_ofertas1_idx');
+			$table->integer('revendedores_id')->index('fk_ofertas_has_revendedores_revendedores1_idx');
 			$table->integer('quantidade')->nullable();
 			$table->timestamps();
 			$table->softDeletes();

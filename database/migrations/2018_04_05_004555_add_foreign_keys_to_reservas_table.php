@@ -14,8 +14,8 @@ class AddForeignKeysToReservasTable extends Migration {
 	{
 		Schema::table('reservas', function(Blueprint $table)
 		{
-			$table->foreign('ofertas_id', 'fk_revendedores_has_oferta_oferta1')->references('id')->on('ofertas')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-			$table->foreign('revendedores_id', 'fk_revendedores_has_oferta_revendedores1')->references('id')->on('revendedores')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('ofertas_id', 'fk_ofertas_has_revendedores_ofertas1')->references('id')->on('ofertas')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('revendedores_id', 'fk_ofertas_has_revendedores_revendedores1')->references('id')->on('revendedores')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
 
@@ -29,8 +29,8 @@ class AddForeignKeysToReservasTable extends Migration {
 	{
 		Schema::table('reservas', function(Blueprint $table)
 		{
-			$table->dropForeign('fk_revendedores_has_oferta_oferta1');
-			$table->dropForeign('fk_revendedores_has_oferta_revendedores1');
+			$table->dropForeign('fk_ofertas_has_revendedores_ofertas1');
+			$table->dropForeign('fk_ofertas_has_revendedores_revendedores1');
 		});
 	}
 
