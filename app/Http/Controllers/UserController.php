@@ -41,14 +41,16 @@ class UserController extends ModelController
         }
 
         $user = $this->getUserFromToken($token);
+        $tipoUser = $this->getClassName($user);
 
-        return response()->json(['token' => $token, 'user' => $user], 200);
+
+        return response()->json(['token' => $token, 'tipo_user'=> $tipoUser ,'user' => $user], 200);
     }
 
 
 
-    public function logout(){
-
+    public function logout(Request $request){
+        return response()->json(['logout'=> JWTAuth::invalidate($request->token)]);
     }
 
 
@@ -68,8 +70,23 @@ class UserController extends ModelController
             return $user->produtor;
         if($user->revendedor)
             return $user->revendedor;
-        if ($this->cadastrador)
-            return $user->revendedor;
+        if ($user->cadastrador)
+            return $user->cadastrador;
     }
+
+
+    /**
+     * @param $instance a instancia do utilizador
+     * @return String - retorna o nome do
+     */
+    private function getClassName($instance){
+        $instancePath = get_class($instance);
+
+        $pathAsArray = explode('\\', $instancePath);
+
+        return $pathAsArray[sizeof($pathAsArray)-1];
+
+    }
+
 
 }

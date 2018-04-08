@@ -15,7 +15,7 @@ class User extends Authenticatable
 
     protected $table = 'users';
     protected $fillable = ['username', 'password', 'nome', 'foto', 'estado', 'remember_token'];
-    protected $hidden = ['senha', 'remember_token',];
+    protected $hidden = ['password', 'remember_token',];
 
 
     public function revendedor(){

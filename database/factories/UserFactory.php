@@ -137,14 +137,14 @@ $factory->define(\App\Models\Cadastrador::class, function (Faker $faker){
 
     return [
         'telefone' => $faker->phoneNumber,
-        'users_id' => $faker->numberBetween(1, 5),
+        'users_id' => $faker->unique()->numberBetween(1, 5),
     ];
 });
 
 $factory->define(\App\Models\Revendedor::class, function (Faker $faker){
 
     return [
-        'users_id' => $faker->numberBetween(6, 30),
+        'users_id' => $faker->unique()->numberBetween(6, 30),
         'mercados_id' => $faker->numberBetween(1, \App\Models\Mercado::all()->count()),
     ];
 });

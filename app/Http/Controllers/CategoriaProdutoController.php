@@ -13,4 +13,6 @@ class CategoriaProdutoController extends ModelController
         $this->objectNames = 'categorias';
         $this->relactionships = ['produtos'];
     }
+
+
 }

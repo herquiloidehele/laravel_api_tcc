@@ -13,7 +13,7 @@ class Produtor extends Model
 
     protected $table = 'produtores';
     protected $fillable = ['users_id', 'localizacoes_id'];
-
+    protected $with = ['user'];
 
     public function user(){
         return $this->belongsTo('App\User', 'users_id');

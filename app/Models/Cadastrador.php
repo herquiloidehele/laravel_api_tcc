@@ -13,6 +13,7 @@ class Cadastrador extends Model
 
     protected $table = 'cadastradores';
     protected $fillable = ['users_id', 'telefone'];
+    protected $with = ['user'];
 
 
     public function user(){

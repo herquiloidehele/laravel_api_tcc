@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Localizacao;
 use Illuminate\Http\Request;
 
-class LocalizacaoProdutoController extends ModelController
+class LocalizacaoController extends ModelController
 {
     public function __construct() {
         $this->object = new Localizacao();
