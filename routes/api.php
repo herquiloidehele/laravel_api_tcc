@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 Route::post('login', 'UserController@login');
 Route::post('logout', 'UserController@logout');
+Route::post('get-user-token/{token}', 'UserController@getUserFromToken');
 
 
 Route::get('/produtos', 'ProdutoController@getAll');

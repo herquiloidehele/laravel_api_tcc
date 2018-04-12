@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Http\Response;
 use JWTAuth;
 
 class UserController extends ModelController
@@ -40,11 +41,10 @@ class UserController extends ModelController
             return response()->json(['mensagem' => 'Erro ao gerar token'], 500);
         }
 
-        $user = $this->getUserFromToken($token);
-        $tipoUser = $this->getClassName($user);
+//        $user = $this->getUserFromToken($token);
+//        $tipoUser = $this->getClassName($user);
 
-
-        return response()->json(['token' => $token, 'tipo_user'=> $tipoUser ,'user' => $user], 200);
+        return response()->json($this->getUserFromToken($token), 200);
     }
 
 
@@ -58,7 +58,8 @@ class UserController extends ModelController
      * return the user associated with the token
      */
     public function getUserFromToken($token){
-        return $this->getUserKind(JWTAuth::toUser($token));
+        $user = $this->getUserKind(JWTAuth::toUser($token));
+        return ['tipo_user' => $this->getClassName($user), 'user' => $user, 'token' => $token];
     }
 
 
@@ -87,6 +88,13 @@ class UserController extends ModelController
         return $pathAsArray[sizeof($pathAsArray)-1];
 
     }
+
+//    public function getUserFromTokenRequest(Request $request){
+//        return $request->all();
+//        return $this->getUserKind(JWTAuth::toUser($request->get('token')));
+//    }
+
+
 
 
 }
