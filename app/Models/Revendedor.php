@@ -30,11 +30,11 @@ class Revendedor extends Model
 
 
     public function interesses(){
-        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'interesses', 'revededores_id', 'produtos_unidades_medidas_id');
+        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'interesses', 'revendedores_id', 'produtos_unidades_medidas_id');
     }
 
     public function procuras(){
-        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'procuras', 'revededores_id', 'produtos_unidades_medidas_id');
+        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'procuras', 'revendedores_id', 'produtos_unidades_medidas_id');
     }
 
 

@@ -16,7 +16,7 @@ class Mercado extends Model
 
 
     public function revendedores(){
-        return $this->hasMany('App\Models\Revendedor', 'revendedores_id');
+        return $this->hasMany('App\Models\Revendedor', 'mercados_id');
     }
 
     public function localizacao(){

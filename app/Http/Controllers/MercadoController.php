@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mercado;
 use Illuminate\Http\Request;
 
-class MercadoProdutoController extends ModelController
+class MercadoController extends ModelController
 {
     public function __construct() {
         $this->object = new Mercado();

@@ -25,11 +25,11 @@ class ProdutoUnidadeMedida extends Model
 
 
     public function interesses(){
-        return $this->belongsToMany('App\Models\Revendedor', 'interesses', 'produtos_unidades_medidas_id', 'revededores_id');
+        return $this->belongsToMany('App\Models\Revendedor', 'interesses', 'produtos_unidades_medidas_id', 'revendedores_id');
     }
 
     public function procura(){
-        return $this->belongsToMany('App\Models\Revendedor', 'procuras', 'produtos_unidades_medidas_id', 'revededores_id');
+        return $this->belongsToMany('App\Models\Revendedor', 'procuras', 'produtos_unidades_medidas_id', 'revendedores_id');
     }
 
 }

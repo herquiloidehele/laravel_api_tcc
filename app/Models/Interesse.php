@@ -12,5 +12,5 @@ class Interesse extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'interesses';
-    protected $fillable = ['produtos_unidades_medidas_id', 'produtores_id', '' ];
+    protected $fillable = ['produtos_unidades_medidas_id', 'produtores_id', 'revendedores_id', 'quantidade_media' ];
 }

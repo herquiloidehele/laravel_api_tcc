@@ -11,6 +11,6 @@ class RevendedorController extends ModelController
         $this->object = new Revendedor();
         $this->objectName = 'revendor';
         $this->objectNames = 'revendedores';
-        $this->relactionships = ['user', 'mercado', 'telefones', 'interesses', 'procuras', 'pfertas'];
+        $this->relactionships = ['user', 'mercado', 'telefones', 'interesses', 'procuras', 'ofertas'];
     }
 }

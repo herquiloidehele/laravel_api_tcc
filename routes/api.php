@@ -59,12 +59,12 @@ Route::put('/epocas/{id}', 'EpocaProdutoController@update');
 Route::delete('/epocas/{id}', 'EpocaProdutoController@destroy');
 
 
-Route::get('/interesses-produtos', 'EpocaProdutoController@getAll');
-Route::get('/interesses-produtos/{id}', 'EpocaProdutoController@get');
-Route::get('/interesses-produtos-search', 'EpocaProdutoController@search');
-Route::post('/interesses-produtos', 'EpocaProdutoController@store');
-Route::put('/interesses-produtos/{id}', 'EpocaProdutoController@update');
-Route::delete('/interesses-produtos/{id}', 'EpocaProdutoController@destroy');
+Route::get('/interesses-produtos', 'InteresseProdutoController@getAll');
+Route::get('/interesses-produtos/{id}', 'InteresseProdutoController@get');
+Route::get('/interesses-produtos-search', 'InteresseProdutoController@search');
+Route::post('/interesses-produtos', 'InteresseProdutoController@store');
+Route::put('/interesses-produtos/{id}', 'InteresseProdutoController@update');
+Route::delete('/interesses-produtos/{id}', 'InteresseProdutoController@destroy');
 
 
 Route::get('/localizacoes', 'LocalizacaoController@getAll');
@@ -72,7 +72,7 @@ Route::get('/localizacoes/{id}', 'LocalizacaoController@get');
 Route::get('/localizacoes-search', 'LocalizacaoController@search');
 Route::post('/localizacoes', 'LocalizacaoController@store');
 Route::put('/localizacoes/{id}', 'LocalizacaoController@update');
-Route::delete('/interesses-produtos/{id}', 'EpocaProdutoController@destroy');
+Route::delete('/localizacoes/{id}', 'LocalizacaoController@destroy');
 
 
 Route::get('/categorias', 'CategoriaProdutoController@getAll');
@@ -81,3 +81,19 @@ Route::get('/categorias-search', 'CategoriaProdutoController@search');
 Route::post('/categorias', 'CategoriaProdutoController@store');
 Route::put('/categorias/{id}', 'CategoriaProdutoController@update');
 Route::delete('/categorias/{id}', 'CategoriaProdutoController@destroy');
+
+
+Route::get('/revendedores', 'RevendedorController@getAll');
+Route::get('/revendedores/{id}', 'RevendedorController@get');
+Route::get('/revendedores-search', 'RevendedorController@search');
+Route::post('/revendedores', 'RevendedorController@store');
+Route::put('/revendedores/{id}', 'RevendedorController@update');
+Route::delete('/revendedores/{id}', 'RevendedorController@destroy');
+
+
+Route::get('/mercados', 'MercadoController@getAll');
+Route::get('/mercados/{id}', 'MercadoController@get');
+Route::get('/mercados-search', 'MercadoController@search');
+Route::post('/mercados', 'MercadoController@store');
+Route::put('/mercados/{id}', 'MercadoController@update');
+Route::delete('/mercados/{id}', 'MercadoController@destroy');
