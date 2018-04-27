@@ -13,7 +13,7 @@ class Localizacao extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'localizacoes';
-    protected $fillable = ['poligono', 'latitude', 'logentude', ];
+    protected $fillable = ['poligono', 'latitude', 'logentude'];
 
 
 
