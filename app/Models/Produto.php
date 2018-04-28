@@ -32,4 +32,8 @@ class Produto extends Model
         return $this->belongsToMany('App\Models\UnidadeMedida', 'produtos_unidades_medidas', 'produtos_id', 'unidades_medidas_id');
     }
 
+    public function produtoUnidadeMedida(){
+        return $this->hasMany('App\Models\ProdutoUnidadeMedida', 'produtos_id');
+    }
+
 }

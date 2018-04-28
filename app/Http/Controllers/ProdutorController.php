@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Produtor;
-use Illuminate\Http\Request;
+
 
 class ProdutorController extends ModelController
 {
@@ -13,4 +13,9 @@ class ProdutorController extends ModelController
         $this->objectNames = 'produtores';
         $this->relactionships = ['user', 'telefones', 'localizacao', 'produtosQueProduz', 'ofertas', 'procuras'];
     }
+
+
+
+
+
 }

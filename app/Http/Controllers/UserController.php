@@ -15,7 +15,7 @@ class UserController extends ModelController
         $this->object = new User();
         $this->objectName = 'user';
         $this->objectNames = 'users';
-        $this->relactionships = [];
+        $this->relactionships = ['produtor','cadastrador', 'revendedor'];
     }
 
 

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Http\Controllers\interfaces\InterfaceController;
-use App\Models\Produto;
 use Illuminate\Http\Request;
 
 

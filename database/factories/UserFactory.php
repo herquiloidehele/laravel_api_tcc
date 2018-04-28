@@ -11,10 +11,12 @@ $factory->define(\App\Models\CategoriaProduto::class, function (Faker $faker) {
 });
 
 
-$unidadesMedidas = ['KG', 'Saco', 'Tonelada', 'Gramas'];
-$factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($unidadesMedidas){
+$unidadesMedidas = ['Quilograma', 'Saco', 'Tonelada', 'Gramas'];
+$abreveatura = ['KG', 'SC', 'TON', 'GR'];
+$factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($unidadesMedidas, $abreveatura){
    return [
-       'designacao' => $faker->unique()->randomElement($unidadesMedidas)
+       'designacao' => $faker->unique()->randomElement($unidadesMedidas),
+       'abreviatura' => $faker->unique()->randomElement($abreveatura),
    ];
 });
 

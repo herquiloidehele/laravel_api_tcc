@@ -97,3 +97,15 @@ Route::get('/mercados-search', 'MercadoController@search');
 Route::post('/mercados', 'MercadoController@store');
 Route::put('/mercados/{id}', 'MercadoController@update');
 Route::delete('/mercados/{id}', 'MercadoController@destroy');
+
+
+Route::get('/procuras', 'ProcuraController@getAll');
+Route::get('/procuras/{id}', 'ProcuraController@get');
+Route::get('/procuras-search', 'ProcuraController@search');
+Route::post('/procuras', 'ProcuraController@store');
+Route::put('/procuras/{id}', 'ProcuraController@update');
+Route::delete('/procuras/{id}', 'ProcuraController@destroy');
+
+
+
+Route::post('/produz/produtor-producao/{produtor_id}', 'ProduzController@getProdutosDoProdutor');
