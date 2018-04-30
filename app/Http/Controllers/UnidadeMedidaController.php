@@ -11,6 +11,6 @@ class UnidadeMedidaController extends ModelController
         $this->object = new UnidadeMedida();
         $this->objectName = 'unidade_medida';
         $this->objectNames = 'unidades_medidas';
-        $this->relactionships = ['produtos'];
+        $this->relactionships = [];
     }
 }

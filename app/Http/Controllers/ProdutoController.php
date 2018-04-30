@@ -11,7 +11,7 @@ class ProdutoController extends ModelController
         $this->object = new Produto();
         $this->objectName = 'produto';
         $this->objectNames = 'produtos';
-        $this->relactionships = ['categoria', 'variedades', 'epocas', 'unidadesMedidas'];
+        $this->relactionships = ['categoria', 'variedades', 'epocas'];
     }
 
 

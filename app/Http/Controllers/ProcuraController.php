@@ -64,8 +64,8 @@ class ProcuraController extends ModelController
     private function getProdutosRequisitados($produtorProducao, $procura){
 
         foreach ($produtorProducao['produz'] as $produtorProduz) {
-//            if ($produtorProduz['produto']['designacao'] == $procura['produto']['designacao'])
-//                if($produtorProduz['unidade_medida']['designacao'] == $procura['unidade_medida']['designacao'])
+            if ($produtorProduz['produto']['designacao'] == $procura['produto']['designacao'])
+                if($produtorProduz['unidade_medida']['designacao'] == $procura['unidade_medida']['designacao'])
                     return true;
         }
 
@@ -98,6 +98,7 @@ class ProcuraController extends ModelController
                         'quantidade' => $produto->pivot->quantidade,
                         'data_formatada' => $produto->pivot->created_at->diffForHumans(),
                         'data_pura' => $produto->created_at
+
                     ]);
             }
 

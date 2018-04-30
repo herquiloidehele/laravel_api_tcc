@@ -28,22 +28,18 @@ class Produto extends Model
         return $this->hasMany('App\Models\Epoca', 'produtos_id');
     }
 
-    public function unidadesMedidas(){
-        return $this->belongsToMany('App\Models\UnidadeMedida', 'produtos_unidades_medidas', 'produtos_id', 'unidades_medidas_id');
-    }
-
 
     public function produzidosPor(){
-        return $this->belongsToMany('App\Models\Produtor', 'produz', 'produtos_id', 'produtores_id')->withPivot('created_at');
+        return $this->belongsToMany('App\Models\Produtor', 'produz', 'produtos_id', 'produtores_id')->withPivot('unidades_medidas_id','created_at');
     }
 
     public function oferta(){
-        return $this->belongsToMany('App\Models\Produtor', 'oferta', 'produtos_id', 'produtores_id')->withPivot('create_at');
+        return $this->belongsToMany('App\Models\Produtor', 'oferta', 'produtos_id', 'produtores_id')->withPivot('unidades_medidas_id','created_at');
     }
 
 
     public function interesses(){
-        return $this->belongsToMany('App\Models\Revendedor', 'interesses', 'produtos_id', 'revendedores_id')->withPivot('created_at');
+        return $this->belongsToMany('App\Models\Revendedor', 'interesses', 'produtos_id', 'revendedores_id')->withPivot('unidades_medidas_id','created_at');
     }
 
     public function procura(){

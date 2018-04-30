@@ -29,7 +29,7 @@ class Produtor extends Model
 
     public function produtosQueProduz(){
         return $this->belongsToMany('App\Models\Produto', 'produz', 'produtores_id', 'produtos_id')
-            ->withPivot('quantidade_media');
+            ->withPivot('unidades_medidas_id','quantidade_media');
     }
 
     public function ofertas(){

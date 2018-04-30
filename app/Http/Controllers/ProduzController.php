@@ -35,7 +35,7 @@ class ProduzController extends ModelController
 
         foreach ($produtos->all() as $produto){
             $prodQueProdutorProduz->push([
-                'produto' => Produto::find($produto->produtos_id),
+                'produto' => $produto,
                 'unidade_medida' => UnidadeMedida::find($produto->pivot->unidades_medidas_id),
                 'quantidade' => $produto->pivot->quantidade_media
             ]);
