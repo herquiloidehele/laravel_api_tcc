@@ -12,5 +12,5 @@ class Produz extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'produz';
-    protected $fillable = ['produtos_unidades_medidas_id', 'produtores_id', 'quantidade_media', 'quantidade_media' ];
+    protected $fillable = ['produtos_unidades_medidas_id', 'produtores_id', 'quantidade_media'];
 }

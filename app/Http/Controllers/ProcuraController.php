@@ -30,9 +30,6 @@ class ProcuraController extends ModelController
 
 
 
-
-
-
     /**
      * Retorna as procuras de produtos de acordo com os interesses de um produtor
      * @param Request $produtosInteressados
@@ -49,7 +46,7 @@ class ProcuraController extends ModelController
         foreach ($revendedorProcuras as $revendedores){
             foreach ($revendedores['procura'] as $procura){
                 if($this->getProdutosRequisitados($produtorProducoes, $procura))
-                    $requisicoesProdutos->push($revendedores);
+                    $requisicoesProdutos->push(['revendedor' => $revendedores['revendedor'], 'procura' => $procura]);
             }
         }
 

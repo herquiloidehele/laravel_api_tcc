@@ -12,7 +12,7 @@ class ProdutoUnidadeMedida extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'produtos_unidades_medidas';
-    protected $fillable = ['produtos_id', 'unidades_medidadas_id'];
+    protected $fillable = ['produtos_id', 'unidades_medidas_id'];
 
 
     public function produzidosPor(){

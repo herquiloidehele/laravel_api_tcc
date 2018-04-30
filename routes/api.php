@@ -99,7 +99,18 @@ Route::put('/mercados/{id}', 'MercadoController@update');
 Route::delete('/mercados/{id}', 'MercadoController@destroy');
 
 
+
+Route::get('/unidades-medidas', 'UnidadeMedidaController@getAll');
+Route::get('/unidades-medidas/{id}', 'UnidadeMedidaController@get');
+Route::get('/unidades-medidas-search', 'UnidadeMedidaController@search');
+Route::post('/unidades-medidas', 'UnidadeMedidaController@store');
+Route::put('/unidades-medidas/{id}', 'UnidadeMedidaController@update');
+Route::delete('/unidades-medidas/{id}', 'UnidadeMedidaController@destroy');
+
+
+
 Route::get('/procuras', 'ProcuraController@getAll');
+Route::post('/procuras/produtos-produtor', 'ProcuraController@getAllOfProdutos');
 Route::get('/procuras/{id}', 'ProcuraController@get');
 Route::get('/procuras-search', 'ProcuraController@search');
 Route::post('/procuras', 'ProcuraController@store');
@@ -108,4 +119,10 @@ Route::delete('/procuras/{id}', 'ProcuraController@destroy');
 
 
 
-Route::post('/produz/produtor-producao/{produtor_id}', 'ProduzController@getProdutosDoProdutor');
+Route::get('/produz/produtor-producao/{produtor_id}', 'ProduzController@getProdutosDoProdutor');
+Route::get('/produz', 'ProduzController@getAll');
+Route::get('/produz/{id}', 'ProduzController@get');
+Route::get('/produz-search', 'ProduzController@search');
+Route::post('/produz', 'ProduzController@store');
+Route::put('/produz/{id}', 'ProduzController@update');
+Route::delete('/produz/{id}', 'ProduzController@destroy');

@@ -13,6 +13,7 @@ class Mercado extends Model
 
     protected $table = 'mercados';
     protected $fillable = ['designacao',  'localizacoes_id'];
+    protected $with = ['localizacao'];
 
 
     public function revendedores(){
