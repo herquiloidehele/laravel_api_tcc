@@ -48,18 +48,12 @@ $factory->define(\App\Models\Epoca::class, function (Faker $faker) use ($meses){
 });
 
 
-$factory->define(\App\Models\ProdutoUnidadeMedida::class, function (Faker $faker){
-    return [
-        'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
-        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count())
-    ];
-});
-
 
 $factory->define(\App\Models\Oferta::class, function (Faker $faker){
     return [
         'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
-        'produtos_unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
+        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
         'preco' => $faker->numberBetween(1000, 50000),
         'quantidade' => $faker->randomNumber(2),
     ] ;
@@ -68,7 +62,8 @@ $factory->define(\App\Models\Oferta::class, function (Faker $faker){
 $factory->define(\App\Models\Produz::class, function (Faker $faker){
     return [
         'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
-        'produtos_unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
+        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
         'quantidade_media' => $faker->randomNumber(2),
     ] ;
 });
@@ -77,7 +72,8 @@ $factory->define(\App\Models\Produz::class, function (Faker $faker){
 $factory->define(\App\Models\Interesse::class, function (Faker $faker){
     return [
         'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
-        'produtos_unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
+        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
         'quantidade_media' => $faker->randomNumber(2),
     ] ;
 });
@@ -85,7 +81,8 @@ $factory->define(\App\Models\Interesse::class, function (Faker $faker){
 $factory->define(\App\Models\Procura::class, function (Faker $faker){
     return [
         'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
-        'produtos_unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
+        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
         'quantidade' => $faker->randomNumber(2),
         'data_fim' => $faker->date(),
         'estado' => $faker->boolean(50),

@@ -16,7 +16,8 @@ class CreateInteressesTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->integer('revendedores_id')->index('fk_revendedores_has_produtos_unidades_mendidas_revendedores_idx');
-			$table->integer('produtos_unidades_medidas_id')->index('fk_revendedores_has_produtos_unidades_mendidas_produtos_uni_idx');
+			$table->integer('produtos_id')->index('fk_interesses_produtos1_idx');
+			$table->integer('unidades_medidas_id')->index('fk_interesses_unidades_medidas1_idx');
 			$table->integer('quantidade_media')->nullable();
 			$table->timestamps();
 			$table->softDeletes();

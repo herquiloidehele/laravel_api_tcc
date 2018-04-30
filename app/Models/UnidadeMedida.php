@@ -14,7 +14,21 @@ class UnidadeMedida extends Model
     protected $table = 'unidades_medidas';
     protected $fillable = ['designacao', 'abreviatura'];
 
-    public function produtos(){
-        return $this->belongsToMany('App\Models\Produto', 'produtos_unidades_medidas', 'unidades_medidas_id', 'produtos_id');
+
+    public function procuras(){
+        return $this->hasMany('App\Models\Procura', 'unidades_medidas_id');
     }
+
+    public function interesses(){
+        return $this->hasMany('App\Models\Interesse', 'unidades_medidas_id');
+    }
+
+    public function producoes(){
+        return $this->hasMany('App\Models\Produz', 'unidades_medidas_id');
+    }
+
+    public function ofertas(){
+        return $this->hasMany('App\Models\Oferta', 'unidades_medidas_id');
+    }
+
 }

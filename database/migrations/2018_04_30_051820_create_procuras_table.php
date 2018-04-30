@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateOfertasTable extends Migration {
+class CreateProcurasTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,12 +12,12 @@ class CreateOfertasTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('ofertas', function(Blueprint $table)
+		Schema::create('procuras', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->integer('produtores_id')->index('fk_produtores_has_produtos_unidades_mendidas_produtores2_idx');
-			$table->integer('produtos_unidades_medidas_id')->index('fk_produtores_has_produtos_unidades_mendidas_produtos_unida_idx');
-			$table->float('preco', 10, 0)->nullable();
+			$table->integer('revendedores_id')->index('fk_produtos_unidades_mendidas_has_revendedores_revendedores_idx');
+			$table->integer('produtos_id')->index('fk_procuras_produtos1_idx');
+			$table->integer('unidades_medidas_id')->index('fk_procuras_unidades_medidas1_idx');
 			$table->integer('quantidade')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
@@ -34,7 +34,7 @@ class CreateOfertasTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('ofertas');
+		Schema::drop('procuras');
 	}
 
 }

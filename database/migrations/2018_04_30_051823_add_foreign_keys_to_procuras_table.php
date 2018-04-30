@@ -14,7 +14,8 @@ class AddForeignKeysToProcurasTable extends Migration {
 	{
 		Schema::table('procuras', function(Blueprint $table)
 		{
-			$table->foreign('produtos_unidades_medidas_id', 'fk_produtos_unidades_mendidas_has_revendedores_produtos_unida1')->references('id')->on('produtos_unidades_medidas')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('produtos_id', 'fk_procuras_produtos1')->references('id')->on('produtos')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('unidades_medidas_id', 'fk_procuras_unidades_medidas1')->references('id')->on('unidades_medidas')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('revendedores_id', 'fk_produtos_unidades_mendidas_has_revendedores_revendedores1')->references('id')->on('revendedores')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
@@ -29,7 +30,8 @@ class AddForeignKeysToProcurasTable extends Migration {
 	{
 		Schema::table('procuras', function(Blueprint $table)
 		{
-			$table->dropForeign('fk_produtos_unidades_mendidas_has_revendedores_produtos_unida1');
+			$table->dropForeign('fk_procuras_produtos1');
+			$table->dropForeign('fk_procuras_unidades_medidas1');
 			$table->dropForeign('fk_produtos_unidades_mendidas_has_revendedores_revendedores1');
 		});
 	}

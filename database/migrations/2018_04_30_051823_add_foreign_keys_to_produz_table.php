@@ -15,7 +15,8 @@ class AddForeignKeysToProduzTable extends Migration {
 		Schema::table('produz', function(Blueprint $table)
 		{
 			$table->foreign('produtores_id', 'fk_produtores_has_produtos_unidades_mendidas_produtores1')->references('id')->on('produtores')->onUpdate('NO ACTION')->onDelete('NO ACTION');
-			$table->foreign('produtos_unidades_medidas_id', 'fk_produtores_has_produtos_unidades_mendidas_produtos_unidade1')->references('id')->on('produtos_unidades_medidas')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('produtos_id', 'fk_produz_produtos1')->references('id')->on('produtos')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('unidades_medidas_id', 'fk_produz_unidades_medidas1')->references('id')->on('unidades_medidas')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
 
@@ -30,7 +31,8 @@ class AddForeignKeysToProduzTable extends Migration {
 		Schema::table('produz', function(Blueprint $table)
 		{
 			$table->dropForeign('fk_produtores_has_produtos_unidades_mendidas_produtores1');
-			$table->dropForeign('fk_produtores_has_produtos_unidades_mendidas_produtos_unidade1');
+			$table->dropForeign('fk_produz_produtos1');
+			$table->dropForeign('fk_produz_unidades_medidas1');
 		});
 	}
 

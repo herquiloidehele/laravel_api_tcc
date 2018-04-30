@@ -30,13 +30,12 @@ class Revendedor extends Model
 
 
     public function interesses(){
-        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'interesses', 'revendedores_id', 'produtos_unidades_medidas_id');
+        return $this->belongsToMany('App\Models\Produto', 'interesses', 'revendedores_id', 'produtos_id');
     }
 
     public function procuras(){
-        return $this->belongsToMany('App\Models\ProdutoUnidadeMedida', 'procuras', 'revendedores_id', 'produtos_unidades_medidas_id')->withPivot('quantidade');
+        return $this->belongsToMany('App\Models\Produto', 'procuras', 'revendedores_id', 'produtos_id')->withPivot('quantidade','created_at', 'unidades_medidas_id');
     }
-
 
     public function ofertas(){
         return $this->belongsToMany('App\Models\Oferta', 'reservas', 'revendedores_id', 'ofertas_id');

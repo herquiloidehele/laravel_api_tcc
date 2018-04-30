@@ -29,20 +29,19 @@ class ProduzController extends ModelController
      * @return array
      */
     public function getProdutosDoProdutor($produtor_id){
-        $produtorUnidadesMedidas = collect(Produtor::find($produtor_id)->produtosQueProduz);
+        $produtos = collect(Produtor::find($produtor_id)->produtosQueProduz);
         $prodQueProdutorProduz = collect();
 
 
-        foreach ($produtorUnidadesMedidas->all() as $produtoUnid){
+        foreach ($produtos->all() as $produto){
             $prodQueProdutorProduz->push([
-                'produto' => Produto::find($produtoUnid->produtos_id),
-                'unidade_medida' => UnidadeMedida::find($produtoUnid->unidades_medidas_id),
-                'quantidade' => $produtoUnid->pivot->quantidade_media
+                'produto' => Produto::find($produto->produtos_id),
+                'unidade_medida' => UnidadeMedida::find($produto->pivot->unidades_medidas_id),
+                'quantidade' => $produto->pivot->quantidade_media
             ]);
         }
 
         return ['produz' => $prodQueProdutorProduz ];
-
     }
 
 
@@ -50,32 +49,18 @@ class ProduzController extends ModelController
 
         $produz = $request->get('produz');
 
-        DB::beginTransaction();
-
-            $produtosUnidadeMedida = ProdutoUnidadeMedida::create(
-                [
-                    'produtos_id' => $produz['produtos_id'],
-                    'unidades_medidas_id' => $produz['unidades_medidas_id']
-                ]);
-
-            if(!$produtosUnidadeMedida){
-                DB::rollBack();
-                throw new \Exception('Erro ao criar produtosUnidadeMedida object');
-            }
 
             $producao = Produz::create(
                 [
-                    'produtos_unidades_medidas_id' => $produtosUnidadeMedida->id,
                     'produtores_id' => $produz['produtores_id'],
+                    'produtos_id' => $produz['produtos_id'],
+                    'unidades_medidas_id' => $produz['unidades_medidas_id'],
                     'quantidade_media' => $produz['quantidade_media']
                 ]);
 
             if(!$producao){
-                DB::rollBack();
                 throw new Exception('Erro ao tentar criar Produz object');
             }
-
-        DB::commit();
 
             return Auxiliar::retornarDados('produz', $producao);
 

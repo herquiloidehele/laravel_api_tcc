@@ -64,8 +64,8 @@ class ProcuraController extends ModelController
     private function getProdutosRequisitados($produtorProducao, $procura){
 
         foreach ($produtorProducao['produz'] as $produtorProduz) {
-            if ($produtorProduz['produto']['designacao'] == $procura['produto']['designacao'])
-                if($produtorProduz['unidade_medida']['designacao'] == $procura['unidade_medida']['designacao'])
+//            if ($produtorProduz['produto']['designacao'] == $procura['produto']['designacao'])
+//                if($produtorProduz['unidade_medida']['designacao'] == $procura['unidade_medida']['designacao'])
                     return true;
         }
 
@@ -84,21 +84,20 @@ class ProcuraController extends ModelController
         $revendedorProcura = collect();
 
         foreach ($revendedores as $revendedor){
-            $produtosProcurados = collect(Revendedor::find($revendedor->id)->procuras);
+            $produtos = collect(Revendedor::find($revendedor->id)->procuras);
 
 
             $procura = collect();
 
 
-            foreach ($produtosProcurados->all() as $produtosProcurado){
+            foreach ($produtos->all() as $produto){
                 $procura->push(
                     [
-                        'produto' => Produto::find($produtosProcurado->produtos_id),
-                        'unidade_medida' => UnidadeMedida::find($produtosProcurado->unidades_medidas_id),
-                        'quantidade' => $produtosProcurado->pivot->quantidade,
-                        'data_formatada' => $produtosProcurado->created_at->diffForHumans(),
-                        'data_pura' => $produtosProcurado->created_at
-
+                        'produto' => $produto,
+                        'unidade_medida' => UnidadeMedida::find($produto->pivot->unidades_medidas_id),
+                        'quantidade' => $produto->pivot->quantidade,
+                        'data_formatada' => $produto->pivot->created_at->diffForHumans(),
+                        'data_pura' => $produto->created_at
                     ]);
             }
 
@@ -115,15 +114,15 @@ class ProcuraController extends ModelController
      * @return array
      */
     private function getProdutosDoProdutor($produtor_id){
-        $produtorUnidadesMedidas = collect(Produtor::find($produtor_id)->produtosQueProduz);
+        $produtos = collect(Produtor::find($produtor_id)->produtosQueProduz);
         $prodQueProdutorProduz = collect();
 
 
-        foreach ($produtorUnidadesMedidas->all() as $produtoUnid){
+        foreach ($produtos->all() as $produto){
             $prodQueProdutorProduz->push([
-                'produto' => Produto::find($produtoUnid->produtos_id),
-                'unidade_medida' => UnidadeMedida::find($produtoUnid->unidades_medidas_id),
-                'quantidade' => $produtoUnid->pivot->quantidade_media
+                'produto' => $produto,
+                'unidade_medida' => UnidadeMedida::find($produto->pivot->unidades_medidas_id),
+                'quantidade' => $produto->pivot->quantidade_media
             ]);
         }
 
