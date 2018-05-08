@@ -33,7 +33,8 @@ class Produtor extends Model
     }
 
     public function ofertas(){
-        return $this->belongsToMany('App\Models\Produto', 'ofertas',  'produtores_id','produtos_id');
+        return $this->belongsToMany('App\Models\Produto', 'ofertas',  'produtores_id','produtos_id')
+            ->withPivot('unidades_medidas_id', 'preco', 'quantidade', 'data_fim', 'estado' ,'created_at');
     }
 
     public function procuras(){

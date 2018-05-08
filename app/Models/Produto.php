@@ -30,20 +30,24 @@ class Produto extends Model
 
 
     public function produzidosPor(){
-        return $this->belongsToMany('App\Models\Produtor', 'produz', 'produtos_id', 'produtores_id')->withPivot('unidades_medidas_id','created_at');
+        return $this->belongsToMany('App\Models\Produtor', 'produz', 'produtos_id', 'produtores_id')
+            ->withPivot('unidades_medidas_id','created_at');
     }
 
     public function oferta(){
-        return $this->belongsToMany('App\Models\Produtor', 'oferta', 'produtos_id', 'produtores_id')->withPivot('unidades_medidas_id','created_at');
+        return $this->belongsToMany('App\Models\Produtor', 'oferta', 'produtos_id', 'produtores_id')
+            ->withPivot('unidades_medidas_id','created_at');
     }
 
 
     public function interesses(){
-        return $this->belongsToMany('App\Models\Revendedor', 'interesses', 'produtos_id', 'revendedores_id')->withPivot('unidades_medidas_id','created_at');
+        return $this->belongsToMany('App\Models\Revendedor', 'interesses', 'produtos_id', 'revendedores_id')
+            ->withPivot('unidades_medidas_id','created_at');
     }
 
     public function procura(){
-        return $this->belongsToMany('App\Models\Revendedor', 'procuras', 'produtos_id', 'revendedores_id')->withPivot( 'unidades_medidas_id', 'created_at');
+        return $this->belongsToMany('App\Models\Revendedor', 'procuras', 'produtos_id', 'revendedores_id')
+            ->withPivot( 'unidades_medidas_id', 'created_at');
     }
 
 

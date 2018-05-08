@@ -126,3 +126,10 @@ Route::get('/produz-search', 'ProduzController@search');
 Route::post('/produz', 'ProduzController@store');
 Route::put('/produz/{id}', 'ProduzController@update');
 Route::delete('/produz/{id}', 'ProduzController@destroy');
+
+
+Route::get('/ofertas/minhas-ofertas/{provedores_id}', 'OfertaController@getMinhasOfertas');
+Route::get('/ofertas', 'OfertaController@getAll');
+Route::post('/ofertas', 'OfertaController@store');
+
+
