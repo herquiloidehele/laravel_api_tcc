@@ -34,7 +34,7 @@ class Revendedor extends Model
     }
 
     public function procuras(){
-        return $this->belongsToMany('App\Models\Produto', 'procuras', 'revendedores_id', 'produtos_id')->withPivot('quantidade','created_at', 'unidades_medidas_id');
+        return $this->belongsToMany('App\Models\Produto', 'procuras', 'revendedores_id', 'produtos_id')->withPivot('id','quantidade','created_at', 'unidades_medidas_id');
     }
 
     public function ofertas(){

@@ -13,4 +13,7 @@ class Disponibilidade extends Model
 
     protected $table = 'disponibilidades';
     protected $fillable = ['procuras_id',  'produtores_id', 'preco', 'quantidade'];
+
+
+
 }

@@ -16,8 +16,10 @@ class Procura extends Model
 
 
     public function produtores(){
-        return $this->belongsToMany('App\Models\Produtor', 'disponibilidades', 'procuras_id', 'produtores_id');
+        return $this->belongsToMany('App\Models\Produtor', 'disponibilidades', 'procuras_id', 'produtores_id')
+            ->withPivot('id','preco', 'quantidade');
     }
+
 
     public function unidadeMedida(){
         return $this->belongsTo('App\Models\UnidadeMedida', 'unidades_medidas_id');

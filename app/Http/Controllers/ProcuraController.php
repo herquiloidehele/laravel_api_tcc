@@ -93,6 +93,7 @@ class ProcuraController extends ModelController
             foreach ($produtos->all() as $produto){
                 $procura->push(
                     [
+                        'id' => $produto->id,
                         'produto' => $produto,
                         'unidade_medida' => UnidadeMedida::find($produto->pivot->unidades_medidas_id),
                         'quantidade' => $produto->pivot->quantidade,

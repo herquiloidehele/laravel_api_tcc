@@ -44,6 +44,7 @@ Route::delete('/categoria-produtos/{id}', 'CategoriaProdutoController@destroy');
 
 
 Route::get('/disponibilidade-produto', 'DisponibilidadeProdutoController@getAll');
+Route::get('/disponibilidade-produto/produtores/{procura_id}', 'DisponibilidadeProdutoController@getProdutores');
 Route::get('/disponibilidade-produto/{id}', 'DisponibilidadeProdutoController@get');
 Route::get('/disponibilidade-produto-search', 'DisponibilidadeProdutoController@search');
 Route::post('/disponibilidade-produto', 'DisponibilidadeProdutoController@store');
@@ -108,7 +109,6 @@ Route::put('/unidades-medidas/{id}', 'UnidadeMedidaController@update');
 Route::delete('/unidades-medidas/{id}', 'UnidadeMedidaController@destroy');
 
 
-
 Route::get('/procuras', 'ProcuraController@getAll');
 Route::post('/procuras/produtos-produtor', 'ProcuraController@getAllOfProdutos');
 Route::get('/procuras/{id}', 'ProcuraController@get');
@@ -116,7 +116,6 @@ Route::get('/procuras-search', 'ProcuraController@search');
 Route::post('/procuras', 'ProcuraController@store');
 Route::put('/procuras/{id}', 'ProcuraController@update');
 Route::delete('/procuras/{id}', 'ProcuraController@destroy');
-
 
 
 Route::get('/produz/produtor-producao/{produtor_id}', 'ProduzController@getProdutosDoProdutor');
