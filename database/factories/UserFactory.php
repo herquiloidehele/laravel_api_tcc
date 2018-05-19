@@ -11,7 +11,7 @@ $factory->define(\App\Models\CategoriaProduto::class, function (Faker $faker) {
 });
 
 
-$unidadesMedidas = ['Quilograma', 'Saco', 'Tonelada', 'Gramas', 'Caixas', 'Frascos', 'Unidades'];
+$unidadesMedidas = ['Quilograma', 'Saco', 'Tonelada', 'Grama', 'Caixa', 'Frasco', 'Unidade'];
 $abreveatura = ['KG', 'SC', 'TON', 'GR'];
 $factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($unidadesMedidas, $abreveatura){
    return [
