@@ -12,7 +12,7 @@ class Reserva extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'reservas';
-    protected $fillable = ['revendedores_id', 'fertas_id', 'quantidade'];
+    protected $fillable = ['revendedores_id', 'fertas_id', 'quantidade', 'mensagem'];
 
 
 

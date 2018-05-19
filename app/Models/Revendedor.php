@@ -41,4 +41,11 @@ class Revendedor extends Model
         return $this->belongsToMany('App\Models\Oferta', 'reservas', 'revendedores_id', 'ofertas_id');
     }
 
+    public function parcelamentos(){
+        return $this->belongsToMany('App\Models\Parcelamento', 'reservas_parcelas', 'revendedores_id','parcelamento_id');
+    }
+
+
+
+
 }

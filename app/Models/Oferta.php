@@ -23,4 +23,8 @@ class Oferta extends Model
         return $this->belongsTo('App\Models\UnidadeMedida', 'unidades_medidas_id');
     }
 
+    public function parcelamentos(){
+        return $this->hasMany('App\Models\Parcelamento', 'ofertas_id');
+    }
+
 }
