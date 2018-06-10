@@ -20,6 +20,8 @@ class CreateReservasTable extends Migration {
 			$table->integer('quantidade')->nullable();
 			$table->timestamps();
 			$table->softDeletes();
+			$table->boolean('is_aceite')->nullable();
+			$table->string('mensagem', 100)->nullable();
 		});
 	}
 

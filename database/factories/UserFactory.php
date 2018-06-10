@@ -3,10 +3,13 @@
 use Faker\Generator as Faker;
 
 
+$categorias = \App\Models\ProdutosSeeders::getCategorias();
 
-$factory->define(\App\Models\CategoriaProduto::class, function (Faker $faker) {
+$factory->define(\App\Models\CategoriaProduto::class, function (Faker $faker) use ($categorias){
+    $categoria = $faker->unique()->randomElement($categorias);
     return [
-        'designacao' => $faker->text(30),
+        'id' => $categoria['id'],
+        'designacao' => $categoria['designacao'],
     ];
 });
 
@@ -22,11 +25,14 @@ $factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use (
 
 //==================================++++++============================++++=============================
 
+$produtos = \App\Models\ProdutosSeeders::getProdutos();
 
-$factory->define(\App\Models\Produto::class, function (Faker $faker){
+
+$factory->define(\App\Models\Produto::class, function (Faker $faker) use ($produtos){
+    $produto = $faker->unique()->randomElement($produtos);
     return [
-        'designacao' => $faker->text(30),
-        'categoria_produtos_id' => $faker->numberBetween(1, \App\Models\CategoriaProduto::all()->count())
+        'designacao' => $produto['designacao'],
+        'categoria_produtos_id' => $produto['categoria_produtos_id']
     ] ;
 });
 
