@@ -20,8 +20,8 @@ class DatabaseSeeder extends Seeder
          factory(\App\Models\Produtor::class, 20)->create();
          factory(\App\Models\TelefoneProdutor::class, 40)->create();
          factory(\App\Models\CategoriaProduto::class, 4)->create();
-         factory(\App\Models\UnidadeMedida::class, 4)->create();
-         factory(\App\Models\Produto::class, 40)->create();
+         factory(\App\Models\UnidadeMedida::class, 7)->create();
+         factory(\App\Models\Produto::class, 39)->create();
          factory(\App\Models\Variedade::class, 60)->create();
          factory(\App\Models\Epoca::class, 60)->create();
          factory(\App\Models\Procura::class, 60)->create();

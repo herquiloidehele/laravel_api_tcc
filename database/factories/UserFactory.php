@@ -14,19 +14,18 @@ $factory->define(\App\Models\CategoriaProduto::class, function (Faker $faker) us
 });
 
 
-$unidadesMedidas = ['Quilograma', 'Saco', 'Tonelada', 'Grama', 'Caixa', 'Frasco', 'Unidade'];
-$abreveatura = ['KG', 'SC', 'TON', 'GR'];
-$factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($unidadesMedidas, $abreveatura){
+$unidadesMedidas = \App\Models\ProdutosSeeders::getUnidadesMedidas();
+$factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($unidadesMedidas){
+    $unidadesMedida = $faker->unique()->randomElement($unidadesMedidas);
    return [
-       'designacao' => $faker->unique()->randomElement($unidadesMedidas),
-       'abreviatura' => $faker->unique()->randomElement($abreveatura),
+       'designacao' => $unidadesMedida['designacao'],
+       'abreviatura' => $unidadesMedida['abreveatura'],
    ];
 });
 
 //==================================++++++============================++++=============================
 
 $produtos = \App\Models\ProdutosSeeders::getProdutos();
-
 
 $factory->define(\App\Models\Produto::class, function (Faker $faker) use ($produtos){
     $produto = $faker->unique()->randomElement($produtos);
@@ -128,7 +127,7 @@ $factory->define(\App\Models\Mercado::class, function (Faker $faker) use ($merca
 //=======================================================UTILIZADORES============================================
 $factory->define(App\User::class, function (Faker $faker) {
     return [
-        'nome' => $faker->name,
+        'nome' => $faker->firstName() .' '.  $faker->lastName,
         'username' => $faker->unique()->userName,
         'password' => '12345',
         'foto' => $faker->imageUrl(),

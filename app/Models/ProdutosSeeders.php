@@ -20,10 +20,20 @@ class ProdutosSeeders
         ['id' => 4,'designacao' => 'Outras']
     ];
 
+    private static $unidadesMedidas = [
+        ['abreveatura' => 'KG','designacao' => 'Quilograma'],
+        ['abreveatura' => 'SC','designacao' => 'Saco'],
+        ['abreveatura' => 'TON','designacao' => 'Tonelada'],
+        ['abreveatura' => 'GR','designacao' => 'Grama'],
+        ['abreveatura' => 'CA','designacao' => 'Caixa'],
+        ['abreveatura' => 'FR','designacao' => 'Frasco'],
+        ['abreveatura' => 'UNI','designacao' => 'Unidade'],
+    ];
+
 
     private static $produtos = [
        ['designacao' => 'Abacate', 'categoria_produtos_id' => 1],
-       ['designacao' => 'Banana', 'categoria_produtos_id'=> 1],
+       ['designacao' => 'Banana',  'categoria_produtos_id'=> 1],
        ['designacao' => 'Ananás', 'categoria_produtos_id'=> 1],
        ['designacao' => 'Coco', 'categoria_produtos_id' => 1],
        ['designacao' => 'Laranja', 'categoria_produtos_id'=> 1],
@@ -38,7 +48,7 @@ class ProdutosSeeders
        ['designacao' => 'Pessego', 'categoria_produtos_id'=> 1],
        ['designacao' => 'Pera Maçã', 'categoria_produtos_id'=> 1],
        ['designacao' => 'Tagerina', 'categoria_produtos_id' => 1],
-       ['designacao' => 'Uva', 'categoria_produtos_id', 1],
+       ['designacao' => 'Uva', 'categoria_produtos_id'=> 1],
        ['designacao' => 'Abobora Seca', 'categoria_produtos_id'=> 2],
        ['designacao' => 'Batata Doce', 'categoria_produtos_id'=> 2],
        ['designacao' => 'Berinjela', 'categoria_produtos_id'=> 2],
@@ -70,10 +80,12 @@ class ProdutosSeeders
         return ProdutosSeeders::$produtos;
     }
 
-
     public static function getCategorias(){
         return ProdutosSeeders::$categorias;
     }
 
+    public static function getUnidadesMedidas(){
+        return ProdutosSeeders::$unidadesMedidas;
+    }
 
 }

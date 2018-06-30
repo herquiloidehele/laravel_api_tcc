@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'pt',
 
     /*
     |--------------------------------------------------------------------------
@@ -217,5 +217,7 @@ return [
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
     ],
+
+    'faker_locale' => 'pt_BR'
 
 ];

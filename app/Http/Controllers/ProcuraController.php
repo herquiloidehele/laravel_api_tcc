@@ -65,7 +65,7 @@ class ProcuraController extends ModelController
 
         foreach ($produtorProducao['produz'] as $produtorProduz) {
             if ($produtorProduz['produto']['designacao'] == $procura['produto']['designacao'])
-                if($produtorProduz['unidade_medida']['designacao'] == $procura['unidade_medida']['designacao'])
+//                if($produtorProduz['unidade_medida']['designacao'] == $procura['unidade_medida']['designacao'])
                     return true;
         }
 
