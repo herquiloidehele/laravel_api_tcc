@@ -14,3 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/teste', function () {
+    return '<h1>Teste Basico</h1>';
+});
