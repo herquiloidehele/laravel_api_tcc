@@ -12,7 +12,7 @@ class Oferta extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'ofertas';
-    protected $fillable = ['produtos_id','produtores_id', 'preco', 'quantidade', 'data_fim', 'estado', 'unidades_medidas_id'];
+    protected $fillable = ['produtos_id','produtores_id','tipo_preco', 'preco','preco_unidade', 'quantidade', 'data_fim', 'estado', 'unidades_medidas_id'];
 
 
     public function revendedores(){

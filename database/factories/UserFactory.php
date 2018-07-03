@@ -61,6 +61,8 @@ $factory->define(\App\Models\Oferta::class, function (Faker $faker){
         'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
         'preco' => $faker->numberBetween(1000, 50000),
         'quantidade' => $faker->randomNumber(2),
+        'tipo_preco' => 'total',
+        'preco_unidade' => null,
     ] ;
 });
 

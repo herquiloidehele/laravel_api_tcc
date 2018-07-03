@@ -36,6 +36,8 @@ class OfertaController extends ModelController
                     'quantidade' => $ofertaRequest['quantidade'],
                     'data_fim' => $ofertaRequest['data_fim'],
                     'estado' => 1,
+                    'preco_unidade' => $ofertaRequest['preco_unidade'],
+                    'tipo_preco' => $ofertaRequest['tipo_preco'],
                     'unidades_medidas_id' => $ofertaRequest['unidades_medidas']['id']
                 ]
             );
@@ -70,6 +72,8 @@ class OfertaController extends ModelController
             'produtor' => Produtor::find($oferta->pivot->produtores_id),
             'produto' => Produto::find($oferta->pivot->produtos_id),
             'unidade_medida' => UnidadeMedida::find($oferta->pivot->unidades_medidas_id),
+            'tipo_preco' => $oferta->tipo_preco,
+            'preco_unidade' => $oferta->preco_unidade,
             'preco' => $oferta->pivot->preco,
             'quantidade' => $oferta->pivot->quantidade,
             'data_fim' => $oferta->pivot->data_fim,
@@ -91,6 +95,8 @@ class OfertaController extends ModelController
                     'produtor' => Produtor::find($oferta->produtores_id),
                     'produto' => Produto::find($oferta->produtos_id),
                     'unidade_medida' => UnidadeMedida::find($oferta->unidades_medidas_id),
+                    'tipo_preco' => $oferta->tipo_preco,
+                    'preco_unidade' => $oferta->preco_unidade,
                     'preco' => $oferta->preco,
                     'quantidade' => $oferta->quantidade,
                     'data_fim' => $oferta->data_fim,

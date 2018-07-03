@@ -25,6 +25,7 @@ class CreateOfertasTable extends Migration {
 			$table->softDeletes();
 			$table->dateTime('data_fim')->nullable();
 			$table->boolean('estado')->default(1);
+			$table->string('tipo_preco', 45)->nullable();
 		});
 	}
 
