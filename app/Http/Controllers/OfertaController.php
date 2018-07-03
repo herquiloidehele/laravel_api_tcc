@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Models\Oferta;
+use App\Models\Parcelamento;
 use App\Models\Produto;
 use App\Models\Produtor;
 use App\Models\UnidadeMedida;
@@ -49,6 +50,22 @@ class OfertaController extends ModelController
     }
 
 
+    public function SalvarParcelas(Request $request){
+
+       foreach ($request->parcelas as $parcela){
+           Parcelamento::create([
+               'quantidade' =>$parcela['quantidade'],
+               'preco' => $parcela['preco'],
+               'unidades_medidas_id' => $parcela['unidade_medida']['id'],
+               'ofertas_id' => $request->oferta_id
+        ]);
+       }
+
+       return ['parcelas' => Parcelamento::where('ofertas_id', $request->oferta_id)->get()];
+    }
+
+
+
     public function getMinhasOfertas($produtores_id){
         if(!$produtores_id)
             throw new Exception('Produtor id invalido');
@@ -64,7 +81,6 @@ class OfertaController extends ModelController
 
         return ['ofertas' => $ofertasCompletas];
     }
-
 
 
     private function getOferta($oferta){

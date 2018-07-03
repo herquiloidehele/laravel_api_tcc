@@ -12,17 +12,14 @@ class Parcelamento extends Model
     protected $dates = ['deleted_at'];
 
     protected $table = 'parcelamento';
-    protected $fillable = ['quantidade', 'peco', 'ofertas_id'];
-//    protected $with = ['user'];
+    protected $fillable = ['quantidade', 'preco', 'ofertas_id', 'unidades_medidas_id'];
+
 
 
     public function oferta(){
         return $this->belongsTo('App\Models\Oferta', 'ofertas_id');
     }
 
-    public function revendedores(){
-        return $this->belongsToMany('App\Models\Revendedor', 'reservas_parcelas', 'parcelamento_id', 'revendedores_id');
-    }
 
 
 }

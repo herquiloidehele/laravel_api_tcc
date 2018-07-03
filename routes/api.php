@@ -130,5 +130,6 @@ Route::delete('/produz/{id}', 'ProduzController@destroy');
 Route::get('/ofertas/minhas-ofertas/{provedores_id}', 'OfertaController@getMinhasOfertas');
 Route::get('/ofertas', 'OfertaController@getAll');
 Route::post('/ofertas', 'OfertaController@store');
+Route::post('/oferta-parcelada', 'OfertaController@SalvarParcelas');
 
 
