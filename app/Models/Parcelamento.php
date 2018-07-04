@@ -16,10 +16,15 @@ class Parcelamento extends Model
 
 
 
+//    protected $with = ['unidadesMedidas'];
+
     public function oferta(){
         return $this->belongsTo('App\Models\Oferta', 'ofertas_id');
     }
 
+    public function unidadesMedidas(){
+        return $this->hasMany('App\Models\UnidadeMedida', 'unidades_medidas_id');
+    }
 
 
 }

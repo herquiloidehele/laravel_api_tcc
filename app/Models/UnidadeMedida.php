@@ -31,4 +31,9 @@ class UnidadeMedida extends Model
         return $this->hasMany('App\Models\Oferta', 'unidades_medidas_id');
     }
 
+
+    public function parcelamentos(){
+        return $this->hasMany('App\Models\Parcelamento', 'unidades_medidas_id');
+    }
+
 }

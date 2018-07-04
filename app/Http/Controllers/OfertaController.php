@@ -7,6 +7,7 @@ use App\Models\Oferta;
 use App\Models\Parcelamento;
 use App\Models\Produto;
 use App\Models\Produtor;
+use App\Models\Revendedor;
 use App\Models\UnidadeMedida;
 use Illuminate\Http\Request;
 use Mockery\Exception;
@@ -100,14 +101,15 @@ class OfertaController extends ModelController
     }
 
 
-    public function getAll(Request $request)
+    public function getAllOfertas()
     {
-        $ofertas = collect(Oferta::all());
+        $ofertas = collect(Oferta::orderBy('id', 'desc')->get());
         $ofertasCompletas = collect();
 
         foreach ($ofertas as $oferta){
             $ofertasCompletas->push(
                 [
+                    'id' => $oferta->id,
                     'produtor' => Produtor::find($oferta->produtores_id),
                     'produto' => Produto::find($oferta->produtos_id),
                     'unidade_medida' => UnidadeMedida::find($oferta->unidades_medidas_id),
@@ -117,17 +119,48 @@ class OfertaController extends ModelController
                     'quantidade' => $oferta->quantidade,
                     'data_fim' => $oferta->data_fim,
                     'estado' => $oferta->estado,
-                    'created_at' => $oferta->created_a,
-                    'data' => $oferta->pivot->created_at,
+                    'created_at' => $oferta->created_at,
+                    'parcelas' => $oferta->parcelamentos
                 ]
             );
         }
 
         return ['ofertas' => $ofertasCompletas];
-
-
-
     }
+
+
+
+    public function getOfertasRevendedores($revendedores_id){
+        $interessesRevendedor = collect(Revendedor::find($revendedores_id)->interesses);
+        $allOfertas = collect($this->getAllOfertas());
+
+        return ['ofertas' => ($this->selecionarOfertas($interessesRevendedor, $allOfertas))];
+    }
+
+
+    /**
+     * Selecoina as ofertas que devem ser mostradas ao revendedor de a cordo com os seus interesses
+     * @param $interesses
+     * @param $ofertas
+     */
+    private function selecionarOfertas($interesses, $ofertas){
+
+
+        $ofertasSelecionadas = collect();
+
+        foreach ($ofertas->get('ofertas') as $oferta) {
+            foreach ($interesses as $interesse) {
+                if($oferta['produto']['id'] == $interesse['id'])
+                    $ofertasSelecionadas->push($oferta);
+            }
+        }
+
+        return $ofertasSelecionadas;
+    }
+
+
+
+
 
 
 }
