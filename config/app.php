@@ -151,6 +151,8 @@ return [
          * Package Service Providers...
          */
 
+        Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
+
         Way\Generators\GeneratorsServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,
@@ -216,6 +218,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'JWTAuth' => Tymon\JWTAuth\Facades\JWTAuth::class,
         'JWTFactory' => Tymon\JWTAuth\Facades\JWTFactory::class,
+        'Sentry' => Sentry\SentryLaravel\SentryFacade::class,
     ],
 
     'faker_locale' => 'pt_BR'

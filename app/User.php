@@ -18,6 +18,7 @@ class User extends Authenticatable
     protected $hidden = ['password', 'remember_token',];
 
 
+
     public function revendedor(){
         return $this->hasOne('App\Models\Revendedor', 'users_id');
     }

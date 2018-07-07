@@ -13,7 +13,8 @@ class Revendedor extends Model
 
     protected $table = 'revendedores';
     protected $fillable = ['user_id', 'mercados_id'];
-    protected $with = ['user', 'mercado'];
+    protected $with = ['user', 'mercado', 'telefones'];
+
 
 
     public function user(){
