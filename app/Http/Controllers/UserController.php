@@ -36,13 +36,11 @@ class UserController extends ModelController
 
         try{
             if(! $token = JWTAuth::attempt($credencias))
-                return response()->json(['mensagem' => 'Credencias Erradas'], 401);
+                return response()->json(['message' => 'Credencias Erradas'], 401);
         }catch (JWTException $ex){
-            return response()->json(['mensagem' => 'Erro ao gerar token'], 500);
+            return response()->json(['message' => 'Erro ao gerar token'], 500);
         }
 
-//        $user = $this->getUserFromToken($token);
-//        $tipoUser = $this->getClassName($user);
 
         return response()->json($this->getUserFromToken($token), 200);
     }
@@ -73,6 +71,7 @@ class UserController extends ModelController
             return $user->revendedor;
         if ($user->cadastrador)
             return $user->cadastrador;
+        throw new \Exception('Nao tem permissao para entrar', 401);
     }
 
 

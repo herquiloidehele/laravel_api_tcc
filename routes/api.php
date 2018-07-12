@@ -2,6 +2,9 @@
 
 use Illuminate\Http\Request;
 
+Route::get('api-test', function (){
+    return ['response', true];
+});
 
 Route::post('login', 'UserController@login');
 Route::post('logout', 'UserController@logout');
