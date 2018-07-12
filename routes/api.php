@@ -3,7 +3,7 @@
 use Illuminate\Http\Request;
 
 Route::get('api-test', function (){
-    return ['response' => true, 'server' => env('APP_URL')];
+    return ['response' => true];
 });
 
 Route::post('login', 'UserController@login');
