@@ -5,7 +5,7 @@ use Faker\Generator as Faker;
 
 $categorias = \App\Models\ProdutosSeeders::getCategorias();
 
-$factory->define(\App\Models\CategoriaProduto::class, function (Faker $faker) use ($categorias){
+$factory->define(\App\Models\Categoria::class, function (Faker $faker) use ($categorias){
     $categoria = $faker->unique()->randomElement($categorias);
     return [
         'id' => $categoria['id'],
@@ -31,7 +31,7 @@ $factory->define(\App\Models\Produto::class, function (Faker $faker) use ($produ
     $produto = $faker->unique()->randomElement($produtos);
     return [
         'designacao' => $produto['designacao'],
-        'categoria_produtos_id' => $produto['categoria_produtos_id']
+        'categorias_id' => $produto['categoria_produtos_id']
     ] ;
 });
 

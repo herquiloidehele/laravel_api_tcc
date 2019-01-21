@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CategoriaProduto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class CategoriaProdutoController extends ModelController
 {
     public function __construct() {
-        $this->object = new CategoriaProduto();
+        $this->object = new Categoria();
         $this->objectName = 'categoria';
         $this->objectNames = 'categorias';
         $this->relactionships = ['produtos'];
