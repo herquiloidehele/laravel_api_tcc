@@ -153,6 +153,8 @@ return [
 
         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
 
+        Reliese\Coders\CodersServiceProvider::class,
+
         Way\Generators\GeneratorsServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
         Tymon\JWTAuth\Providers\JWTAuthServiceProvider::class,

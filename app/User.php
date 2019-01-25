@@ -1,41 +1,73 @@
 <?php
 
+/**
+ * Created by Reliese Model.
+ * Date: Fri, 25 Jan 2019 14:21:25 +0000.
+ */
+
 namespace App;
 
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Foundation\Auth\User as Authenticable;
 
-class User extends Authenticatable
+/**
+ * Class User
+ * 
+ * @property int $id
+ * @property string $username
+ * @property string $password
+ * @property string $nome
+ * @property string $foto
+ * @property int $estado
+ * @property \Carbon\Carbon $created_at
+ * @property \Carbon\Carbon $updated_at
+ * @property string $deleted_at
+ * @property string $remember_token
+ * 
+ * @property \Illuminate\Database\Eloquent\Collection $cadastradores
+ * @property \Illuminate\Database\Eloquent\Collection $produtores
+ * @property \Illuminate\Database\Eloquent\Collection $revendedores
+ *
+ * @package App\Models
+ */
+class User extends Authenticable
 {
-    use Notifiable;
-    use SoftDeletes;
+    use \Illuminate\Database\Eloquent\SoftDeletes;
+    use \Illuminate\Notifications\Notifiable;
 
-    protected $dates = ['deleted_at'];
+	protected $casts = [
+		'estado' => 'int'
+	];
 
-    protected $table = 'users';
-    protected $fillable = ['username', 'password', 'nome', 'foto', 'estado', 'remember_token'];
-    protected $hidden = ['password', 'remember_token',];
+	protected $hidden = [
+		'password',
+		'remember_token'
+	];
 
+	protected $fillable = [
+		'username',
+		'password',
+		'nome',
+		'foto',
+		'estado',
+		'remember_token'
+	];
 
+	public function cadastradores()
+	{
+		return $this->hasMany(\App\Models\Cadastradore::class, 'users_id');
+	}
 
-    public function revendedor(){
-        return $this->hasOne('App\Models\Revendedor', 'users_id');
-    }
+	public function produtores()
+	{
+		return $this->hasMany(\App\Models\Produtore::class, 'users_id');
+	}
 
-    public function produtor(){
-        return $this->hasOne('App\Models\Produtor', 'users_id');
-    }
-
-    public function cadastrador(){
-        return $this->hasOne('App\Models\Cadastrador', 'users_id');
-    }
-
-
+	public function revendedores()
+	{
+		return $this->hasMany(\App\Models\Revendedore::class, 'users_id');
+	}
 
     public function setPasswordAttribute($value){
         $this->attributes['password']  = bcrypt($value);
     }
-
-
 }
