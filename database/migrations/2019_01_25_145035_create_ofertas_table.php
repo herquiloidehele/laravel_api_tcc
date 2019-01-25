@@ -27,6 +27,7 @@ class CreateOfertasTable extends Migration {
 			$table->softDeletes();
 			$table->enum('negociavel', array('SIM','NAO'))->nullable();
 			$table->integer('visualizacoes')->nullable();
+			$table->integer('distritos_id')->index('fk_ofertas_distritos1_idx');
 		});
 	}
 

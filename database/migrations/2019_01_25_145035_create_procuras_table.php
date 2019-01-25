@@ -22,6 +22,7 @@ class CreateProcurasTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->enum('estado', array('ACTIVO','DESACTIVO'));
+			$table->integer('distritos_id')->index('fk_procuras_distritos1_idx');
 		});
 	}
 

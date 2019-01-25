@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateProdutoresTable extends Migration {
+class CreateMercadosTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,13 @@ class CreateProdutoresTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('produtores', function(Blueprint $table)
+		Schema::create('mercados', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->string('telefone', 12)->nullable();
-			$table->integer('users_id')->index('fk_produtores_users1_idx');
+			$table->string('designacao', 45)->nullable();
 			$table->timestamps();
 			$table->softDeletes();
-			$table->integer('localizacoes_id')->index('fk_produtores_localizacoes1_idx');
+			$table->integer('distritos_id')->index('fk_mercados_distritos1_idx');
 		});
 	}
 
@@ -31,7 +30,7 @@ class CreateProdutoresTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('produtores');
+		Schema::drop('mercados');
 	}
 
 }
