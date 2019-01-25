@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
          factory(\App\User::class, 61)->create();
          factory(\App\Models\Provincia::class, 11)->create();
-         factory(\App\Models\Distrito::class, 140)->create();
+         factory(\App\Models\Distrito::class, 145)->create();
          factory(\App\Models\Mercado::class, 6)->create();
          factory(\App\Models\Cadastradore::class, 5)->create();
          factory(\App\Models\Revendedore::class, 20)->create();
