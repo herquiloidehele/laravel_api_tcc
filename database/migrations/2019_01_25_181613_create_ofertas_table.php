@@ -15,8 +15,8 @@ class CreateOfertasTable extends Migration {
 		Schema::create('ofertas', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->string('designacao', 45)->nullable();
-			$table->string('descricao', 45)->nullable();
+			$table->string('designacao', 145)->nullable();
+			$table->text('descricao', 65535)->nullable();
 			$table->float('preco', 10, 0)->nullable();
 			$table->integer('quantidade')->nullable();
 			$table->enum('estado', array('DISPONIVEL','VENDIDO','INDISPONIVEL','DESACTIVO'));

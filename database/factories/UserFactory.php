@@ -96,11 +96,11 @@ $factory->define(\App\Models\Mercado::class, function (Faker $faker) use ($merca
 
 $factory->define(App\User::class, function (Faker $faker) {
     return [
-        'nome' => $faker->firstName() .' '.  $faker->lastName,
-        'username' => $faker->unique()->userName,
+        'nome' => $faker->firstName .' '.  $faker->lastName,
+        'username' => $faker->unique()->phoneNumber,
         'password' => '12345',
-        'foto' => $faker->imageUrl(),
-        'estado' => $faker->boolean(100),
+        'foto' => $faker->imageUrl($faker->numberBetween(50, 250), $faker->numberBetween(100, 450), 'people'),
+        'estado' => 1,
         'remember_token' => str_random(10),
     ];
 });
@@ -109,7 +109,6 @@ $factory->define(App\User::class, function (Faker $faker) {
 $factory->define(\App\Models\Cadastradore::class, function (Faker $faker){
 
     return [
-        'telefone' => $faker->phoneNumber,
         'users_id' => $faker->unique()->numberBetween(1, 5),
     ];
 });
@@ -124,6 +123,14 @@ $factory->define(\App\Models\Revendedore::class, function (Faker $faker){
     ];
 });
 
+$factory->define(\App\Models\Imagen::class, function (Faker $faker){
+    return [
+        'caminho' => $faker->imageUrl($faker->numberBetween(50, 250), $faker->numberBetween(100, 450), 'food'),
+        'is_principal' => $faker->numberBetween(5,10),
+        'ofertas_id' => $faker->numberBetween(1, \App\Models\Oferta::all()->count()),
+    ];
+});
+
 
 $factory->define(\App\Models\Produtore::class, function (Faker $faker){
     $user_id = $faker->unique()->numberBetween(31, 60);
@@ -133,8 +140,6 @@ $factory->define(\App\Models\Produtore::class, function (Faker $faker){
         'distritos_id' => $faker->numberBetween(11, \App\Models\Distrito::all()->count()),
     ];
 });
-
-
 
 $factory->define(\App\Models\Provincia::class, function (Faker $faker) {
 

@@ -11,25 +11,21 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-//         factory(\App\User::class, 60)->create();
-//         factory(\App\Models\Localizacao::class, 30)->create();
-//         factory(\App\Models\Mercado::class, 5)->create();
-//         factory(\App\Models\Cadastrador::class, 5)->create();
-//         factory(\App\Models\Revendedor::class, 20)->create();
-//         factory(\App\Models\TelefoneRevendedor::class, 40)->create();
-//         factory(\App\Models\Produtor::class, 20)->create();
-//         factory(\App\Models\TelefoneProdutor::class, 40)->create();
+         factory(\App\User::class, 61)->create();
+         factory(\App\Models\Provincia::class, 11)->create();
+         factory(\App\Models\Distrito::class, 140)->create();
+         factory(\App\Models\Mercado::class, 6)->create();
+         factory(\App\Models\Cadastradore::class, 5)->create();
+         factory(\App\Models\Revendedore::class, 20)->create();
+         factory(\App\Models\Produtore::class, 20)->create();
          factory(\App\Models\Categoria::class, 5)->create();
-//         factory(\App\Models\UnidadeMedida::class, 7)->create();
+         factory(\App\Models\UnidadesMedida::class, 7)->create();
          factory(\App\Models\Produto::class, 45)->create();
-//         factory(\App\Models\Variedade::class, 60)->create();
-//         factory(\App\Models\Epoca::class, 60)->create();
-//         factory(\App\Models\Procura::class, 60)->create();
-//         factory(\App\Models\Interesse::class, 60)->create();
-//         factory(\App\Models\Produz::class, 60)->create();
-//         factory(\App\Models\Disponibilidade::class, 20)->create();
-//         factory(\App\Models\Oferta::class, 30)->create();
-//         factory(\App\Models\Reserva::class, 30)->create();
+         factory(\App\Models\Procura::class, 60)->create();
+         factory(\App\Models\Interess::class, 60)->create();
+         factory(\App\Models\Produz::class, 60)->create();
+         factory(\App\Models\Oferta::class, 30)->create();
+         factory(\App\Models\Imagen::class, 130)->create();
 
     }
 }

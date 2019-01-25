@@ -15,7 +15,7 @@ class CreateProdutoresTable extends Migration {
 		Schema::create('produtores', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->string('telefone', 12)->nullable();
+			$table->string('telefone', 45)->nullable();
 			$table->integer('users_id')->index('fk_produtores_users1_idx');
 			$table->timestamps();
 			$table->softDeletes();

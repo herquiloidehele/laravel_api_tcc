@@ -19,7 +19,7 @@ class CreateRevendedoresTable extends Migration {
 			$table->timestamps();
 			$table->softDeletes();
 			$table->integer('mercados_id')->nullable()->index('fk_revendedores_mercados1_idx');
-			$table->string('telefone', 12)->nullable();
+			$table->string('telefone', 45)->nullable();
 			$table->enum('tipo_revendedor', array('FABRICA','LOJA','INDIVIDUAL'))->nullable();
 		});
 	}
