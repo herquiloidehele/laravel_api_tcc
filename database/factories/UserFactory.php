@@ -15,7 +15,7 @@ $factory->define(\App\Models\Categoria::class, function (Faker $faker) use ($cat
 
 
 $unidadesMedidas = \App\Models\ProdutosSeeders::getUnidadesMedidas();
-$factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use ($unidadesMedidas){
+$factory->define(\App\Models\UnidadesMedida::class, function (Faker $faker) use ($unidadesMedidas){
     $unidadesMedida = $faker->unique()->randomElement($unidadesMedidas);
    return [
        'designacao' => $unidadesMedida['designacao'],
@@ -23,7 +23,6 @@ $factory->define(\App\Models\UnidadeMedida::class, function (Faker $faker) use (
    ];
 });
 
-//==================================++++++============================++++=============================
 
 $produtos = \App\Models\ProdutosSeeders::getProdutos();
 
@@ -31,102 +30,70 @@ $factory->define(\App\Models\Produto::class, function (Faker $faker) use ($produ
     $produto = $faker->unique()->randomElement($produtos);
     return [
         'designacao' => $produto['designacao'],
-        'categorias_id' => $produto['categoria_produtos_id']
+        'categorias_id' => $produto['categoria_produtos_id'],
+        'default_photo' => $produto['default_photo'],
+        'estado' => 'ACTIVO'
     ] ;
 });
-
-$factory->define(\App\Models\Variedade::class, function (Faker $faker){
-   return [
-      'designacao' => $faker->text(30),
-       'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count())
-   ] ;
-});
-
-
-$meses = ['Janeiro', 'Fevereiro', 'Marco', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
-$factory->define(\App\Models\Epoca::class, function (Faker $faker) use ($meses){
-    return [
-        'mes_inicio' => $faker->randomElement($meses),
-        'mes_fim' => $faker->randomElement($meses),
-        'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count())
-    ];
-});
-
 
 
 $factory->define(\App\Models\Oferta::class, function (Faker $faker){
     return [
-        'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
+        'designacao' => $faker->text(50),
+        'descricao' => $faker->text(150),
+        'produtores_id' => $faker->numberBetween(1, \App\Models\Produtore::all()->count()),
         'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
-        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadesMedida::all()->count()),
         'preco' => $faker->numberBetween(1000, 50000),
         'quantidade' => $faker->randomNumber(2),
-        'tipo_preco' => 'total',
-        'preco_unidade' => null,
+        'estado' => 'DISPONIVEL',
+        'negociavel' => $faker->randomElement(['SIM', 'NAO']),
+        'visualizacoes' => 0,
+        'distritos_id' => $faker->numberBetween(11, \App\Models\Distrito::all()->count()),
     ] ;
 });
+
 
 $factory->define(\App\Models\Produz::class, function (Faker $faker){
     return [
-        'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
+        'produtores_id' => $faker->numberBetween(1, \App\Models\Produtore::all()->count()),
         'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
-        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
-        'quantidade_media' => $faker->randomNumber(2),
     ] ;
 });
 
 
-$factory->define(\App\Models\Interesse::class, function (Faker $faker){
+$factory->define(\App\Models\Interess::class, function (Faker $faker){
     return [
-        'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
+        'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedore::all()->count()),
         'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
-        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
-        'quantidade_media' => $faker->randomNumber(2),
     ] ;
 });
+
 
 $factory->define(\App\Models\Procura::class, function (Faker $faker){
     return [
-        'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
+        'designacao' => $faker->text(50),
+        'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedore::all()->count()),
         'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
-        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadeMedida::all()->count()),
+        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadesMedida::all()->count()),
         'quantidade' => $faker->randomNumber(2),
-        'data_fim' => $faker->date(),
-        'estado' => $faker->boolean(50),
-    ] ;
-});
-
-
-$factory->define(\App\Models\Disponibilidade::class, function (Faker $faker){
-    return [
-        'procuras_id' => $faker->numberBetween(1, \App\Models\Procura::all()->count()),
-        'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
-        'quantidade' => $faker->randomNumber(2),
-        'preco' => $faker->numberBetween(1000, 50000),
-    ] ;
-});
-
-
-$factory->define(\App\Models\Reserva::class, function (Faker $faker){
-    return [
-        'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
-        'ofertas_id' => $faker->numberBetween(1, \App\Models\Oferta::all()->count()),
-        'quantidade' => $faker->randomNumber(2),
+        'estado' => $faker->randomElement(['ACTIVO', 'DESACTIVO']),
+        'distritos_id' => $faker->numberBetween(11, \App\Models\Distrito::all()->count()),
     ] ;
 });
 
 
 
-$mercados = ['Zimpeto', 'Mercado 2', 'Mercado Municiapal', 'Mercado 4', 'Mercado 5'];
+$mercados = ['Zimpeto', 'Municipal de Maputo', 'Central de Maputo', 'Municiapal de Zavala', 'Centar de Inhambane', 'Municial de Vilanculos'];
 $factory->define(\App\Models\Mercado::class, function (Faker $faker) use ($mercados){
 
     return [
         'designacao' => $faker->randomElement($mercados),
-        'localizacoes_id' => $faker->numberBetween(1, 10),
+        'distritos_id' => $faker->numberBetween(11, \App\Models\Distrito::all()->count()),
     ];
 });
 
-//=======================================================UTILIZADORES============================================
+
 $factory->define(App\User::class, function (Faker $faker) {
     return [
         'nome' => $faker->firstName() .' '.  $faker->lastName,
@@ -139,7 +106,7 @@ $factory->define(App\User::class, function (Faker $faker) {
 });
 
 
-$factory->define(\App\Models\Cadastrador::class, function (Faker $faker){
+$factory->define(\App\Models\Cadastradore::class, function (Faker $faker){
 
     return [
         'telefone' => $faker->phoneNumber,
@@ -147,49 +114,49 @@ $factory->define(\App\Models\Cadastrador::class, function (Faker $faker){
     ];
 });
 
-$factory->define(\App\Models\Revendedor::class, function (Faker $faker){
-
+$factory->define(\App\Models\Revendedore::class, function (Faker $faker){
+    $user_id = $faker->unique()->numberBetween(6, 30);
     return [
-        'users_id' => $faker->unique()->numberBetween(6, 30),
+        'users_id' => $user_id,
+        'telefone' => \App\User::where('id', '=', $user_id)->first()['username'],
+        'tipo_revendedor' => $faker->randomElement(['FABRICA', 'LOJA', 'INDIVIDUAL']),
         'mercados_id' => $faker->numberBetween(1, \App\Models\Mercado::all()->count()),
     ];
 });
 
 
-$factory->define(\App\Models\Produtor::class, function (Faker $faker){
-
+$factory->define(\App\Models\Produtore::class, function (Faker $faker){
+    $user_id = $faker->unique()->numberBetween(31, 60);
     return [
-        'users_id' => $faker->numberBetween(31, 60),
-        'localizacoes_id' => $faker->numberBetween(11, \App\Models\Localizacao::all()->count()),
+        'users_id' => $user_id,
+        'telefone' => \App\User::where('id', '=', $user_id)->first()['username'],
+        'distritos_id' => $faker->numberBetween(11, \App\Models\Distrito::all()->count()),
     ];
 });
 
 
-//=========================================CONTACTOS E LOCALIZACAO=========================================
 
-$factory->define(\App\Models\TelefoneRevendedor::class, function (Faker $faker){
+$factory->define(\App\Models\Provincia::class, function (Faker $faker) {
 
+    $provincias = \App\Http\Controllers\DataController::getProvinvias();
+    $provincia = $faker->unique()->randomElement($provincias);
     return [
-        'designacao' => $faker->phoneNumber,
-        'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedor::all()->count()),
+        'id' => $provincia['id'],
+        'designacao' => $provincia['name']
     ];
 });
 
+$distritos = \App\Http\Controllers\DataController::getDistritos();
 
-$factory->define(\App\Models\TelefoneProdutor::class, function (Faker $faker){
+$factory->define(\App\Models\Distrito::class, function (Faker $faker) use ($distritos){
 
-    return [
-        'designacao' => $faker->phoneNumber,
-        'produtores_id' => $faker->numberBetween(1, \App\Models\Produtor::all()->count()),
-    ];
-});
-
-$factory->define(\App\Models\Localizacao::class, function (Faker $faker){
+    $distrito = $distritos->pop();
 
     return [
-        'poligono' => $faker->numberBetween(10000, 2000000),
-        'latitude' => $faker->latitude,
-        'longetude' => $faker->longitude,
+        'designacao' => $distrito['name'],
+        'provincias_id' => $distrito['in_place']['id']
     ];
+
 });
+
 
