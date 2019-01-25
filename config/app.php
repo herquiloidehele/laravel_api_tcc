@@ -152,7 +152,6 @@ return [
          */
 
         Sentry\SentryLaravel\SentryLaravelServiceProvider::class,
-        LaraCrud\LaraCrudServiceProvider::class,
 
         Way\Generators\GeneratorsServiceProvider::class,
         Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,

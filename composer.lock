@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5818f65af7fdc6956a07e96b41eb5219",
+    "content-hash": "847e867bfbb986be4bb55f8b08426d40",
     "packages": [
         {
             "name": "barryvdh/laravel-ide-helper",
@@ -3421,99 +3421,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "digitaldream/dbreader",
-            "version": "1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/digitaldreams/dbreader.git",
-                "reference": "54bfe8e024a91e536d629bf2a04e3adc6a9ef496"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/digitaldreams/dbreader/zipball/54bfe8e024a91e536d629bf2a04e3adc6a9ef496",
-                "reference": "54bfe8e024a91e536d629bf2a04e3adc6a9ef496",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DbReader\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tuhin",
-                    "email": "digitaldreams40@gmail.com"
-                }
-            ],
-            "description": "Database Reader",
-            "time": "2017-09-18T17:06:51+00:00"
-        },
-        {
-            "name": "digitaldream/laracrud",
-            "version": "3.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/digitaldreams/laracrud.git",
-                "reference": "7fb56997626612c104efabb6d8542105b5a17306"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/digitaldreams/laracrud/zipball/7fb56997626612c104efabb6d8542105b5a17306",
-                "reference": "7fb56997626612c104efabb6d8542105b5a17306",
-                "shasum": ""
-            },
-            "require": {
-                "digitaldream/dbreader": "~1.0",
-                "laravel/framework": ">=5.2",
-                "php": ">=5.5.9"
-            },
-            "suggest": {
-                "dingo/api": "To make API",
-                "intervention/image": "For Image",
-                "tymon/jwt-auth": "For API authentication"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "LaraCrud\\LaraCrudServiceProvider"
-                    ],
-                    "aliases": []
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "LaraCrud\\": "src/lara-crud/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tuhin Bepari",
-                    "email": "digitaldreams40@gmail.com",
-                    "homepage": "http://www.tuhinbepari.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "CRUD means CREATE, READ, UPDATE AND DELTE are common work in almost every web application. Laravel has also CRUD. We use Model, View, Controller, Request, Route's for CRUD. A well structured database are the blueprint of a web application. So We can create Model, View, Controller, Request from a database table",
-            "homepage": "https://github.com/digitaldreams/laracrud",
-            "keywords": [
-                "code generator",
-                "crud",
-                "laravel",
-                "laravel code generator"
-            ],
-            "time": "2018-12-31T14:54:11+00:00"
-        },
         {
             "name": "doctrine/cache",
             "version": "v1.8.0",
