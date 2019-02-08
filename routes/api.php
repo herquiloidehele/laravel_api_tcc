@@ -133,6 +133,6 @@ Route::get('/ofertas/minhas-ofertas/{provedores_id}', 'OfertaController@getMinha
 Route::get('/ofertas/revendedor/{revendedores_id}', 'OfertaController@getOfertasRevendedores');
 Route::get('/ofertas', 'OfertaController@getAll');
 Route::post('/ofertas', 'OfertaController@store');
-Route::post('/oferta-parcelada', 'OfertaController@SalvarParcelas');
+Route::get('/ofertas/produtor/{produtor_id}', 'OfertaController@getOfertasProdutor');
 
 

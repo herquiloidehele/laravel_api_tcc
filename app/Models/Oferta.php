@@ -65,6 +65,8 @@ class Oferta extends Eloquent
 		'distritos_id'
 	];
 
+	protected $with = ['produto'];
+
 	public function distrito()
 	{
 		return $this->belongsTo(\App\Models\Distrito::class, 'distritos_id');

@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Models\Oferta;
 use App\Models\Produto;
 use App\Models\Produtore;
-use App\Models\Revendedore;
 use App\Models\UnidadesMedida;
 use Illuminate\Http\Request;
 use Mockery\Exception;
@@ -50,22 +48,20 @@ class OfertaController extends ModelController
     }
 
 
+    public function getOfertasProdutor($produtor_id){
+        if(!$produtor_id)
+            throw new Exception('produtor_id invalido', 404);
 
-
-    public function getMinhasOfertas($produtores_id){
-        if(!$produtores_id)
-            throw new Exception('Produtor id invalido');
-
-        $produtor = Produtore::find($produtores_id);
+        $produtor = Produtore::where('id', '=', $produtor_id)->first();
         $ofertas = collect($produtor->ofertas);
+//
+//        $ofertasCompletas = collect();
+//
+//        foreach ($ofertas as $oferta){
+//            $ofertasCompletas->push($this->getOferta($oferta));
+//        }
 
-        $ofertasCompletas = collect();
-
-        foreach ($ofertas as $oferta){
-            $ofertasCompletas->push($this->getOferta($oferta));
-        }
-
-        return ['ofertas' => $ofertasCompletas];
+        return ['ofertas' => $ofertas];
     }
 
 
