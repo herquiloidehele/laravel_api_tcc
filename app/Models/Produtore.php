@@ -42,6 +42,8 @@ class Produtore extends Eloquent
 		'distritos_id'
 	];
 
+	protected $with = ['user'];
+
 	public function distrito()
 	{
 		return $this->belongsTo(\App\Models\Distrito::class, 'distritos_id');
@@ -57,8 +59,14 @@ class Produtore extends Eloquent
 		return $this->hasMany(\App\Models\Oferta::class, 'produtores_id');
 	}
 
-	public function produzs()
+	public function produz()
 	{
 		return $this->hasMany(\App\Models\Produz::class, 'produtores_id');
 	}
+
+	public function produtosProduzidos(){
+	    return $this->belongsToMany(Produto::class, 'produz', 'produtores_id', 'produtos_id')
+            ->withPivot('id', 'deleted_at');
+    }
+
 }

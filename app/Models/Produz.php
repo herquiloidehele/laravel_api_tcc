@@ -39,6 +39,7 @@ class Produz extends Eloquent
 		'produtos_id'
 	];
 
+
 	public function produtore()
 	{
 		return $this->belongsTo(\App\Models\Produtore::class, 'produtores_id');

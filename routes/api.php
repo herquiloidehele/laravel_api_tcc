@@ -2,12 +2,10 @@
 
 use Illuminate\Http\Request;
 
-Route::get('api-test', function (){
-    return ['response' => true];
-});
 
+Route::post('user/produtor', 'UserController@createProdutor');
 Route::post('login', 'UserController@login');
-Route::post('logout', 'UserController@logout');
+Route::get('user/verify-numbem/{numero}', 'UserController@verifyNumber');
 Route::post('get-user-token/{token}', 'UserController@getUserFromToken');
 
 

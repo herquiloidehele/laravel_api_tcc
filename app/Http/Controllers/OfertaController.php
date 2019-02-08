@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Models\Oferta;
-use App\Models\Parcelamento;
 use App\Models\Produto;
-use App\Models\Produtor;
-use App\Models\Revendedor;
-use App\Models\UnidadeMedida;
+use App\Models\Produtore;
+use App\Models\Revendedore;
+use App\Models\UnidadesMedida;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
@@ -18,7 +17,7 @@ class OfertaController extends ModelController
         $this->object = new Oferta();
         $this->objectName = 'oferta';
         $this->objectNames = 'ofertas';
-        $this->relactionships = ['revendedores', 'unidadeMedida'];
+        $this->relactionships = ['produtore', 'imagens', 'distrito', 'produto', 'unidades_medida'];
     }
 
 
@@ -51,27 +50,13 @@ class OfertaController extends ModelController
     }
 
 
-    public function SalvarParcelas(Request $request){
-
-       foreach ($request->parcelas as $parcela){
-           Parcelamento::create([
-               'quantidade' =>$parcela['quantidade'],
-               'preco' => $parcela['preco'],
-               'unidades_medidas_id' => $parcela['unidade_medida']['id'],
-               'ofertas_id' => $request->oferta_id
-        ]);
-       }
-
-       return ['parcelas' => Parcelamento::where('ofertas_id', $request->oferta_id)->get()];
-    }
-
 
 
     public function getMinhasOfertas($produtores_id){
         if(!$produtores_id)
             throw new Exception('Produtor id invalido');
 
-        $produtor = Produtor::find($produtores_id);
+        $produtor = Produtore::find($produtores_id);
         $ofertas = collect($produtor->ofertas);
 
         $ofertasCompletas = collect();
@@ -86,9 +71,9 @@ class OfertaController extends ModelController
 
     private function getOferta($oferta){
         return [
-            'produtor' => Produtor::find($oferta->pivot->produtores_id),
+            'produtor' => Produtore::find($oferta->pivot->produtores_id),
             'produto' => Produto::find($oferta->pivot->produtos_id),
-            'unidade_medida' => UnidadeMedida::find($oferta->pivot->unidades_medidas_id),
+            'unidade_medida' => UnidadesMedida::find($oferta->pivot->unidades_medidas_id),
             'tipo_preco' => $oferta->pivot->tipo_preco,
             'preco_unidade' => $oferta->pivot->preco_unidade,
             'preco' => $oferta->pivot->preco,

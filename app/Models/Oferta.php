@@ -7,6 +7,7 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
@@ -88,4 +89,11 @@ class Oferta extends Eloquent
 	{
 		return $this->hasMany(\App\Models\Imagen::class, 'ofertas_id');
 	}
+
+
+	public function getcreatedAtAttribute($value){
+	    return Carbon::parse($value)->diffForHumans();
+    }
+
+
 }

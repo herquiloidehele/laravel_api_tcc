@@ -37,6 +37,9 @@ class Distrito extends Eloquent
 		'provincias_id'
 	];
 
+    protected $with = ['provincia'];
+
+
 	public function provincia()
 	{
 		return $this->belongsTo(\App\Models\Provincia::class, 'provincias_id');

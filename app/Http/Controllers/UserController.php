@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Produtore;
+use App\Models\Produz;
+use Couchbase\Exception;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Http\Response;
@@ -20,9 +23,60 @@ class UserController extends ModelController
 
 
 
-    public function signup(){
+    public function createProdutor(Request $request){
+
+        $user = $request->get('user');
+        if(!$user)
+            return new \Exception('Utilizador Nao definido', 404);
+
+        \DB::beginTransaction();
+
+        $userCreated = User::create([
+            'username' => $user['username'],
+            'password' => '1234',
+            'nome' => $user['nome'],
+            'estado' => 0,
+        ]);
+
+        if(!$userCreated)
+            return new \Exception('Erro ao criar Utilizador, os parametros envidos podem estar errados', 500);
+
+        $produtorCreated = Produtore::create([
+            'telefone' => $userCreated['username'],
+            'users_id' => $userCreated['id'],
+            'distritos_id' => $user['distrito_id']
+        ]);
+
+        if(!$produtorCreated){
+            \DB::rollBack();
+            return new \Exception('Erro ao criar Produto,  os parametros envidos podem estar errados',500);
+        }
+
+        foreach ($user['interesses'] as $interesse){
+            $produtosDoProdutor = Produz::create([
+                'produtores_id' => $produtorCreated['id'],
+                'produtos_id' => $interesse
+        ]);
+
+            if(!$produtosDoProdutor) {
+                \DB::rollBack();
+                return new \Exception('Erro ao Registar Produtos do produtor, os parametros enviados podem estar incorrentos', 500);
+            }
+        }
+
+        \DB::commit();
+        return ['user' => $this->getProdutorById($produtorCreated['id']), 'message' => 'Conta de Produtor criada com sucesso'];
 
     }
+
+
+
+    private function getProdutorById($produtor_id){
+        return Produtore::with(['distrito', 'user', 'produtosProduzidos', 'ofertas'])->where('id', '=', $produtor_id)->first();
+    }
+
+
+
 
 
     public function login(Request $request){
@@ -92,6 +146,21 @@ class UserController extends ModelController
 //        return $request->all();
 //        return $this->getUserKind(JWTAuth::toUser($request->get('token')));
 //    }
+
+
+
+
+    public function verifyNumber($numero){
+
+        if($numero){
+            $user = User::where('username', $numero)->count();
+
+           return $user == 0 ? ['result' => false] : ['result' => true];
+        }
+        else
+            return new \Exception("No Number Provided");
+
+    }
 
 
 

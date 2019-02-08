@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Localizacao;
+use App\Models\Localiza;
 use Illuminate\Http\Request;
 
 class LocalizacaoController extends ModelController
