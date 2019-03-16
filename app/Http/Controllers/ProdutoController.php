@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Models\Produto;
-use App\Models\Variedade;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
@@ -57,5 +57,36 @@ class ProdutoController extends ModelController
 
     }
 
+
+    public function getAll(Request $request) {
+
+        $produtos = json_decode($request->get('produtos'), true);
+
+
+        if ($request->exists('pagination') and $request->get('pagination') > 0){
+            return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderBy('id','desc')
+                ->paginate($request->input('pagination')), 200);
+        }
+
+        if($produtos){
+            $produtosIds = $this->getProdutosIds($produtos);
+            if(count($produtosIds) > 0){
+                $produtosIds = implode(',', $produtosIds);
+                return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderByRaw(\DB::raw("FIELD(id, $produtosIds) DESC"))->get(), 200);
+            }
+        }
+
+        return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderBy('id','desc')->get(), 200);
+    }
+
+
+
+    public function getProdutosIds($produtos){
+        $ids = collect($produtos)->map(function($produto){
+           return $produto['id'];
+        });
+
+        return $ids->all();
+    }
 
 }

@@ -27,7 +27,13 @@ class  ModelController extends Controller implements InterfaceController
                 ->paginate($request->input('pagination')), 200);
         }
 
-        else
+        if($request->exists('order_by')){
+            $ids = collect($request->get('order_by'));
+            if($ids->count() > 0){
+                return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderByRaw('id','desc', $ids->all() )->get(), 200);
+            }
+        }
+
             return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderBy('id','desc')->get(), 200);
     }
 
