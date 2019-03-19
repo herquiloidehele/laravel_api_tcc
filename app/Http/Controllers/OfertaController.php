@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\classesAuxiliares\NomesOfertas;
 use App\Models\Oferta;
 use App\Models\Produto;
 use App\Models\Produtore;
+use App\Models\Produz;
 use App\Models\UnidadesMedida;
 use Illuminate\Http\Request;
 use Mockery\Exception;
@@ -24,63 +26,58 @@ class OfertaController extends ModelController
 
     public function store(Request $request){
 
-        $ofertaRequest = $request->get('oferta');
+        $ofertaRequest = json_decode(json_encode($request->get('oferta')));
 
-        try {
             $oferta = Oferta::create(
                 [
-                    'produtos_id' => $ofertaRequest['produto']['id'],
-                    'produtores_id' => $request->get('produtor_id'),
-                    'preco' => $ofertaRequest['preco'],
-                    'quantidade' => $ofertaRequest['quantidade'],
-                    'data_fim' => $ofertaRequest['data_fim'],
+                    'produtos_id' => $ofertaRequest->produtos_id,
+                    'produtores_id' => $ofertaRequest->produtores_id,
+                    'preco' => $ofertaRequest->preco,
+                    'quantidade' => $ofertaRequest->quantidade,
                     'estado' => 1,
-                    'preco_unidade' => $ofertaRequest['preco_unidade'],
-                    'tipo_preco' => $ofertaRequest['tipo_preco'],
-                    'unidades_medidas_id' => $ofertaRequest['unidades_medidas']['id']
+                    'unidades_medidas_id' => $ofertaRequest->unidades_medidas_id,
+                    'distritos_id' => $ofertaRequest->distritos_id,
+                    'descricao' => $ofertaRequest->descricao,
+                    'designacao' => $this->getDesignacao($ofertaRequest),
                 ]
             );
-            return ['oferta' => $oferta];
-        }catch(\Exception $ex){
-            return ['erro' => $ex];
-        }
+            if($oferta){
+                $this->adicionarProduto($oferta->produtos_id, $oferta->produtores_id);
+                ['oferta' => $oferta];
+            }else
+                return ['erro' =>  new \Exception("Erro ao criar Oferta", 500)];
 
     }
 
 
-    public function getOfertasProdutor($produtor_id){
-        if(!$produtor_id)
+    public function getOfertasProdutor($produtores_id){
+        if(!$produtores_id)
             throw new Exception('produtor_id invalido', 404);
 
-        $produtor = Produtore::where('id', '=', $produtor_id)->first();
-        $ofertas = collect($produtor->ofertas);
-//
-//        $ofertasCompletas = collect();
-//
-//        foreach ($ofertas as $oferta){
-//            $ofertasCompletas->push($this->getOferta($oferta));
-//        }
+        $produtor = Produtore::where('id', '=', $produtores_id)->first();
+        $ofertas = collect($produtor->ofertas)->all();
 
         return ['ofertas' => $ofertas];
     }
 
 
-    private function getOferta($oferta){
-        return [
-            'produtor' => Produtore::find($oferta->pivot->produtores_id),
-            'produto' => Produto::find($oferta->pivot->produtos_id),
-            'unidade_medida' => UnidadesMedida::find($oferta->pivot->unidades_medidas_id),
-            'tipo_preco' => $oferta->pivot->tipo_preco,
-            'preco_unidade' => $oferta->pivot->preco_unidade,
-            'preco' => $oferta->pivot->preco,
-            'quantidade' => $oferta->pivot->quantidade,
-            'data_fim' => $oferta->pivot->data_fim,
-            'estado' => $oferta->pivot->estado,
-            'created_at' => $oferta->pivot->created_at,
-            'data' => $oferta->pivot->created_at,
-        ];
+    private function adicionarProduto($produtos_id, $produtores_id){
+
+        if(Produz::where('produtores_id', '=', $produtores_id)->where('produtos_id', '=', $produtos_id)->count() == 0){
+            $producao = Produz::create([
+                'produtos_id' => $produtos_id,
+                'produtores_id' => $produtores_id
+            ]);
+        }
     }
 
+    private function getDesignacao($oferta){
+
+        if($oferta->designacao == '' or $oferta->designacao == null){
+            return NomesOfertas::getDesegnacao($oferta);
+        }
+        return $oferta->designacao;
+    }
 
     public function getAllOfertas()
     {

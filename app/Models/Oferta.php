@@ -65,7 +65,7 @@ class Oferta extends Eloquent
 		'distritos_id'
 	];
 
-	protected $with = ['produto'];
+	protected $with = ['produto', 'produtore', 'distrito', 'unidades_medida', 'imagens'];
 
 	public function distrito()
 	{
