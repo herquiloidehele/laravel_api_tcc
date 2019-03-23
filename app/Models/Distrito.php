@@ -17,7 +17,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $provincias_id
  * 
  * @property \App\Models\Provincia $provincia
- * @property \Illuminate\Database\Eloquent\Collection $mercados
+ * @property \Illuminate\Database\Eloquent\Collection $mercado
  * @property \Illuminate\Database\Eloquent\Collection $ofertas
  * @property \Illuminate\Database\Eloquent\Collection $procuras
  * @property \Illuminate\Database\Eloquent\Collection $produtores

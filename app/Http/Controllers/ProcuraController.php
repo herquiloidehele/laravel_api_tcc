@@ -56,7 +56,7 @@ class ProcuraController extends ModelController
 
 
     /**
-     * compara os produtos que o produtor produz e os produtos que os mercados disponibilizam
+     * compara os produtos que o produtor produz e os produtos que os mercado disponibilizam
      * @param $produtorProducao
      * @param $procura
      * @return bool

@@ -30,9 +30,9 @@ class NomesOfertas
     private static function getUnidadesMedidas($unidadeMedidaId, $quantidade){
         $unidadeMedida = UnidadesMedida::where('id', '=', $unidadeMedidaId)->first();
         if($quantidade == 1)
-            return $unidadeMedida['designacao'];
+            return $unidadeMedida['abreviatura'];
         else
-            return $unidadeMedida['designacao'] . "s";
+            return $unidadeMedida['abreviatura'];
     }
 
     private static function getProduto($produto_id){

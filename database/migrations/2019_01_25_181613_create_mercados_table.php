@@ -12,7 +12,7 @@ class CreateMercadosTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('mercados', function(Blueprint $table)
+		Schema::create('mercado', function(Blueprint $table)
 		{
 			$table->integer('id', true);
 			$table->string('designacao', 45)->nullable();
@@ -30,7 +30,7 @@ class CreateMercadosTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('mercados');
+		Schema::drop('mercado');
 	}
 
 }

@@ -3,16 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
-use App\Models\Interesse;
-use App\Models\Revendedor;
-use App\Models\UnidadeMedida;
+use App\Models\Interess;
+use App\Models\Revendedore;
+use App\Models\UnidadesMedida;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 
 class InteresseProdutoController extends ModelController
 {
     public function __construct() {
-        $this->object = new Interesse();
+        $this->object = new Interess();
         $this->objectName = 'interesse';
         $this->objectNames = 'interesses';
         $this->relactionships = [];

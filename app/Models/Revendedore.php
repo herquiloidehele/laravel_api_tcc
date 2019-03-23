@@ -44,6 +44,8 @@ class Revendedore extends Eloquent
 		'tipo_revendedor'
 	];
 
+	protected $with = ['user', 'interesses', 'procuras', 'mercado'];
+
 	public function mercado()
 	{
 		return $this->belongsTo(\App\Models\Mercado::class, 'mercados_id');
@@ -56,11 +58,13 @@ class Revendedore extends Eloquent
 
 	public function interesses()
 	{
-		return $this->hasMany(\App\Models\Interess::class, 'revendedores_id');
-	}
+        return $this->belongsToMany(Produto::class, 'interesses', 'revendedores_id','produtos_id');
+    }
 
 	public function procuras()
 	{
 		return $this->hasMany(\App\Models\Procura::class, 'revendedores_id');
 	}
+
+
 }

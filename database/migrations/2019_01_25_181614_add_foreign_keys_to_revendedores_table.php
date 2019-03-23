@@ -14,7 +14,7 @@ class AddForeignKeysToRevendedoresTable extends Migration {
 	{
 		Schema::table('revendedores', function(Blueprint $table)
 		{
-			$table->foreign('mercados_id', 'fk_revendedores_mercados1')->references('id')->on('mercados')->onUpdate('NO ACTION')->onDelete('NO ACTION');
+			$table->foreign('mercados_id', 'fk_revendedores_mercados1')->references('id')->on('mercado')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 			$table->foreign('users_id', 'fk_revendedores_users1')->references('id')->on('users')->onUpdate('NO ACTION')->onDelete('NO ACTION');
 		});
 	}
