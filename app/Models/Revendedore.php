@@ -44,7 +44,6 @@ class Revendedore extends Eloquent
 		'tipo_revendedor'
 	];
 
-	protected $with = ['user', 'interesses', 'procuras', 'mercado'];
 
 	public function mercado()
 	{

@@ -12,7 +12,11 @@ class MercadoController extends ModelController
         $this->object = new Mercado();
         $this->objectName = 'mercado';
         $this->objectNames = 'mercados';
-        $this->relactionships = ['revendedores', 'distrito'];
+        $this->relactionships = ['revendedores' => function($query){
+            $query->with(['user', 'interesses', 'procuras' => function($query){
+                $query->with(['distrito', 'produto', 'unidades_medida', 'revendedore']);
+            }, 'mercado']);
+        }, 'distrito'];
     }
 
 

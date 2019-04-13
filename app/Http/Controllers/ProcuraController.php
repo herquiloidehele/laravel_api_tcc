@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Models\Procura;
 use App\Models\Produto;
-use App\Models\Produtor;
-use App\Models\Revendedor;
-use App\Models\UnidadeMedida;
+use App\Models\Produtore;
+use App\Models\Revendedore;
+use App\Models\UnidadesMedida;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,14 +19,14 @@ class ProcuraController extends ModelController
         $this->object = new Procura();
         $this->objectName = 'procura';
         $this->objectNames = 'procuras';
-        $this->relactionships = ['produtores'];
+        $this->relactionships = ['distrito', 'produto', 'unidades_medida', 'revendedore' => function($query) {$query->with('user');}];
     }
 
 
-    public function getAll(Request $request)
-    {
-        return Auxiliar::retornarDados('produras',  $this->getProcura(), 200);
-    }
+//    public function getAll(Request $request)
+//    {
+//        return Auxiliar::retornarDados('procuras',  $this->getProcura(), 200);
+//    }
 
 
 
@@ -35,7 +35,7 @@ class ProcuraController extends ModelController
      * @param Request $produtosInteressados
      */
     public function getAllOfProdutos(Request $request){
-        $produtor = User::find(JWTAuth::toUser($request->token)->id)->produtor;
+        $produtor = User::find($request->id)->produtor;
 
         $revendedorProcuras = $this->getProcura();
         $produtorProducoes = $this->getProdutosDoProdutor($produtor->id);

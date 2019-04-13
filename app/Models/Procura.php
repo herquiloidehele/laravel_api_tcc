@@ -51,6 +51,7 @@ class Procura extends Eloquent
 		'distritos_id'
 	];
 
+
 	public function distrito()
 	{
 		return $this->belongsTo(\App\Models\Distrito::class, 'distritos_id');
