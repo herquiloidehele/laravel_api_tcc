@@ -66,7 +66,7 @@ class ProcuraController extends ModelController
                             ->where('produtos.categorias_id', '=', $produto['categorias_id'])
                             ->get();
 
-        return $procuras;
+        return ['procuras' => $procuras];
     }
 
     /**
