@@ -118,6 +118,7 @@ Route::get('/procuras-search', 'ProcuraController@search');
 Route::post('/procuras', 'ProcuraController@store');
 Route::put('/procuras/{id}', 'ProcuraController@update');
 Route::delete('/procuras/{id}', 'ProcuraController@destroy');
+Route::get('/procuras-semelhantes/{id}', 'ProcuraController@getProcurasSemelhantes');
 
 
 Route::get('/produz/produtor-producao/{produtor_id}', 'ProduzController@getProdutosDoProdutor');

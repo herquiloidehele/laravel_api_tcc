@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
+use App\Models\Categoria;
 use App\Models\Procura;
 use App\Models\Produto;
 use App\Models\Produtore;
@@ -54,6 +55,19 @@ class ProcuraController extends ModelController
         return $requisicoesProdutos;
     }
 
+
+
+    public function getProcurasSemelhantes($id){
+        $produto = Produto::find(Procura::where('id', '=', $id)->first()['produtos_id']);
+
+        $procuras = Procura::with(['distrito', 'produto', 'unidades_medida', 'revendedore' => function($query) {$query->with('user');}])
+                            ->select('procuras.*')
+                            ->join('produtos', 'produtos.id', '=', 'procuras.produtos_id')
+                            ->where('produtos.categorias_id', '=', $produto['categorias_id'])
+                            ->get();
+
+        return $procuras;
+    }
 
     /**
      * compara os produtos que o produtor produz e os produtos que os mercado disponibilizam
