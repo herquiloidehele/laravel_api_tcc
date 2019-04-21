@@ -58,11 +58,11 @@ class User extends Eloquent
 
 	public function produtores()
 	{
-		return $this->hasMany(\App\Models\Produtore::class, 'users_id');
+		return $this->hasOne(\App\Models\Produtore::class, 'users_id');
 	}
 
 	public function revendedores()
 	{
-		return $this->hasMany(\App\Models\Revendedore::class, 'users_id');
+		return $this->hasOne(\App\Models\Revendedore::class, 'users_id');
 	}
 }
