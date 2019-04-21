@@ -47,22 +47,15 @@ class ProduzController extends ModelController
 
     public function store(Request $request){
 
-        $produz = $request->get('produz');
+        $produz = Produz::create([
+            'produtores_id' => $request->get('idProdutor'),
+            'produtos_id' => $request->get('idProduto')
+        ]);
 
-
-            $producao = Produz::create(
-                [
-                    'produtores_id' => $produz['produtores_id'],
-                    'produtos_id' => $produz['produtos_id'],
-                    'unidades_medidas_id' => $produz['unidades_medidas_id'],
-                    'quantidade_media' => $produz['quantidade_media']
-                ]);
-
-            if(!$producao){
-                throw new Exception('Erro ao tentar criar Produz object');
-            }
-
-            return Auxiliar::retornarDados('produz', $producao);
+        if($produz)
+            return ['produz' => $produz];
+        else
+            throw new \Exception("Erro ao criar Produz", 500);
 
     }
 

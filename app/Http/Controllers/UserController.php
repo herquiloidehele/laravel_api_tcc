@@ -8,7 +8,6 @@ use App\Models\Produz;
 use Couchbase\Exception;
 use Illuminate\Http\Request;
 use App\User;
-use Illuminate\Http\Response;
 use JWTAuth;
 
 class UserController extends ModelController

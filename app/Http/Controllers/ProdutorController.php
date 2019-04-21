@@ -2,16 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Produtor;
+use App\Models\Produtore;
 
 
 class ProdutorController extends ModelController
 {
     public function __construct() {
-        $this->object = new Produtor();
+        $this->object = new Produtore();
         $this->objectName = 'produtor';
         $this->objectNames = 'produtores';
-        $this->relactionships = ['user', 'telefones', 'localizacao', 'produtosQueProduz', 'ofertas', 'procuras'];
+        $this->relactionships = ['distrito', 'user', 'produtosProduzidos', 'ofertas'];
     }
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Models\Produto;
+use App\Models\Produz;
 use Illuminate\Http\Request;
 use Mockery\Exception;
 

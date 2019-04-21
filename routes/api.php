@@ -15,6 +15,7 @@ Route::get('/produtos-search', 'ProdutoController@search');
 Route::post('/produtos', 'ProdutoController@store');
 Route::put('/produtos/{id}', 'ProdutoController@update');
 Route::delete('/produtos/{id}', 'ProdutoController@destroy');
+Route::post('/produtos/pro', 'ProdutoController@destroy');
 
 
 
@@ -136,4 +137,4 @@ Route::get('/ofertas', 'OfertaController@getAll');
 Route::post('/ofertas', 'OfertaController@store');
 Route::get('/ofertas/produtores/{produtores_id}', 'OfertaController@getOfertasProdutor');
 
-
+Route::get('/provincias', 'LocalizacaoController@getProcincias');

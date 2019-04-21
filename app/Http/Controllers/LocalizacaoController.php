@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Localiza;
-use Illuminate\Http\Request;
 
-class LocalizacaoController extends ModelController
+
+use App\Models\Distrito;
+use App\Models\Provincia;
+
+class LocalizacaoController extends Controller
 {
     public function __construct() {
-        $this->object = new Localizacao();
-        $this->objectName = 'localizacao';
-        $this->objectNames = 'localizacoes';
-        $this->relactionships = [];
     }
+
+
+    public function getProcincias(){
+        return ['provincias' => Provincia::with(['distritos'])->get()];
+    }
+
+
+
 }

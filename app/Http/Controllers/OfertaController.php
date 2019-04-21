@@ -36,6 +36,7 @@ class OfertaController extends ModelController
                     'quantidade' => $ofertaRequest->quantidade,
                     'estado' => 1,
                     'unidades_medidas_id' => $ofertaRequest->unidades_medidas_id,
+                    'is_preco_unidade' => $ofertaRequest->is_preco_unidade,
                     'distritos_id' => $ofertaRequest->distritos_id,
                     'descricao' => $ofertaRequest->descricao,
                     'designacao' => $this->getDesignacao($ofertaRequest),

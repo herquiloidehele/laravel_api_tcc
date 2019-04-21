@@ -63,7 +63,6 @@ class ProdutosSeeders
         ['designacao' => 'Quiabo', 'categoria_produtos_id'=> 2, 'default_photo' => 'img/produtos/Quiabo.jpeg'],
         ['designacao' => 'Tomate', 'categoria_produtos_id'=> 2, 'default_photo' => 'img/produtos/Tomate.jpg'],
         ['designacao' => 'Cebola', 'categoria_produtos_id'=> 2, 'default_photo' => 'img/produtos/Cebola.jpeg'],
-        ['designacao' => 'Batata', 'categoria_produtos_id'=> 2, 'default_photo' => 'img/produtos/Batata Reno.jpeg'],
         ['designacao' => 'Alface', 'categoria_produtos_id'=> 3, 'default_photo' => 'img/produtos/Alface.jpeg'],
         ['designacao' => 'Brócolos', 'categoria_produtos_id'=> 3, 'default_photo' => 'img/produtos/Brócolos.jpeg'],
         ['designacao' => 'Espinafre', 'categoria_produtos_id'=> 3, 'default_photo' => 'img/produtos/Espinafre.jpeg'],
