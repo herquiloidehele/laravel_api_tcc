@@ -36,22 +36,6 @@ class ProdutoController extends ModelController
                 \DB::rollBack();
                 throw new Exception('Erro ao criar um produto', 402);
             }
-            else{
-                foreach ($produto_request['variedades'] as $variedade){
-                    $varie = Variedade::create(
-                        [
-                            'designacao' => $variedade,
-                            'produtos_id' => $produto->id
-                        ]
-                    );
-
-
-                    if (!$varie){
-                        \DB::rollBack();
-                        throw new Exception('Erro ao criar variedades', 402);
-                    }
-                }
-            }
 
         \DB::commit();
             return ['produto' => $produto];

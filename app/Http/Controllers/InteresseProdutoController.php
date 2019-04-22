@@ -26,14 +26,14 @@ class InteresseProdutoController extends ModelController
      * @return array
      */
     public function getProdutosRevendedor($produtor_id){
-        $produtos = collect(Revendedor::find($produtor_id)->interesses);
+        $produtos = collect(Revendedore::find($produtor_id)->interesses);
         $interesses = collect();
 
 
         foreach ($produtos->all() as $produto){
             $interesses->push([
                 'produto' => $produto,
-                'unidade_medida' => UnidadeMedida::find($produto->pivot->unidades_medidas_id),
+                'unidade_medida' => UnidadesMedida::find($produto->pivot->unidades_medidas_id),
                 'quantidade' => $produto->pivot->quantidade_media
             ]);
         }

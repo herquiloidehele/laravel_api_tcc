@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Models\Produto;
-use App\Models\Produtor;
-use App\Models\ProdutoUnidadeMedida;
+use App\Models\Produtore;
 use App\Models\Produz;
-use App\Models\UnidadeMedida;
+use App\Models\UnidadesMedida;
 use App\User;
 use Illuminate\Http\Request;
 use DB;
@@ -29,14 +28,14 @@ class ProduzController extends ModelController
      * @return array
      */
     public function getProdutosDoProdutor($produtor_id){
-        $produtos = collect(Produtor::find($produtor_id)->produtosQueProduz);
+        $produtos = collect(Produtore::find($produtor_id)->produtosQueProduz);
         $prodQueProdutorProduz = collect();
 
 
         foreach ($produtos->all() as $produto){
             $prodQueProdutorProduz->push([
                 'produto' => $produto,
-                'unidade_medida' => UnidadeMedida::find($produto->pivot->unidades_medidas_id),
+                'unidade_medida' => UnidadesMedida::find($produto->pivot->unidades_medidas_id),
                 'quantidade' => $produto->pivot->quantidade_media
             ]);
         }

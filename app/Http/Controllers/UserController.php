@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Produtore;
 use App\Models\Produz;
-use Couchbase\Exception;
 use Illuminate\Http\Request;
 use App\User;
 use JWTAuth;

@@ -20,10 +20,6 @@ class OfertaController extends ModelController
         $this->relactionships = ['produtore', 'imagens', 'distrito', 'produto', 'unidades_medida'];
     }
 
-
-
-
-
     public function store(Request $request){
 
         $ofertaRequest = json_decode(json_encode($request->get('oferta')));
