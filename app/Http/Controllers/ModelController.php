@@ -44,10 +44,10 @@ class  ModelController extends Controller implements InterfaceController
         if(!$id)
             return Auxiliar::retornarErros('id not found or undefined', 404);
         else{
-            if(!$objectEncontrado = $this->object->with($this->relactionships)->find($id))
+            if(!$objectEncontrado = $this->object->with($this->relactionships)->where('id', '=', $id))
                 return Auxiliar::retornarErros("object with id=$id does not exists", 404);
             else
-                return Auxiliar::retornarDados($this->objectName, $objectEncontrado, 200);
+                return Auxiliar::retornarDados($this->objectName, $objectEncontrado->first(), 200);
         }
     }
 
@@ -63,13 +63,15 @@ class  ModelController extends Controller implements InterfaceController
 
 
     public function update(Request $object, $id) {
-        $var_object = $this->object->with($this->relactionships)->find($id);
+        $var_object = $this->object->with($this->relactionships)->where('id', '=', $id);
         if (!$var_object)
             return Auxiliar::retornarErros($this->objectName.' not found', 404);
 
         else {
-            $var_object->update($object->all());
-            return Auxiliar::retornarDados($this->objectName, $var_object, 200);
+            if($var_object->update($object->all()))
+                return Auxiliar::retornarDados($this->objectName, $var_object->first(), 200);
+            else
+                return Auxiliar::retornarErros($this->objectName.' not found', 404);
         }
     }
 

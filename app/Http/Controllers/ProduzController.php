@@ -18,7 +18,7 @@ class ProduzController extends ModelController
         $this->object = new Produz();
         $this->objectName = 'produz';
         $this->objectNames = 'produzes';
-        $this->relactionships = [];
+        $this->relactionships = ['unidades_medida', 'epocas', 'produto', 'produtore'];
     }
 
 

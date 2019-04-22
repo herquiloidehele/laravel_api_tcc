@@ -19,8 +19,8 @@ class CreateProduzTable extends Migration {
 			$table->softDeletes();
 			$table->integer('produtores_id')->index('fk_produz_produtores1_idx');
 			$table->integer('produtos_id')->index('fk_produz_produtos1_idx');
-			$table->integer('quandidade_media')->nullable();
-			$table->integer('unidades_medidas_id')->index('fk_produz_unidades_medidas1_idx');
+			$table->integer('quantidade')->nullable();
+			$table->integer('unidades_medidas_id')->nullable()->index('fk_produz_unidades_medidas1_idx');
 			$table->text('descricao', 65535)->nullable();
 		});
 	}

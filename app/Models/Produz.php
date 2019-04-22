@@ -44,7 +44,7 @@ class Produz extends Eloquent
 	protected $fillable = [
 		'produtores_id',
 		'produtos_id',
-		'quandidade_media',
+		'quantidade',
 		'unidades_medidas_id',
 		'descricao'
 	];
