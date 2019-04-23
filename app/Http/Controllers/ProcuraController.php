@@ -60,7 +60,8 @@ class ProcuraController extends ModelController
     public function getProcurasSemelhantes($id){
         $produto = Produto::find(Procura::where('id', '=', $id)->first()['produtos_id']);
 
-        $procuras = Procura::with(['distrito', 'produto', 'unidades_medida', 'revendedore' => function($query) {$query->with('user');}])
+        $procuras = Procura::with(['distrito', 'produto', 'unidades_medida',
+                'revendedore' => function($query) {$query->with('user');}])
                             ->select('procuras.*')
                             ->join('produtos', 'produtos.id', '=', 'procuras.produtos_id')
                             ->where('produtos.categorias_id', '=', $produto['categorias_id'])

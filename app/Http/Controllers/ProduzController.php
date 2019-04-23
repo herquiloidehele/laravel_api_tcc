@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
+use App\Models\Epoca;
 use App\Models\Produto;
 use App\Models\Produtore;
 use App\Models\Produz;
@@ -58,5 +59,10 @@ class ProduzController extends ModelController
 
     }
 
+
+    public function getEpocasProducao($id){
+        $epocas = Epoca::where('produz_id', $id)->get();
+        return ['epocas' => $epocas];
+    }
 
 }
