@@ -56,7 +56,7 @@ class Revendedore extends Eloquent
 
 	public function interesses()
 	{
-		return $this->hasMany(\App\Models\Interess::class, 'revendedores_id');
+		return $this->belongsToMany(\App\Models\Produto::class, 'interesses','revendedores_id', 'produtos_id')->withPivot('id');
 	}
 
 	public function procuras()

@@ -70,4 +70,9 @@ class Produto extends Eloquent
 	{
 		return $this->hasMany(\App\Models\Produz::class, 'produtos_id');
 	}
+
+    public function produtores(){
+        return $this->belongsToMany(Produtore::class, 'produz', 'produtos_id', 'produtores_id')
+            ->withPivot('id', 'deleted_at');
+    }
 }
