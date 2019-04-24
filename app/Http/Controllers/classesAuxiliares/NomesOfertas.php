@@ -20,7 +20,7 @@ class NomesOfertas
 
         $formas = [
             "Vendo ". NomesOfertas::getProduto($oferta->produtos_id) ." à $oferta->preco",
-            "Promoçao de ". NomesOfertas::getProduto($oferta->produtos_id) ." de $oferta->designacao , $oferta->quantidade ". NomesOfertas::getUnidadesMedidas($oferta->unidades_medidas_id, $oferta->quantidade),
+            "Promoção de ". NomesOfertas::getProduto($oferta->produtos_id) .", $oferta->quantidade ". NomesOfertas::getUnidadesMedidas($oferta->unidades_medidas_id, $oferta->quantidade),
              NomesOfertas::getProduto($oferta->produtos_id) ."  $oferta->quantidade ". NomesOfertas::getUnidadesMedidas($oferta->unidades_medidas_id, $oferta->quantidade),
             "$oferta->quantidade ". NomesOfertas::getUnidadesMedidas($oferta->unidades_medidas_id, $oferta->quantidade) ." de " .NomesOfertas::getProduto($oferta->produtos_id)
         ];

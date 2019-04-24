@@ -97,6 +97,8 @@ Route::delete('/revendedores/{id}', 'RevendedorController@destroy');
 
 Route::get('/mercados', 'MercadoController@getAll');
 Route::get('/mercados/{id}', 'MercadoController@get');
+Route::get('/mercados/{id_mercado}/todos-produtos', 'MercadoController@getProdutosMercado');
+Route::get('/mercados/{id_mercado}/produtos-procurados', 'MercadoController@getProdutosMaisProcurados');
 Route::get('/mercados-search', 'MercadoController@search');
 Route::post('/mercados', 'MercadoController@store');
 Route::put('/mercados/{id}', 'MercadoController@update');

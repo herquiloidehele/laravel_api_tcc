@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
+use App\Models\Interess;
 use App\Models\Mercado;
+use App\Models\Procura;
+use App\Models\Produto;
 use Illuminate\Http\Request;
 
 class MercadoController extends ModelController
@@ -29,6 +32,51 @@ class MercadoController extends ModelController
             else
                 return Auxiliar::retornarErros('Erro ao criar o mercao', 404);
     }
+
+
+    /**
+     * Retorna todos os produtos que sao vendidos em um determinado mercado
+     *
+     * @param $id_mercado
+     * @return Interess[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function getProdutosMercado($id_mercado)
+    {
+        return
+            ['procutos' => Interess::with([])
+                ->select(['produtos.designacao as produto', \DB::raw('count(revendedores.id) as revendedores')])
+                ->Join('produtos', 'produtos.id', '=', 'interesses.produtos_id')
+                ->join('revendedores', 'revendedores.id', '=', 'interesses.revendedores_id')
+                ->join('mercados', 'mercados.id', '=', 'revendedores.mercados_id')
+                ->where('revendedores.mercados_id', '=', $id_mercado)
+                ->groupBy('produtos.designacao')
+                ->orderBy('revendedores', 'desc')
+                ->get()
+            ];
+    }
+
+
+    /**
+     * Retorna os 3 produtos mais procurados em um determinado mercado
+     * @param $id_mercado
+     * @return Procura[]|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
+     */
+    public function getProdutosMaisProcurados($id_mercado)
+    {
+        return
+            ['procutos' => Procura::with([])
+                ->select(['produtos.designacao as produto', \DB::raw('count(procuras.id) as procuras')])
+                ->Join('produtos', 'produtos.id', '=', 'procuras.produtos_id')
+                ->join('revendedores', 'revendedores.id', '=', 'procuras.revendedores_id')
+                ->join('mercados', 'mercados.id', '=', 'revendedores.mercados_id')
+                ->where('revendedores.mercados_id', '=', $id_mercado)
+                ->groupBy('produtos.designacao')
+                ->orderBy('procuras', 'desc')
+                ->limit(3)
+                ->get()
+            ];
+    }
+
 
 
 }

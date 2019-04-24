@@ -54,7 +54,14 @@ class Produtore extends Eloquent
 
 	public function ofertas()
 	{
-		return $this->hasMany(\App\Models\Oferta::class, 'produtores_id')->orderBy('id', 'desc');
+		return $this->hasMany(\App\Models\Oferta::class, 'produtores_id')
+            ->orderBy('id', 'desc')
+            ->with(
+                [
+                    'produtore' => function($query) {
+                        $query->with('user');
+                    }
+            ]);
 	}
 
 	public function produzs()
