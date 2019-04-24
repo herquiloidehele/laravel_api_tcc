@@ -42,17 +42,26 @@ class MercadoController extends ModelController
      */
     public function getProdutosMercado($id_mercado)
     {
-        return
-            ['procutos' => Interess::with([])
-                ->select(['produtos.designacao as produto', \DB::raw('count(revendedores.id) as revendedores')])
-                ->Join('produtos', 'produtos.id', '=', 'interesses.produtos_id')
-                ->join('revendedores', 'revendedores.id', '=', 'interesses.revendedores_id')
-                ->join('mercados', 'mercados.id', '=', 'revendedores.mercados_id')
-                ->where('revendedores.mercados_id', '=', $id_mercado)
-                ->groupBy('produtos.designacao')
-                ->orderBy('revendedores', 'desc')
-                ->get()
+
+        $produtos = collect(Interess::with([])
+            ->select(['produtos.id as produto_id', \DB::raw('count(revendedores.id) as revendedores')])
+            ->Join('produtos', 'produtos.id', '=', 'interesses.produtos_id')
+            ->join('revendedores', 'revendedores.id', '=', 'interesses.revendedores_id')
+            ->join('mercados', 'mercados.id', '=', 'revendedores.mercados_id')
+            ->where('revendedores.mercados_id', '=', $id_mercado)
+            ->groupBy('produtos.id')
+            ->orderBy('revendedores', 'desc')
+            ->get());
+
+        $produtos = $produtos->map(function($produto){
+            return [
+                "produto" => Produto::where('id', '=', $produto['produto_id'])->first(),
+                "revendedores" => $produto['revendedores']
             ];
+        });
+
+
+        return ['produtos' => $produtos];
     }
 
 
@@ -64,7 +73,7 @@ class MercadoController extends ModelController
     public function getProdutosMaisProcurados($id_mercado)
     {
         return
-            ['procutos' => Procura::with([])
+            ['produtos' => Procura::with([])
                 ->select(['produtos.designacao as produto', \DB::raw('count(procuras.id) as procuras')])
                 ->Join('produtos', 'produtos.id', '=', 'procuras.produtos_id')
                 ->join('revendedores', 'revendedores.id', '=', 'procuras.revendedores_id')
