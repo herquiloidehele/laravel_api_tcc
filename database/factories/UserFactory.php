@@ -50,14 +50,20 @@ $factory->define(\App\Models\Oferta::class, function (Faker $faker){
         'negociavel' => $faker->randomElement(['SIM', 'NAO']),
         'visualizacoes' => 0,
         'distritos_id' => $faker->numberBetween(11, \App\Models\Distrito::all()->count()),
+        'is_preco_unidade' => $faker->boolean
     ] ;
 });
+
+
 
 
 $factory->define(\App\Models\Produz::class, function (Faker $faker){
     return [
         'produtores_id' => $faker->numberBetween(1, \App\Models\Produtore::all()->count()),
         'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
+        'quantidade' => $faker->randomNumber(2),
+        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadesMedida::all()->count()),
+        'descricao' => $faker->text(200)
     ] ;
 });
 

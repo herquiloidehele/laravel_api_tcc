@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
          factory(\App\Models\Produtore::class, 20)->create();
          factory(\App\Models\Categoria::class, 5)->create();
          factory(\App\Models\UnidadesMedida::class, 7)->create();
-         factory(\App\Models\Produto::class, 45)->create();
+         factory(\App\Models\Produto::class, 44)->create();
          factory(\App\Models\Procura::class, 60)->create();
          factory(\App\Models\Interess::class, 60)->create();
          factory(\App\Models\Produz::class, 60)->create();
