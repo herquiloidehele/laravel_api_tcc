@@ -72,18 +72,27 @@ class MercadoController extends ModelController
      */
     public function getProdutosMaisProcurados($id_mercado)
     {
-        return
-            ['produtos' => Procura::with([])
-                ->select(['produtos.designacao as produto', \DB::raw('count(procuras.id) as procuras')])
+       $produtos = Procura::with([])
+                ->select(['produtos.id as produto_id', \DB::raw('count(procuras.id) as procuras')])
                 ->Join('produtos', 'produtos.id', '=', 'procuras.produtos_id')
                 ->join('revendedores', 'revendedores.id', '=', 'procuras.revendedores_id')
                 ->join('mercados', 'mercados.id', '=', 'revendedores.mercados_id')
                 ->where('revendedores.mercados_id', '=', $id_mercado)
-                ->groupBy('produtos.designacao')
+                ->groupBy('produtos.id')
                 ->orderBy('procuras', 'desc')
                 ->limit(3)
-                ->get()
+                ->get();
+
+
+        $produtos = $produtos->map(function($produto){
+            return [
+                "produto" => Produto::where('id', '=', $produto['produto_id'])->first(),
+                "requisicoes" => $produto['procuras']
             ];
+        });
+
+
+        return ['produtos' => $produtos];
     }
 
 

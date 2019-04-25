@@ -71,6 +71,7 @@ $factory->define(\App\Models\Interess::class, function (Faker $faker){
 
 
 $factory->define(\App\Models\Procura::class, function (Faker $faker){
+
     return [
         'designacao' => $faker->text(50),
         'revendedores_id' => $faker->numberBetween(1, \App\Models\Revendedore::all()->count()),
@@ -99,7 +100,7 @@ $factory->define(App\User::class, function (Faker $faker) {
         'nome' => $faker->firstName .' '.  $faker->lastName,
         'username' => $faker->unique()->phoneNumber,
         'password' => '12345',
-        'foto' => $faker->imageUrl($faker->numberBetween(50, 250), $faker->numberBetween(100, 450), 'people'),
+        'foto' => $faker->imageUrl($faker->numberBetween(100, 250), $faker->numberBetween(100, 450), 'people'),
         'estado' => 1,
         'remember_token' => str_random(10),
     ];
