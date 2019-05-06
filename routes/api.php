@@ -3,7 +3,10 @@
 use Illuminate\Http\Request;
 
 
-Route::post('user/produtor', 'UserController@createProdutor');
+Route::post('users/produtor', 'UserController@createProdutor');
+Route::get('users', 'UserController@getAll');
+Route::get('users', 'UserController@getAll');
+Route::put('users/{id}', 'UserController@update');
 Route::post('login', 'UserController@login');
 Route::get('user/verify-numbem/{numero}', 'UserController@verifyNumber');
 Route::post('get-user-token/{token}', 'UserController@getUserFromToken');

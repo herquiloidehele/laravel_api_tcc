@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\classesAuxiliares\Auxiliar;
 use App\Http\Controllers\interfaces\InterfaceController;
 use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 
 class  ModelController extends Controller implements InterfaceController
@@ -65,13 +66,13 @@ class  ModelController extends Controller implements InterfaceController
     public function update(Request $object, $id) {
         $var_object = $this->object->with($this->relactionships)->where('id', '=', $id);
         if (!$var_object)
-            return Auxiliar::retornarErros($this->objectName.' not found', 404);
+            return new NotFoundHttpException("$this->objectName nao encontrado");
 
         else {
             if($var_object->update($object->all()))
                 return Auxiliar::retornarDados($this->objectName, $var_object->first(), 200);
             else
-                return Auxiliar::retornarErros($this->objectName.' not found', 404);
+                throw new NotFoundHttpException("Erro ao actualizar $this->objectName");
         }
     }
 
