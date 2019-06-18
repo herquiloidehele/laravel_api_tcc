@@ -144,3 +144,7 @@ Route::post('/ofertas', 'OfertaController@store');
 Route::get('/ofertas/produtores/{produtores_id}', 'OfertaController@getOfertasProdutor');
 
 Route::get('/provincias', 'LocalizacaoController@getProcincias');
+
+Route::post('upload-imagens', function (Request $request){
+    return $request->all();
+});
