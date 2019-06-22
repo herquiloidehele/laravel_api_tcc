@@ -143,6 +143,7 @@ Route::get('/ofertas', 'OfertaController@getAll');
 Route::post('/ofertas', 'OfertaController@store');
 Route::get('/ofertas/produtores/{produtores_id}', 'OfertaController@getOfertasProdutor');
 Route::get('ofertas/categorias/{idCategoria}', 'OfertaController@getPublicacaoCategoria');
+Route::post('ofertas/visualizacoes', 'OfertaController@addVisualizacoes');
 
 Route::get('/provincias', 'LocalizacaoController@getProcincias');
 

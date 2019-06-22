@@ -17,7 +17,7 @@ class OfertaController extends ModelController
         $this->object = new Oferta();
         $this->objectName = 'oferta';
         $this->objectNames = 'ofertas';
-        $this->relactionships = ['produtore', 'imagens', 'distrito', 'produto', 'unidades_medida'];
+        $this->relactionships = ['produtore' => function($query){ $query->with('user'); }, 'imagens', 'distrito', 'produto', 'unidades_medida'];
     }
 
     public function store(Request $request){
@@ -151,6 +151,21 @@ class OfertaController extends ModelController
         ];
     }
 
+
+    public function addVisualizacoes(Request $request){
+
+        $oferta = Oferta::where('id', '=', $request->id)->first();
+
+        if($oferta){
+            $oferta->visualizacoes += 1;
+            $oferta->update();
+        }
+
+
+        return [
+            'visualizacoes' => $oferta->visualizacoes ? $oferta->visualizacoes : 0
+        ];
+    }
 
 
 }
