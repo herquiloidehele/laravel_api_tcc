@@ -134,7 +134,22 @@ class OfertaController extends ModelController
     }
 
 
+    /**
+     * Busca todos todas as publicacoes / ofertas que sao
+     * de uma determinada categoria de produtos
+     * @param $idCategoria
+     * @return array
+     */
+    public function getPublicacaoCategoria($idCategoria){
 
+        return [
+            'ofertas' => Oferta::with($this->relactionships)->whereHas('produto', function($query) use ($idCategoria){
+              $query->with('categoria')->whereHas('categoria', function ($query) use ($idCategoria){
+                  $query->where('id', '=', $idCategoria);
+              });
+            })->orderBy('updated_at', 'desc')->get()
+        ];
+    }
 
 
 
