@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 
 
 Route::post('users/produtor', 'UserController@createProdutor');
+Route::post('users/revendedor', 'UserController@createRevendedor');
 Route::get('users', 'UserController@getAll');
 Route::get('users', 'UserController@getAll');
 Route::put('users/{id}', 'UserController@update');

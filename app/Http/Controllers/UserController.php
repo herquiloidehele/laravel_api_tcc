@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Interess;
 use App\Models\Produtore;
 use App\Models\Produz;
+use App\Models\Revendedore;
 use Illuminate\Http\Request;
 use App\User;
 use JWTAuth;
@@ -54,7 +56,7 @@ class UserController extends ModelController
             $produtosDoProdutor = Produz::create([
                 'produtores_id' => $produtorCreated['id'],
                 'produtos_id' => $interesse
-        ]);
+            ]);
 
             if(!$produtosDoProdutor) {
                 \DB::rollBack();
@@ -74,6 +76,69 @@ class UserController extends ModelController
     }
 
 
+
+    public function createRevendedor(Request $request){
+        $user = $request->get('user');
+        if(!$user)
+            return new \Exception('Utilizador Não definido', 404);
+
+        \DB::beginTransaction();
+
+        $userCreated = User::create([
+            'username' => $user['username'],
+            'password' => '1234',
+            'nome' => $user['nome'],
+            'estado' => 0,
+        ]);
+
+        if(!$userCreated)
+            return new \Exception('Erro ao criar Utilizador, os parametros envidos podem estar errados', 500);
+
+
+        $revendedorCreated = Revendedore::create([
+            'telefone' => $userCreated['username'],
+            'users_id' => $userCreated['id'],
+            'mercados_id' => $user['mercados_id']
+        ]);
+
+        if(!$revendedorCreated){
+            \DB::rollBack();
+            return new \Exception('Erro ao criar Revendedor,  os parametros envidos podem estar errados',500);
+        }
+
+
+
+        foreach ($user['interesses'] as $interesse) {
+            $interesseDoRevendedor = Interess::create([
+                'revendedores_id' => $revendedorCreated['id'],
+                'produtos_id' => $interesse
+            ]);
+
+            if (!$interesseDoRevendedor) {
+                \DB::rollBack();
+                return new \Exception('Erro ao Registar Produtos do Revendedor, os parametros enviados podem estar incorrentos', 500);
+            }
+        }
+
+        \DB::commit();
+        return ['user' => $this->getRevendedorById($revendedorCreated['id']), 'message' => 'Conta de Revendedor criada com sucesso'];
+
+
+    }
+
+
+    public function getRevendedorById($revendedor_id){
+        return Revendedore::with([
+            'user',
+            'mercado' => function($query){
+                $query->with('distrito');
+            },
+            'interesses' ,
+            'procuras' => function($query){
+                $query->with(['produto', 'unidades_medida'
+                ]);
+            }])->where('id', '=', $revendedor_id)->first();
+    }
 
 
 
@@ -153,7 +218,7 @@ class UserController extends ModelController
         if($numero){
             $user = User::where('username', $numero)->count();
 
-           return $user == 0 ? ['result' => false] : ['result' => true];
+            return $user == 0 ? ['result' => false] : ['result' => true];
         }
         else
             return new \Exception("No Number Provided");
