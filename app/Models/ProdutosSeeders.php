@@ -77,7 +77,7 @@ class ProdutosSeeders
         ['designacao' => 'Cevada', 'categoria_produtos_id'=> 4, 'default_photo' => 'img/produtos/Cevada.jpeg'],
         ['designacao' => 'Feijao', 'categoria_produtos_id'=> 4, 'default_photo' => 'img/produtos/Feijao.jpg'],
         ['designacao' => 'Castanha', 'categoria_produtos_id'=> 4, 'default_photo' => 'img/produtos/Castanha.jpeg'],
-        ['designacao' => 'Amanedoim', 'categoria_produtos_id'=> 4, 'default_photo' => 'img/produtos/Amanedoim.jpg'],
+        ['designacao' => 'Amendoim', 'categoria_produtos_id'=> 4, 'default_photo' => 'img/produtos/Amanedoim.jpg'],
 
 
     ];
