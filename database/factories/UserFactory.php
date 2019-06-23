@@ -1,6 +1,7 @@
 <?php
 
 use Faker\Generator as Faker;
+use \App\Http\Controllers\classesAuxiliares\NomesOfertas;
 
 
 $categorias = \App\Models\ProdutosSeeders::getCategorias();
@@ -38,12 +39,19 @@ $factory->define(\App\Models\Produto::class, function (Faker $faker) use ($produ
 
 
 $factory->define(\App\Models\Oferta::class, function (Faker $faker){
+
+    $produtos_id = $faker->numberBetween(1, \App\Models\Produto::all()->count());
+    $preco = $faker->numberBetween(1000, 50000);
+    $quantidade = $faker->randomNumber(2);
+    $unidades_medidas_id = $faker->numberBetween(1, \App\Models\UnidadesMedida::all()->count());
+
+
     return [
-        'designacao' => $faker->text(50),
+        'designacao' => NomesOfertas::getDesignacao2($produtos_id, $preco, $quantidade, $unidades_medidas_id),
         'descricao' => $faker->text(150),
         'produtores_id' => $faker->numberBetween(1, \App\Models\Produtore::all()->count()),
-        'produtos_id' => $faker->numberBetween(1, \App\Models\Produto::all()->count()),
-        'unidades_medidas_id' => $faker->numberBetween(1, \App\Models\UnidadesMedida::all()->count()),
+        'produtos_id' => $produtos_id,
+        'unidades_medidas_id' => $unidades_medidas_id,
         'preco' => $faker->numberBetween(1000, 50000),
         'quantidade' => $faker->randomNumber(2),
         'estado' => 'DISPONIVEL',

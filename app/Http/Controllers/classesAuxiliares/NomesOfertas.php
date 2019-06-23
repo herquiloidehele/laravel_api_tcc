@@ -27,6 +27,19 @@ class NomesOfertas
         return $formas[rand(0, count($formas) - 1)];
     }
 
+
+    public static function getDesignacao2($produtos_id, $preco, $quantidade, $unidades_medidas_id){
+
+        $formas = [
+            "Vendo ". NomesOfertas::getProduto($produtos_id) ." à $preco",
+            "Promoção de ". NomesOfertas::getProduto($produtos_id) .", $quantidade ". NomesOfertas::getUnidadesMedidas($unidades_medidas_id,$quantidade),
+            NomesOfertas::getProduto($produtos_id) ."  $quantidade ". NomesOfertas::getUnidadesMedidas($unidades_medidas_id, $quantidade),
+            "$quantidade ". NomesOfertas::getUnidadesMedidas($unidades_medidas_id, $quantidade) ." de " .NomesOfertas::getProduto($produtos_id)
+        ];
+        return $formas[rand(0, count($formas) - 1)];
+    }
+
+
     private static function getUnidadesMedidas($unidadeMedidaId, $quantidade){
         $unidadeMedida = UnidadesMedida::where('id', '=', $unidadeMedidaId)->first();
         if($quantidade == 1)
