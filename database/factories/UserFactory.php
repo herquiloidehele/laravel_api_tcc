@@ -41,7 +41,7 @@ $factory->define(\App\Models\Produto::class, function (Faker $faker) use ($produ
 $factory->define(\App\Models\Oferta::class, function (Faker $faker){
 
     $produtos_id = $faker->numberBetween(1, \App\Models\Produto::all()->count());
-    $preco = $faker->numberBetween(1000, 50000);
+    $preco = $faker->numberBetween(600, 5000);
     $quantidade = $faker->randomNumber(2);
     $unidades_medidas_id = $faker->numberBetween(1, \App\Models\UnidadesMedida::all()->count());
 
