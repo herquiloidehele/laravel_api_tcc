@@ -215,6 +215,8 @@ class UserController extends ModelController
 
     public function verifyNumber($numero){
 
+//        ['result' => true];
+
         if($numero){
             $user = User::where('username', $numero)->count();
 
