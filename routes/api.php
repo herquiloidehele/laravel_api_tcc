@@ -119,6 +119,7 @@ Route::delete('/unidades-medidas/{id}', 'UnidadeMedidaController@destroy');
 
 
 Route::get('/procuras', 'ProcuraController@getAll');
+Route::get('/procuras/produtores/{id}', 'ProcuraController@getProcurasProdutor');
 Route::post('/procuras/produtos-produtor', 'ProcuraController@getAllOfProdutos');
 Route::get('/procuras/{id}', 'ProcuraController@get');
 Route::get('/procuras-search', 'ProcuraController@search');

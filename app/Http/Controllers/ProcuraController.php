@@ -13,6 +13,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use JWTAuth;
+use DB;
 
 class ProcuraController extends ModelController
 {
@@ -95,11 +96,11 @@ class ProcuraController extends ModelController
      * @return array
      */
     private function getProcura(){
-        $revendedores = Revendedor::all();
+        $revendedores = Revendedore::all();
         $revendedorProcura = collect();
 
         foreach ($revendedores as $revendedor){
-            $produtos = collect(Revendedor::find($revendedor->id)->procuras);
+            $produtos = collect(Revendedore::find($revendedor->id)->procuras);
 
 
             $procura = collect();
@@ -110,7 +111,7 @@ class ProcuraController extends ModelController
                     [
                         'id' => $produto->id,
                         'produto' => $produto,
-                        'unidade_medida' => UnidadeMedida::find($produto->pivot->unidades_medidas_id),
+                        'unidade_medida' => UnidadesMedida::find($produto->pivot->unidades_medidas_id),
                         'quantidade' => $produto->pivot->quantidade,
                         'data_formatada' => $produto->pivot->created_at->diffForHumans(),
                         'data_pura' => $produto->created_at
@@ -118,7 +119,7 @@ class ProcuraController extends ModelController
                     ]);
             }
 
-            $revendedorProcura->push(['revendedor' => Revendedor::find($revendedor->id), 'procura' => $procura]);
+            $revendedorProcura->push(['revendedor' => Revendedore::find($revendedor->id), 'procura' => $procura]);
         }
 
         return $revendedorProcura;
@@ -143,10 +144,49 @@ class ProcuraController extends ModelController
             ]);
         }
 
-        return ['produtor' => Produtor::find($produtor_id)->first(), 'produz' => $prodQueProdutorProduz ];
+        return ['produtor' => Produtore::find($produtor_id)->first(), 'produzs' => $prodQueProdutorProduz ];
 
     }
 
+
+
+    public function getProcurasProdutor($id){
+        $produtor = Produtore::with(['distrito', 'produzs'])->where('id', '=', $id)->first();
+
+        $produtosId = implode(',', $this->getProdutosId($produtor->produzs));
+        $distrito_id = $produtor->distrito->id . '';
+
+        return [ 'procuras' => Procura::with(
+            [
+            'distrito',
+            'produto',
+            'unidades_medida',
+            'revendedore' => function($query) {$query->with('user');}
+            ])
+            ->orderByRaw(DB::raw("FIELD(produtos_id, $produtosId) DESC"))
+            ->orderByRaw(DB::raw("FIELD(distritos_id, $distrito_id) DESC"))
+            ->get()
+            ];
+
+    }
+
+
+    /**
+     * Retorna os ids dos produtos produzidos pelo produtor
+     * @param $produz
+     * @return array
+     */
+    private function getProdutosId($produz){
+        if(count($produz) == 0)
+            return [];
+
+        $produzCollect = collect($produz);
+        $produtosId = $produzCollect->map(function ($produto) {
+            return $produto['produtos_id'];
+        });
+
+        return $produtosId->all();
+    }
 
 
 }

@@ -7,6 +7,7 @@ use App\Models\Oferta;
 use App\Models\Produto;
 use App\Models\Produtore;
 use App\Models\Produz;
+use App\Models\Revendedore;
 use App\Models\UnidadesMedida;
 use Illuminate\Http\Request;
 use Mockery\Exception;
@@ -85,9 +86,9 @@ class OfertaController extends ModelController
             $ofertasCompletas->push(
                 [
                     'id' => $oferta->id,
-                    'produtor' => Produtor::find($oferta->produtores_id),
+                    'produtor' => Produtore::find($oferta->produtores_id),
                     'produto' => Produto::find($oferta->produtos_id),
-                    'unidade_medida' => UnidadeMedida::find($oferta->unidades_medidas_id),
+                    'unidade_medida' => UnidadesMedida::find($oferta->unidades_medidas_id),
                     'tipo_preco' => $oferta->tipo_preco,
                     'preco_unidade' => $oferta->preco_unidade,
                     'preco' => $oferta->preco,
@@ -106,7 +107,7 @@ class OfertaController extends ModelController
 
 
     public function getOfertasRevendedores($revendedores_id){
-        $interessesRevendedor = collect(Revendedor::find($revendedores_id)->interesses);
+        $interessesRevendedor = collect(Revendedore::find($revendedores_id)->interesses);
         $allOfertas = collect($this->getAllOfertas());
 
         return ['ofertas' => ($this->selecionarOfertas($interessesRevendedor, $allOfertas))];
