@@ -142,6 +142,7 @@ Route::get('/produz/{id}/epocas', 'ProduzController@getEpocasProducao');
 Route::get('/ofertas/minhas-ofertas/{provedores_id}', 'OfertaController@getMinhasOfertas');
 Route::get('/ofertas/revendedor/{revendedores_id}', 'OfertaController@getOfertasRevendedores');
 Route::get('/ofertas', 'OfertaController@getAll');
+Route::get('/ofertas/revendedores/{id}', 'OfertaController@getOfertasRevendedor');
 Route::post('/ofertas', 'OfertaController@store');
 Route::get('/ofertas/produtores/{produtores_id}', 'OfertaController@getOfertasProdutor');
 Route::get('ofertas/categorias/{idCategoria}', 'OfertaController@getPublicacaoCategoria');

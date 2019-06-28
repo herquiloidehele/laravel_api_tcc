@@ -169,4 +169,40 @@ class OfertaController extends ModelController
     }
 
 
+    public function getOfertasRevendedor($id){
+        $revendedor = Revendedore::where('id', '=', $id)->first();
+
+         $produtosIds = implode(',', $this->getProdutosId($revendedor->interesses));
+
+
+        return [
+            'ofertas' => Oferta::with($this->relactionships)
+                        ->orderByRaw(\DB::raw("FIELD(produtos_id, $produtosIds) DESC"))
+                        ->get()
+        ];
+
+
+
+    }
+
+
+    /**
+     * Retorna os ids dos produtos do interesse do revendedor
+     * @param $produz
+     * @return array
+     */
+    private function getProdutosId($interesses){
+        if(count($interesses) == 0)
+            return [];
+
+        $interesseCollect = collect($interesses);
+        $produtosId = $interesseCollect->map(function ($produto) {
+            return $produto['id'];
+        });
+
+        return $produtosId->all();
+    }
+
+
+
 }
