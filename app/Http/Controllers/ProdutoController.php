@@ -17,9 +17,14 @@ class ProdutoController extends ModelController
         $this->relactionships = ['categoria', 'produtores'];
     }
 
-
-
-
+    /** @ApiDescription (section = Produto, description="Cria um novo Produto Produto")
+     * @ApiMethod(type="Post")
+     * @ApiRoute(name="/produtos")
+     * @ApiHeaders(name="Content-Type", type="application/json")
+     * @ApiParams(name="designacao", type="string", nullable=false)
+     * @ApiParams(name="categorias_id", type="int", nullable=false)
+     * @ApiParams(name="default_photo", type="string", nullable=false)
+     */
     public function store(Request $request)
     {
         $produto_request =  $request->all('designacao', 'categoria', 'variedades');
@@ -43,6 +48,11 @@ class ProdutoController extends ModelController
     }
 
 
+    /** @ApiDescription (section = Produto, description="Busca todos os produtos existentes")
+     * @ApiMethod(type="GET")
+     * @ApiRoute(name="/produtos")
+     * @ApiHeaders(name="Content-Type", type="application/json")
+     */
     public function getAll(Request $request) {
 
         $produtos = json_decode($request->get('produtos'), true);
