@@ -1684,13 +1684,1842 @@
         </div>
     </div>
 </div>
+<h2>Procuras</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion12" href="#collapseOne12"> /procuras</a>
+        </h4>
+    </div>
+    <div id="collapseOne12" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab12">
+                <li class="active"><a href="#info12" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox12" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample12" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info12">
+                    <div class="well">
+                    Retorna todos Procuras
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td></td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox12">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder=" - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras" method="get" name="form12" id="form12">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="12">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers12"></pre>
+                                <pre id="response12"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample12">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion13" href="#collapseOne13"> /procuras/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne13" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab13">
+                <li class="active"><a href="#info13" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox13" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample13" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info13">
+                    <div class="well">
+                    Busca Uma Determinada Procuras existente
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Procuras ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox13">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/{id}" method="GET" name="form13" id="form13">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Procuras ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="13">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers13"></pre>
+                                <pre id="response13"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample13">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion14" href="#collapseOne14"> /procuras</a>
+        </h4>
+    </div>
+    <div id="collapseOne14" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab14">
+                <li class="active"><a href="#info14" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox14" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample14" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info14">
+                    <div class="well">
+                    Cria uma nova Procura
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>designacao</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Designacao</td>
+</tr>
+
+<tr>
+    <td>revendedores_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do revendedor</td>
+</tr>
+
+<tr>
+    <td>unidades_medidas_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id da Uniade de Medida</td>
+</tr>
+
+<tr>
+    <td>produtos_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do Produto</td>
+</tr>
+
+<tr>
+    <td>quantidade</td>
+    <td>double</td>
+    <td>Yes</td>
+    <td>Quantidade procurada</td>
+</tr>
+
+<tr>
+    <td>distritos_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do distrito em que se localiza o revendedor</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox14">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras" method="POST" name="form14" id="form14">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="designacao">designacao</label>
+    <input type="string" class="form-control input-sm" id="designacao" placeholder="Designacao - Ex: " name="designacao">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="revendedores_id">revendedores_id</label>
+    <input type="integer" class="form-control input-sm" id="revendedores_id" placeholder="Id do revendedor - Ex: " name="revendedores_id">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="unidades_medidas_id">unidades_medidas_id</label>
+    <input type="integer" class="form-control input-sm" id="unidades_medidas_id" placeholder="Id da Uniade de Medida - Ex: " name="unidades_medidas_id">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="produtos_id">produtos_id</label>
+    <input type="integer" class="form-control input-sm" id="produtos_id" placeholder="Id do Produto - Ex: " name="produtos_id">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="quantidade">quantidade</label>
+    <input type="double" class="form-control input-sm" id="quantidade" placeholder="Quantidade procurada - Ex: " name="quantidade">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="distritos_id">distritos_id</label>
+    <input type="integer" class="form-control input-sm" id="distritos_id" placeholder="Id do distrito em que se localiza o revendedor - Ex: " name="distritos_id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="14">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers14"></pre>
+                                <pre id="response14"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample14">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion15" href="#collapseOne15"> /procuras/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne15" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab15">
+                <li class="active"><a href="#info15" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox15" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample15" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info15">
+                    <div class="well">
+                    Actualiza uma Procuras
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Procuras ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox15">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/{id}" method="put" name="form15" id="form15">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Procuras ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="15">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers15"></pre>
+                                <pre id="response15"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample15">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion16" href="#collapseOne16"> /procuras/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne16" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab16">
+                <li class="active"><a href="#info16" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox16" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample16" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info16">
+                    <div class="well">
+                    Elimina uma Procuras
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Procuras ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox16">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/{id}" method="delete" name="form16" id="form16">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Procuras ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="16">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers16"></pre>
+                                <pre id="response16"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample16">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion19" href="#collapseOne19"> /procuras/produtores/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne19" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab19">
+                <li class="active"><a href="#info19" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox19" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample19" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info19">
+                    <div class="well">
+                    Retorna os produtos requisitados para um determinado produtor
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do Produtor</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox19">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/produtores/{id}" method="GET" name="form19" id="form19">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Id do Produtor - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="19">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers19"></pre>
+                                <pre id="response19"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample19">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+<h2>Requisições</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion17" href="#collapseOne17"> /procuras/produtos-produtor</a>
+        </h4>
+    </div>
+    <div id="collapseOne17" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab17">
+                <li class="active"><a href="#info17" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox17" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample17" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info17">
+                    <div class="well">
+                    Retorna as requisicoes feitas para o produtor de produtos de acordo com os seus interesses
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td></td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do User</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox17">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder=" - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/produtos-produtor" method="GET" name="form17" id="form17">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Id do User - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="17">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers17"></pre>
+                                <pre id="response17"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample17">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+<h2>Produtores</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion18" href="#collapseOne18"> /produz/produtor-producao/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne18" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab18">
+                <li class="active"><a href="#info18" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox18" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample18" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info18">
+                    <div class="well">
+                    Retorna os produtos que um determinado produtor produz
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do Produtor</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox18">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/produz/produtor-producao/{id}" method="GET" name="form18" id="form18">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Id do Produtor - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="18">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers18"></pre>
+                                <pre id="response18"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample18">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion20" href="#collapseOne20"> /produtores</a>
+        </h4>
+    </div>
+    <div id="collapseOne20" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab20">
+                <li class="active"><a href="#info20" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox20" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample20" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info20">
+                    <div class="well">
+                    Retorna todos Produtores
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td></td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox20">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder=" - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores" method="get" name="form20" id="form20">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="20">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers20"></pre>
+                                <pre id="response20"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample20">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion21" href="#collapseOne21"> /produtores/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne21" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab21">
+                <li class="active"><a href="#info21" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox21" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample21" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info21">
+                    <div class="well">
+                    Busca Uma Determinada Produtores existente
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Produtores ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox21">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores/{id}" method="GET" name="form21" id="form21">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Produtores ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="21">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers21"></pre>
+                                <pre id="response21"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample21">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion22" href="#collapseOne22"> /produtores</a>
+        </h4>
+    </div>
+    <div id="collapseOne22" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab22">
+                <li class="active"><a href="#info22" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox22" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample22" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info22">
+                    <div class="well">
+                    Cria uma nova Procura
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>designacao</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Designacao</td>
+</tr>
+
+<tr>
+    <td>revendedores_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do revendedor</td>
+</tr>
+
+<tr>
+    <td>unidades_medidas_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id da Uniade de Medida</td>
+</tr>
+
+<tr>
+    <td>produtos_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do Produto</td>
+</tr>
+
+<tr>
+    <td>quantidade</td>
+    <td>double</td>
+    <td>Yes</td>
+    <td>Quantidade procurada</td>
+</tr>
+
+<tr>
+    <td>distritos_id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Id do distrito em que se localiza o revendedor</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox22">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores" method="POST" name="form22" id="form22">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="designacao">designacao</label>
+    <input type="string" class="form-control input-sm" id="designacao" placeholder="Designacao - Ex: " name="designacao">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="revendedores_id">revendedores_id</label>
+    <input type="integer" class="form-control input-sm" id="revendedores_id" placeholder="Id do revendedor - Ex: " name="revendedores_id">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="unidades_medidas_id">unidades_medidas_id</label>
+    <input type="integer" class="form-control input-sm" id="unidades_medidas_id" placeholder="Id da Uniade de Medida - Ex: " name="unidades_medidas_id">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="produtos_id">produtos_id</label>
+    <input type="integer" class="form-control input-sm" id="produtos_id" placeholder="Id do Produto - Ex: " name="produtos_id">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="quantidade">quantidade</label>
+    <input type="double" class="form-control input-sm" id="quantidade" placeholder="Quantidade procurada - Ex: " name="quantidade">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="distritos_id">distritos_id</label>
+    <input type="integer" class="form-control input-sm" id="distritos_id" placeholder="Id do distrito em que se localiza o revendedor - Ex: " name="distritos_id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="22">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers22"></pre>
+                                <pre id="response22"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample22">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion23" href="#collapseOne23"> /produtores/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne23" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab23">
+                <li class="active"><a href="#info23" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox23" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample23" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info23">
+                    <div class="well">
+                    Actualiza uma Produtores
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Produtores ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox23">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores/{id}" method="put" name="form23" id="form23">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Produtores ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="23">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers23"></pre>
+                                <pre id="response23"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample23">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion24" href="#collapseOne24"> /produtores/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne24" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab24">
+                <li class="active"><a href="#info24" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox24" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample24" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info24">
+                    <div class="well">
+                    Elimina uma Produtores
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Produtores ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox24">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores/{id}" method="delete" name="form24" id="form24">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Produtores ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="24">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers24"></pre>
+                                <pre id="response24"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample24">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
 
         </div>
         <hr>
 
         <div class="row mt0 footer">
             <div class="col-md-6" align="left">
-                Generated on 2019-07-01, 20:01:23
+                Generated on 2019-07-01, 21:08:25
             </div>
             <div class="col-md-6" align="right">
                 <a href="https://github.com/calinrada/php-apidoc" target="_blank">php-apidoc v1.3.8</a>
