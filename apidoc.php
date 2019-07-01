@@ -8,6 +8,7 @@ $classes = array(
     'App\Http\Controllers\MercadoController',
     'App\Http\Controllers\ProcuraController',
     'App\Http\Controllers\ProdutorController',
+    'App\Http\Controllers\RevendedorController',
 );
 
 $output_dir  = __DIR__.'/apidocs';
