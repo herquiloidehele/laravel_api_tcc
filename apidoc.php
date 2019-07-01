@@ -5,6 +5,7 @@ use Crada\Apidoc\Exception;
 
 $classes = array(
     'App\Http\Controllers\ProdutoController',
+    'App\Http\Controllers\MercadoController',
 );
 
 $output_dir  = __DIR__.'/apidocs';
