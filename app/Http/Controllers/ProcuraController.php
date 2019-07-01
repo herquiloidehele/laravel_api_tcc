@@ -28,7 +28,7 @@ class ProcuraController extends ModelController
     /**
      * @ApiDescription (section = Procuras, description="Retorna todos Procuras")
      * @ApiMethod(type="get")
-     * @ApiRoute(name="/procuras")
+     * @ApiRoute(name="/api/procuras")
      * @ApiHeaders(name="Content-Type", type="application/json", descriptoin="Tipo de conteudo")
      */
     public function getAll(Request $request)
@@ -40,7 +40,7 @@ class ProcuraController extends ModelController
      * @ApiDescription (section = Procuras, description="Busca Uma Determinada Procuras existente")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Procuras ID")
-     * @ApiRoute(name="/procuras/{id}")
+     * @ApiRoute(name="/api/procuras/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      */
     public function get($id)
@@ -52,7 +52,7 @@ class ProcuraController extends ModelController
     /**
      * @ApiDescription (section = Procuras, description="Cria uma nova Procura")
      * @ApiMethod(type="POST")
-     * @ApiRoute(name="/procuras")
+     * @ApiRoute(name="/api/procuras")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="designacao", type="string", nullable=false, description="Designacao")
      * @ApiParams(name="revendedores_id", type="integer", nullable=false, description="Id do revendedor")
@@ -68,7 +68,7 @@ class ProcuraController extends ModelController
 
     /** @ApiDescription (section = Procuras, description="Actualiza uma Procuras")
      * @ApiMethod(type="put")
-     * @ApiRoute(name="/procuras/{id}")
+     * @ApiRoute(name="/api/procuras/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Procuras ID")
      */
@@ -80,7 +80,7 @@ class ProcuraController extends ModelController
 
     /** @ApiDescription (section = Procuras, description="Elimina uma Procuras")
      * @ApiMethod(type="delete")
-     * @ApiRoute(name="/procuras/{id}")
+     * @ApiRoute(name="/api/procuras/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Procuras ID")
      */
@@ -97,7 +97,7 @@ class ProcuraController extends ModelController
      * @ApiDescription (section = "Requisições", description="Retorna as requisicoes feitas para o produtor de produtos de acordo com os seus interesses")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Id do User")
-     * @ApiRoute(name="/procuras/produtos-produtor")
+     * @ApiRoute(name="/api/procuras/produtos-produtor")
      * @ApiHeaders(name="Content-Type", type="application/json", )
      */
     public function getAllOfProdutos(Request $request){
@@ -194,7 +194,7 @@ class ProcuraController extends ModelController
      * @ApiDescription (section = "Produtores", description="Retorna os produtos que um determinado produtor produz")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Id do Produtor")
-     * @ApiRoute(name="/produz/produtor-producao/{id}")
+     * @ApiRoute(name="/api/produz/produtor-producao/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      */
     private function getProdutosDoProdutor($produtor_id){
@@ -219,7 +219,7 @@ class ProcuraController extends ModelController
      * @ApiDescription (section = "Procuras", description="Retorna os produtos requisitados para um determinado produtor")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Id do Produtor")
-     * @ApiRoute(name="/procuras/produtores/{id}")
+     * @ApiRoute(name="/api/procuras/produtores/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @param $id
      * @return array

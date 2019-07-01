@@ -25,7 +25,7 @@ class MercadoController extends ModelController
 
     /** @ApiDescription (section = Mercados, description="Cria um novo Mercado")
      * @ApiMethod(type="Post")
-     * @ApiRoute(name="/mercados")
+     * @ApiRoute(name="/api/mercados")
      * @ApiHeaders(name="Content-Type", type="application/json")
      * @ApiParams(name="designacao", type="string", nullable=false, description="Nome do mercado")
      * @ApiParams(name="distritos_id", type="integer", nullable=false, description="Id do Distrito")
@@ -44,7 +44,7 @@ class MercadoController extends ModelController
     /**
      * @ApiDescription (section = Mercados, description="Retorna todos os produtos que sao vendidos em um determinado mercado")
      * @ApiMethod(type="get")
-     * @ApiRoute(name="/mercados/{id}/todos-produtos")
+     * @ApiRoute(name="/api/mercados/{id}/todos-produtos")
      * @ApiHeaders(name="Content-Type", type="application/json", descriptoin="Tipo de conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Id do mercado")
      */
@@ -77,7 +77,7 @@ class MercadoController extends ModelController
      * @ApiDescription (section = Mercados, description="Retorna os 3 produtos mais procurados em um determinado mercado")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Mercado ID")
-     * @ApiRoute(name="/mercados/{id}/produtos-procurados")
+     * @ApiRoute(name="/api/mercados/{id}/produtos-procurados")
      * @ApiHeaders(name="Content-Type", type="application/json")
      *
      *
@@ -112,7 +112,7 @@ class MercadoController extends ModelController
     /**
      * @ApiDescription (section = Mercados, description="Retorna todos Mercados")
      * @ApiMethod(type="get")
-     * @ApiRoute(name="/mercados")
+     * @ApiRoute(name="/api/mercados")
      * @ApiHeaders(name="Content-Type", type="application/json", descriptoin="Tipo de conteudo")
      */
     public function getAll(Request $request)
@@ -124,7 +124,7 @@ class MercadoController extends ModelController
      * @ApiDescription (section = Mercados, description="Busca Um Determinado Mercado existente")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Mercado ID")
-     * @ApiRoute(name="/mercados/{id}")
+     * @ApiRoute(name="/api/mercados/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json")
      */
     public function get($id)
@@ -135,7 +135,7 @@ class MercadoController extends ModelController
 
     /** @ApiDescription (section = Mercados, description="Actualiza um Mercado")
      * @ApiMethod(type="put")
-     * @ApiRoute(name="/mercados/{id}")
+     * @ApiRoute(name="/api/mercados/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json")
      * @ApiParams(name="id", type="integer", nullable=false, description="Mercado ID")
      */
@@ -147,7 +147,7 @@ class MercadoController extends ModelController
 
     /** @ApiDescription (section = Mercados, description="Elimina um Mercado")
      * @ApiMethod(type="delete")
-     * @ApiRoute(name="/mercados/{id}")
+     * @ApiRoute(name="/api/mercados/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json")
      * @ApiParams(name="id", type="integer", nullable=false, description="Mercado ID")
      */

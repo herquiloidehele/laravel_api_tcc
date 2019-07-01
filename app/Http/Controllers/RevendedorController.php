@@ -22,7 +22,7 @@ class RevendedorController extends ModelController
     /**
      * @ApiDescription (section = Revendedores, description="Retorna todos Revendedores")
      * @ApiMethod(type="get")
-     * @ApiRoute(name="/revendedores")
+     * @ApiRoute(name="/api/revendedores")
      * @ApiHeaders(name="Content-Type", type="application/json", descriptoin="Tipo de conteudo")
      */
     public function getAll(Request $request)
@@ -34,7 +34,7 @@ class RevendedorController extends ModelController
      * @ApiDescription (section = Revendedores, description="Busca Uma Determinada Revendedores existente")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Revendedores ID")
-     * @ApiRoute(name="/revendedores/{id}")
+     * @ApiRoute(name="/api/revendedores/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      */
     public function get($id)
@@ -46,7 +46,7 @@ class RevendedorController extends ModelController
     /**
      * @ApiDescription (section = Revendedores, description="Cria uma nova Procura")
      * @ApiMethod(type="POST")
-     * @ApiRoute(name="/revendedores")
+     * @ApiRoute(name="/api/revendedores")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="telefone", type="string", nullable=false, description="Numero de Telefone")
      * @ApiParams(name="users_id", type="integer", nullable=false, description="Id do Utilizador")
@@ -60,7 +60,7 @@ class RevendedorController extends ModelController
 
     /** @ApiDescription (section = Revendedores, description="Actualiza uma Revendedores")
      * @ApiMethod(type="put")
-     * @ApiRoute(name="/revendedores/{id}")
+     * @ApiRoute(name="/api/revendedores/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Revendedores ID")
      */
@@ -72,7 +72,7 @@ class RevendedorController extends ModelController
 
     /** @ApiDescription (section = Revendedores, description="Elimina uma Revendedores")
      * @ApiMethod(type="delete")
-     * @ApiRoute(name="/revendedores/{id}")
+     * @ApiRoute(name="/api/revendedores/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Revendedores ID")
      */

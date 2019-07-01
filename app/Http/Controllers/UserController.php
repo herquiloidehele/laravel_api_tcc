@@ -25,7 +25,7 @@ class UserController extends ModelController
     /**
      * @ApiDescription (section = Contas, description="Cria uma conta como produtor")
      * @ApiMethod(type="POST")
-     * @ApiRoute(name="/users/produtor")
+     * @ApiRoute(name="/api/users/produtor")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="username", type="string", nullable=false, description="Username / Numero de Telefone")
      * @ApiParams(name="password", type="string", nullable=false, description="Password")
@@ -91,7 +91,7 @@ class UserController extends ModelController
     /**
      * @ApiDescription (section = Contas, description="Cria uma conta como Revendedor")
      * @ApiMethod(type="POST")
-     * @ApiRoute(name="/users/revendedor")
+     * @ApiRoute(name="/api/users/revendedor")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="username", type="string", nullable=false, description="Username / Numero de Telefone")
      * @ApiParams(name="password", type="string", nullable=false, description="Password")
@@ -168,7 +168,7 @@ class UserController extends ModelController
     /**
      * @ApiDescription (section = Contas, description="Efectuar um Login")
      * @ApiMethod(type="POST")
-     * @ApiRoute(name="/login")
+     * @ApiRoute(name="/api/login")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="username", type="string", nullable=false, description="Username / Numero de Telefone")
      * @ApiParams(name="password", type="string", nullable=false, description="Password")
@@ -198,7 +198,7 @@ class UserController extends ModelController
     /**
      * @ApiDescription (section = Contas, description="Efectuar o Logout")
      * @ApiMethod(type="POST")
-     * @ApiRoute(name="/logout")
+     * @ApiRoute(name="/api/logout")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="token", type="string", nullable=false, description="Token de Autenticacao")
      */
@@ -210,7 +210,7 @@ class UserController extends ModelController
     /**
      * @ApiDescription (section = Contas, description="Retorna o utilizador atraves do token")
      * @ApiMethod(type="GET")
-     * @ApiRoute(name="/get-user-token/{token}")
+     * @ApiRoute(name="/api/get-user-token/{token}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="token", type="string", nullable=false, description="Token de Autenticacao")
      */
@@ -256,7 +256,7 @@ class UserController extends ModelController
     /**
      * @ApiDescription (section = Contas, description="Verifica se um determinado número é valido / único ou não")
      * @ApiMethod(type="GET")
-     * @ApiRoute(name="/user/verify-numbem/{numero}")
+     * @ApiRoute(name="/api/user/verify-numbem/{numero}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="numero", type="string", nullable=false, description="Numero do Utilizador")
      */
@@ -276,7 +276,7 @@ class UserController extends ModelController
     /**
      * @ApiDescription (section = Utilizadores, description="Retorna todos Utilizadores")
      * @ApiMethod(type="get")
-     * @ApiRoute(name="/users")
+     * @ApiRoute(name="/api/users")
      * @ApiHeaders(name="Content-Type", type="application/json", descriptoin="Tipo de conteudo")
      */
     public function getAll(Request $request)
@@ -288,7 +288,7 @@ class UserController extends ModelController
      * @ApiDescription (section = Utilizadores, description="Busca Uma Determinada Utilizadores existente")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Utilizadores ID")
-     * @ApiRoute(name="/users/{id}")
+     * @ApiRoute(name="/api/users/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      */
     public function get($id)
@@ -300,7 +300,7 @@ class UserController extends ModelController
     /**
      * @ApiDescription (section = Utilizadores, description="Cria uma nova Procura")
      * @ApiMethod(type="POST")
-     * @ApiRoute(name="/users")
+     * @ApiRoute(name="/api/users")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="username", type="string", nullable=false, description="Username / Numero de Telefone")
      * @ApiParams(name="password", type="string", nullable=false, description="Password")
@@ -314,7 +314,7 @@ class UserController extends ModelController
 
     /** @ApiDescription (section = Utilizadores, description="Actualiza uma Utilizadores")
      * @ApiMethod(type="put")
-     * @ApiRoute(name="/users/{id}")
+     * @ApiRoute(name="/api/users/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Utilizadores ID")
      */
@@ -326,7 +326,7 @@ class UserController extends ModelController
 
     /** @ApiDescription (section = Utilizadores, description="Elimina uma Utilizadores")
      * @ApiMethod(type="delete")
-     * @ApiRoute(name="/users/{id}")
+     * @ApiRoute(name="/api/users/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Utilizadores ID")
      */

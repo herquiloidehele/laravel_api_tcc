@@ -20,7 +20,7 @@ class ProdutoController extends ModelController
 
     /** @ApiDescription (section = Produtos, description="Busca todos os produtos existentes")
      * @ApiMethod(type="GET")
-     * @ApiRoute(name="/produtos")
+     * @ApiRoute(name="/api/produtos")
      * @ApiHeaders(name="Content-Type", type="application/json")
      */
     public function getAll(Request $request) {
@@ -47,7 +47,7 @@ class ProdutoController extends ModelController
 
     /** @ApiDescription (section = Produtos, description="Cria um novo Produto")
      * @ApiMethod(type="Post")
-     * @ApiRoute(name="/produtos")
+     * @ApiRoute(name="/api/produtos")
      * @ApiHeaders(name="Content-Type", type="application/json")
      * @ApiParams(name="designacao", type="string", nullable=false)
      * @ApiParams(name="categorias_id", type="int", nullable=false)
@@ -79,7 +79,7 @@ class ProdutoController extends ModelController
     /** @ApiDescription (section = Produtos, description="Busca Um Determinado Produto existente")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="User ID")
-     * @ApiRoute(name="/produtos/{id}")
+     * @ApiRoute(name="/api/produtos/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json")
      */
     public function get($id)
@@ -90,7 +90,7 @@ class ProdutoController extends ModelController
 
     /** @ApiDescription (section = Produtos, description="Actualiza um Produto")
      * @ApiMethod(type="put")
-     * @ApiRoute(name="/produtos/{id}")
+     * @ApiRoute(name="/api/produtos/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json")
      * @ApiParams(name="id", type="string", nullable=false, description="User ID")
      */
@@ -102,7 +102,7 @@ class ProdutoController extends ModelController
 
     /** @ApiDescription (section = Produtos, description="Elimina um Produto")
      * @ApiMethod(type="delete")
-     * @ApiRoute(name="/produtos/{id}")
+     * @ApiRoute(name="/api/produtos/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json")
      * @ApiParams(name="id", type="string", nullable=false, description="User ID")
      */

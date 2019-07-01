@@ -19,7 +19,7 @@ class ProdutorController extends ModelController
     /**
      * @ApiDescription (section = Produtores, description="Retorna todos Produtores")
      * @ApiMethod(type="get")
-     * @ApiRoute(name="/produtores")
+     * @ApiRoute(name="/api/produtores")
      * @ApiHeaders(name="Content-Type", type="application/json", descriptoin="Tipo de conteudo")
      */
     public function getAll(Request $request)
@@ -31,7 +31,7 @@ class ProdutorController extends ModelController
      * @ApiDescription (section = Produtores, description="Busca Uma Determinada Produtores existente")
      * @ApiMethod(type="GET")
      * @ApiParams(name="id", type="integer", nullable=false, description="Produtores ID")
-     * @ApiRoute(name="/produtores/{id}")
+     * @ApiRoute(name="/api/produtores/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      */
     public function get($id)
@@ -43,7 +43,7 @@ class ProdutorController extends ModelController
     /**
      * @ApiDescription (section = Produtores, description="Cria uma nova Procura")
      * @ApiMethod(type="POST")
-     * @ApiRoute(name="/produtores")
+     * @ApiRoute(name="/api/produtores")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="telefone", type="string", nullable=false, description="Numero de Telefone")
      * @ApiParams(name="users_id", type="integer", nullable=false, description="Id do Utilizador")
@@ -56,7 +56,7 @@ class ProdutorController extends ModelController
 
     /** @ApiDescription (section = Produtores, description="Actualiza uma Produtores")
      * @ApiMethod(type="put")
-     * @ApiRoute(name="/produtores/{id}")
+     * @ApiRoute(name="/api/produtores/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Produtores ID")
      */
@@ -68,7 +68,7 @@ class ProdutorController extends ModelController
 
     /** @ApiDescription (section = Produtores, description="Elimina uma Produtores")
      * @ApiMethod(type="delete")
-     * @ApiRoute(name="/produtores/{id}")
+     * @ApiRoute(name="/api/produtores/{id}")
      * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
      * @ApiParams(name="id", type="integer", nullable=false, description="Produtores ID")
      */

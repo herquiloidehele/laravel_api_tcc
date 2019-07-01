@@ -78,7 +78,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion0" href="#collapseOne0"> /users/produtor</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion0" href="#collapseOne0"> /api/users/produtor</a>
         </h4>
     </div>
     <div id="collapseOne0" class="panel-collapse collapse">
@@ -206,7 +206,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/users/produtor" method="POST" name="form0" id="form0">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/users/produtor" method="POST" name="form0" id="form0">
 
         Parameters
         <hr/>
@@ -273,7 +273,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1"> /users/revendedor</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1"> /api/users/revendedor</a>
         </h4>
     </div>
     <div id="collapseOne1" class="panel-collapse collapse">
@@ -401,7 +401,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/users/revendedor" method="POST" name="form1" id="form1">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/users/revendedor" method="POST" name="form1" id="form1">
 
         Parameters
         <hr/>
@@ -468,7 +468,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2"> /login</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2"> /api/login</a>
         </h4>
     </div>
     <div id="collapseOne2" class="panel-collapse collapse">
@@ -568,7 +568,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/login" method="POST" name="form2" id="form2">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/login" method="POST" name="form2" id="form2">
 
         Parameters
         <hr/>
@@ -615,7 +615,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion3" href="#collapseOne3"> /logout</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion3" href="#collapseOne3"> /api/logout</a>
         </h4>
     </div>
     <div id="collapseOne3" class="panel-collapse collapse">
@@ -708,7 +708,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/logout" method="POST" name="form3" id="form3">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/logout" method="POST" name="form3" id="form3">
 
         Parameters
         <hr/>
@@ -750,7 +750,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4"> /get-user-token/{token}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion4" href="#collapseOne4"> /api/get-user-token/{token}</a>
         </h4>
     </div>
     <div id="collapseOne4" class="panel-collapse collapse">
@@ -843,7 +843,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/get-user-token/{token}" method="GET" name="form4" id="form4">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/get-user-token/{token}" method="GET" name="form4" id="form4">
 
         Parameters
         <hr/>
@@ -885,7 +885,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion5" href="#collapseOne5"> /user/verify-numbem/{numero}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion5" href="#collapseOne5"> /api/user/verify-numbem/{numero}</a>
         </h4>
     </div>
     <div id="collapseOne5" class="panel-collapse collapse">
@@ -903,7 +903,7 @@
 
                 <div class="tab-pane active" id="info5">
                     <div class="well">
-                    Verifica se um determinado número é valido (único
+                    Verifica se um determinado número é valido / único ou não
                     </div>
                     <div class="panel panel-default">
                       <div class="panel-heading"><strong>Headers</strong></div>
@@ -978,7 +978,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/user/verify-numbem/{numero}" method="GET" name="form5" id="form5">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/user/verify-numbem/{numero}" method="GET" name="form5" id="form5">
 
         Parameters
         <hr/>
@@ -1020,7 +1020,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion6" href="#collapseOne6"> /users</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion6" href="#collapseOne6"> /api/users</a>
         </h4>
     </div>
     <div id="collapseOne6" class="panel-collapse collapse">
@@ -1094,7 +1094,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/users" method="get" name="form6" id="form6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/users" method="get" name="form6" id="form6">
 
         Parameters
         <hr/>
@@ -1132,7 +1132,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion7" href="#collapseOne7"> /users/{id}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion7" href="#collapseOne7"> /api/users/{id}</a>
         </h4>
     </div>
     <div id="collapseOne7" class="panel-collapse collapse">
@@ -1225,7 +1225,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/users/{id}" method="GET" name="form7" id="form7">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/users/{id}" method="GET" name="form7" id="form7">
 
         Parameters
         <hr/>
@@ -1267,7 +1267,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion8" href="#collapseOne8"> /users</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion8" href="#collapseOne8"> /api/users</a>
         </h4>
     </div>
     <div id="collapseOne8" class="panel-collapse collapse">
@@ -1381,7 +1381,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/users" method="POST" name="form8" id="form8">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/users" method="POST" name="form8" id="form8">
 
         Parameters
         <hr/>
@@ -1438,7 +1438,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion9" href="#collapseOne9"> /users/{id}</a>
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion9" href="#collapseOne9"> /api/users/{id}</a>
         </h4>
     </div>
     <div id="collapseOne9" class="panel-collapse collapse">
@@ -1531,7 +1531,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/users/{id}" method="put" name="form9" id="form9">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/users/{id}" method="put" name="form9" id="form9">
 
         Parameters
         <hr/>
@@ -1573,7 +1573,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion10" href="#collapseOne10"> /users/{id}</a>
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion10" href="#collapseOne10"> /api/users/{id}</a>
         </h4>
     </div>
     <div id="collapseOne10" class="panel-collapse collapse">
@@ -1666,7 +1666,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/users/{id}" method="delete" name="form10" id="form10">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/users/{id}" method="delete" name="form10" id="form10">
 
         Parameters
         <hr/>
@@ -1708,7 +1708,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion11" href="#collapseOne11"> /produtos</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion11" href="#collapseOne11"> /api/produtos</a>
         </h4>
     </div>
     <div id="collapseOne11" class="panel-collapse collapse">
@@ -1782,7 +1782,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtos" method="GET" name="form11" id="form11">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtos" method="GET" name="form11" id="form11">
 
         Parameters
         <hr/>
@@ -1820,7 +1820,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion12" href="#collapseOne12"> /produtos</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion12" href="#collapseOne12"> /api/produtos</a>
         </h4>
     </div>
     <div id="collapseOne12" class="panel-collapse collapse">
@@ -1927,7 +1927,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtos" method="Post" name="form12" id="form12">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtos" method="Post" name="form12" id="form12">
 
         Parameters
         <hr/>
@@ -1979,7 +1979,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion13" href="#collapseOne13"> /produtos/{id}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion13" href="#collapseOne13"> /api/produtos/{id}</a>
         </h4>
     </div>
     <div id="collapseOne13" class="panel-collapse collapse">
@@ -2072,7 +2072,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtos/{id}" method="GET" name="form13" id="form13">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtos/{id}" method="GET" name="form13" id="form13">
 
         Parameters
         <hr/>
@@ -2114,7 +2114,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion14" href="#collapseOne14"> /produtos/{id}</a>
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion14" href="#collapseOne14"> /api/produtos/{id}</a>
         </h4>
     </div>
     <div id="collapseOne14" class="panel-collapse collapse">
@@ -2207,7 +2207,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtos/{id}" method="put" name="form14" id="form14">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtos/{id}" method="put" name="form14" id="form14">
 
         Parameters
         <hr/>
@@ -2249,7 +2249,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion15" href="#collapseOne15"> /produtos/{id}</a>
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion15" href="#collapseOne15"> /api/produtos/{id}</a>
         </h4>
     </div>
     <div id="collapseOne15" class="panel-collapse collapse">
@@ -2342,7 +2342,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtos/{id}" method="delete" name="form15" id="form15">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtos/{id}" method="delete" name="form15" id="form15">
 
         Parameters
         <hr/>
@@ -2384,7 +2384,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion16" href="#collapseOne16"> /mercados</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion16" href="#collapseOne16"> /api/mercados</a>
         </h4>
     </div>
     <div id="collapseOne16" class="panel-collapse collapse">
@@ -2484,7 +2484,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/mercados" method="Post" name="form16" id="form16">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/mercados" method="Post" name="form16" id="form16">
 
         Parameters
         <hr/>
@@ -2531,7 +2531,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion17" href="#collapseOne17"> /mercados/{id}/todos-produtos</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion17" href="#collapseOne17"> /api/mercados/{id}/todos-produtos</a>
         </h4>
     </div>
     <div id="collapseOne17" class="panel-collapse collapse">
@@ -2624,7 +2624,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/mercados/{id}/todos-produtos" method="get" name="form17" id="form17">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/mercados/{id}/todos-produtos" method="get" name="form17" id="form17">
 
         Parameters
         <hr/>
@@ -2666,7 +2666,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion18" href="#collapseOne18"> /mercados/{id}/produtos-procurados</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion18" href="#collapseOne18"> /api/mercados/{id}/produtos-procurados</a>
         </h4>
     </div>
     <div id="collapseOne18" class="panel-collapse collapse">
@@ -2759,7 +2759,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/mercados/{id}/produtos-procurados" method="GET" name="form18" id="form18">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/mercados/{id}/produtos-procurados" method="GET" name="form18" id="form18">
 
         Parameters
         <hr/>
@@ -2801,7 +2801,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion19" href="#collapseOne19"> /mercados</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion19" href="#collapseOne19"> /api/mercados</a>
         </h4>
     </div>
     <div id="collapseOne19" class="panel-collapse collapse">
@@ -2875,7 +2875,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/mercados" method="get" name="form19" id="form19">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/mercados" method="get" name="form19" id="form19">
 
         Parameters
         <hr/>
@@ -2913,7 +2913,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion20" href="#collapseOne20"> /mercados/{id}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion20" href="#collapseOne20"> /api/mercados/{id}</a>
         </h4>
     </div>
     <div id="collapseOne20" class="panel-collapse collapse">
@@ -3006,7 +3006,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/mercados/{id}" method="GET" name="form20" id="form20">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/mercados/{id}" method="GET" name="form20" id="form20">
 
         Parameters
         <hr/>
@@ -3048,7 +3048,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion21" href="#collapseOne21"> /mercados/{id}</a>
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion21" href="#collapseOne21"> /api/mercados/{id}</a>
         </h4>
     </div>
     <div id="collapseOne21" class="panel-collapse collapse">
@@ -3141,7 +3141,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/mercados/{id}" method="put" name="form21" id="form21">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/mercados/{id}" method="put" name="form21" id="form21">
 
         Parameters
         <hr/>
@@ -3183,7 +3183,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion22" href="#collapseOne22"> /mercados/{id}</a>
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion22" href="#collapseOne22"> /api/mercados/{id}</a>
         </h4>
     </div>
     <div id="collapseOne22" class="panel-collapse collapse">
@@ -3276,7 +3276,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/mercados/{id}" method="delete" name="form22" id="form22">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/mercados/{id}" method="delete" name="form22" id="form22">
 
         Parameters
         <hr/>
@@ -3318,7 +3318,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion23" href="#collapseOne23"> /procuras</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion23" href="#collapseOne23"> /api/procuras</a>
         </h4>
     </div>
     <div id="collapseOne23" class="panel-collapse collapse">
@@ -3392,7 +3392,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras" method="get" name="form23" id="form23">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/procuras" method="get" name="form23" id="form23">
 
         Parameters
         <hr/>
@@ -3430,7 +3430,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion24" href="#collapseOne24"> /procuras/{id}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion24" href="#collapseOne24"> /api/procuras/{id}</a>
         </h4>
     </div>
     <div id="collapseOne24" class="panel-collapse collapse">
@@ -3523,7 +3523,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/{id}" method="GET" name="form24" id="form24">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/procuras/{id}" method="GET" name="form24" id="form24">
 
         Parameters
         <hr/>
@@ -3565,7 +3565,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion25" href="#collapseOne25"> /procuras</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion25" href="#collapseOne25"> /api/procuras</a>
         </h4>
     </div>
     <div id="collapseOne25" class="panel-collapse collapse">
@@ -3693,7 +3693,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras" method="POST" name="form25" id="form25">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/procuras" method="POST" name="form25" id="form25">
 
         Parameters
         <hr/>
@@ -3760,7 +3760,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion26" href="#collapseOne26"> /procuras/{id}</a>
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion26" href="#collapseOne26"> /api/procuras/{id}</a>
         </h4>
     </div>
     <div id="collapseOne26" class="panel-collapse collapse">
@@ -3853,7 +3853,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/{id}" method="put" name="form26" id="form26">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/procuras/{id}" method="put" name="form26" id="form26">
 
         Parameters
         <hr/>
@@ -3895,7 +3895,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion27" href="#collapseOne27"> /procuras/{id}</a>
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion27" href="#collapseOne27"> /api/procuras/{id}</a>
         </h4>
     </div>
     <div id="collapseOne27" class="panel-collapse collapse">
@@ -3988,7 +3988,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/{id}" method="delete" name="form27" id="form27">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/procuras/{id}" method="delete" name="form27" id="form27">
 
         Parameters
         <hr/>
@@ -4030,7 +4030,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion30" href="#collapseOne30"> /procuras/produtores/{id}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion30" href="#collapseOne30"> /api/procuras/produtores/{id}</a>
         </h4>
     </div>
     <div id="collapseOne30" class="panel-collapse collapse">
@@ -4123,7 +4123,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/produtores/{id}" method="GET" name="form30" id="form30">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/procuras/produtores/{id}" method="GET" name="form30" id="form30">
 
         Parameters
         <hr/>
@@ -4165,7 +4165,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion28" href="#collapseOne28"> /procuras/produtos-produtor</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion28" href="#collapseOne28"> /api/procuras/produtos-produtor</a>
         </h4>
     </div>
     <div id="collapseOne28" class="panel-collapse collapse">
@@ -4258,7 +4258,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/procuras/produtos-produtor" method="GET" name="form28" id="form28">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/procuras/produtos-produtor" method="GET" name="form28" id="form28">
 
         Parameters
         <hr/>
@@ -4300,7 +4300,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion29" href="#collapseOne29"> /produz/produtor-producao/{id}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion29" href="#collapseOne29"> /api/produz/produtor-producao/{id}</a>
         </h4>
     </div>
     <div id="collapseOne29" class="panel-collapse collapse">
@@ -4393,7 +4393,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produz/produtor-producao/{id}" method="GET" name="form29" id="form29">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produz/produtor-producao/{id}" method="GET" name="form29" id="form29">
 
         Parameters
         <hr/>
@@ -4435,7 +4435,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion31" href="#collapseOne31"> /produtores</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion31" href="#collapseOne31"> /api/produtores</a>
         </h4>
     </div>
     <div id="collapseOne31" class="panel-collapse collapse">
@@ -4509,7 +4509,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores" method="get" name="form31" id="form31">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtores" method="get" name="form31" id="form31">
 
         Parameters
         <hr/>
@@ -4547,7 +4547,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion32" href="#collapseOne32"> /produtores/{id}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion32" href="#collapseOne32"> /api/produtores/{id}</a>
         </h4>
     </div>
     <div id="collapseOne32" class="panel-collapse collapse">
@@ -4640,7 +4640,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores/{id}" method="GET" name="form32" id="form32">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtores/{id}" method="GET" name="form32" id="form32">
 
         Parameters
         <hr/>
@@ -4682,7 +4682,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion33" href="#collapseOne33"> /produtores</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion33" href="#collapseOne33"> /api/produtores</a>
         </h4>
     </div>
     <div id="collapseOne33" class="panel-collapse collapse">
@@ -4789,7 +4789,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores" method="POST" name="form33" id="form33">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtores" method="POST" name="form33" id="form33">
 
         Parameters
         <hr/>
@@ -4841,7 +4841,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion34" href="#collapseOne34"> /produtores/{id}</a>
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion34" href="#collapseOne34"> /api/produtores/{id}</a>
         </h4>
     </div>
     <div id="collapseOne34" class="panel-collapse collapse">
@@ -4934,7 +4934,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores/{id}" method="put" name="form34" id="form34">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtores/{id}" method="put" name="form34" id="form34">
 
         Parameters
         <hr/>
@@ -4976,7 +4976,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion35" href="#collapseOne35"> /produtores/{id}</a>
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion35" href="#collapseOne35"> /api/produtores/{id}</a>
         </h4>
     </div>
     <div id="collapseOne35" class="panel-collapse collapse">
@@ -5069,7 +5069,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/produtores/{id}" method="delete" name="form35" id="form35">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/produtores/{id}" method="delete" name="form35" id="form35">
 
         Parameters
         <hr/>
@@ -5111,7 +5111,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion36" href="#collapseOne36"> /revendedores</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion36" href="#collapseOne36"> /api/revendedores</a>
         </h4>
     </div>
     <div id="collapseOne36" class="panel-collapse collapse">
@@ -5185,7 +5185,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/revendedores" method="get" name="form36" id="form36">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/revendedores" method="get" name="form36" id="form36">
 
         Parameters
         <hr/>
@@ -5223,7 +5223,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion37" href="#collapseOne37"> /revendedores/{id}</a>
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion37" href="#collapseOne37"> /api/revendedores/{id}</a>
         </h4>
     </div>
     <div id="collapseOne37" class="panel-collapse collapse">
@@ -5316,7 +5316,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/revendedores/{id}" method="GET" name="form37" id="form37">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/revendedores/{id}" method="GET" name="form37" id="form37">
 
         Parameters
         <hr/>
@@ -5358,7 +5358,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion38" href="#collapseOne38"> /revendedores</a>
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion38" href="#collapseOne38"> /api/revendedores</a>
         </h4>
     </div>
     <div id="collapseOne38" class="panel-collapse collapse">
@@ -5472,7 +5472,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/revendedores" method="POST" name="form38" id="form38">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/revendedores" method="POST" name="form38" id="form38">
 
         Parameters
         <hr/>
@@ -5529,7 +5529,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion39" href="#collapseOne39"> /revendedores/{id}</a>
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion39" href="#collapseOne39"> /api/revendedores/{id}</a>
         </h4>
     </div>
     <div id="collapseOne39" class="panel-collapse collapse">
@@ -5622,7 +5622,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/revendedores/{id}" method="put" name="form39" id="form39">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/revendedores/{id}" method="put" name="form39" id="form39">
 
         Parameters
         <hr/>
@@ -5664,7 +5664,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion40" href="#collapseOne40"> /revendedores/{id}</a>
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion40" href="#collapseOne40"> /api/revendedores/{id}</a>
         </h4>
     </div>
     <div id="collapseOne40" class="panel-collapse collapse">
@@ -5757,7 +5757,7 @@
         </div>
 </div>
 <div class="col-md-6">
-    <form enctype="application/x-www-form-urlencoded" role="form" action="/revendedores/{id}" method="delete" name="form40" id="form40">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/revendedores/{id}" method="delete" name="form40" id="form40">
 
         Parameters
         <hr/>
@@ -5795,13 +5795,1218 @@
         </div>
     </div>
 </div>
+<h2>Unidades de Medida</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion41" href="#collapseOne41"> /api/unidades-medidas</a>
+        </h4>
+    </div>
+    <div id="collapseOne41" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab41">
+                <li class="active"><a href="#info41" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox41" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample41" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info41">
+                    <div class="well">
+                    Retorna todos Unidades de Medida
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td></td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox41">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder=" - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/unidades-medidas" method="get" name="form41" id="form41">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="41">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers41"></pre>
+                                <pre id="response41"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample41">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion42" href="#collapseOne42"> /api/unidades-medidas/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne42" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab42">
+                <li class="active"><a href="#info42" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox42" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample42" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info42">
+                    <div class="well">
+                    Busca Uma Determinada Unidades de Medida existente
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Unidades de Medida ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox42">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/unidades-medidas/{id}" method="GET" name="form42" id="form42">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Unidades de Medida ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="42">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers42"></pre>
+                                <pre id="response42"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample42">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-primary">POST</span> <a data-toggle="collapse" data-parent="#accordion43" href="#collapseOne43"> /api/unidades-medidas</a>
+        </h4>
+    </div>
+    <div id="collapseOne43" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab43">
+                <li class="active"><a href="#info43" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox43" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample43" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info43">
+                    <div class="well">
+                    Cria uma nova Procura
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>username</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Username / Numero de Telefone</td>
+</tr>
+
+<tr>
+    <td>password</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Password</td>
+</tr>
+
+<tr>
+    <td>nome</td>
+    <td>string</td>
+    <td>Yes</td>
+    <td>Nome do Utilizador</td>
+</tr>
+
+<tr>
+    <td>foto</td>
+    <td>string </td>
+    <td>Yes</td>
+    <td>Foto do Utilizador</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox43">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/unidades-medidas" method="POST" name="form43" id="form43">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="username">username</label>
+    <input type="string" class="form-control input-sm" id="username" placeholder="Username / Numero de Telefone - Ex: " name="username">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="password">password</label>
+    <input type="string" class="form-control input-sm" id="password" placeholder="Password - Ex: " name="password">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="nome">nome</label>
+    <input type="string" class="form-control input-sm" id="nome" placeholder="Nome do Utilizador - Ex: " name="nome">
+</div>
+
+<div class="form-group">
+    <label class="control-label" for="foto">foto</label>
+    <input type="string " class="form-control input-sm" id="foto" placeholder="Foto do Utilizador - Ex: " name="foto">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="43">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers43"></pre>
+                                <pre id="response43"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample43">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion44" href="#collapseOne44"> /api/unidades-medidas/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne44" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab44">
+                <li class="active"><a href="#info44" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox44" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample44" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info44">
+                    <div class="well">
+                    Actualiza uma Unidades de Medida
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Unidades de Medida ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox44">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/unidades-medidas/{id}" method="put" name="form44" id="form44">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Unidades de Medida ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="44">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers44"></pre>
+                                <pre id="response44"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample44">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion45" href="#collapseOne45"> /api/unidades-medidas/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne45" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab45">
+                <li class="active"><a href="#info45" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox45" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample45" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info45">
+                    <div class="well">
+                    Elimina uma Unidades de Medida
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td>Tipo de Conteudo</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Unidades de Medida ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox45">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder="Tipo de Conteudo - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/unidades-medidas/{id}" method="delete" name="form45" id="form45">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Unidades de Medida ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="45">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers45"></pre>
+                                <pre id="response45"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample45">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+<h2>Categorias de Produtos</h2>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion46" href="#collapseOne46"> /api/categorias</a>
+        </h4>
+    </div>
+    <div id="collapseOne46" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab46">
+                <li class="active"><a href="#info46" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox46" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample46" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info46">
+                    <div class="well">
+                    Retorna todos Categorias de Produtos
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td></td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox46">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder=" - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/categorias" method="get" name="form46" id="form46">
+
+        Parameters
+        <hr/>
+        
+        <button type="submit" class="btn btn-success send" rel="46">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers46"></pre>
+                                <pre id="response46"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample46">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-success">GET</span> <a data-toggle="collapse" data-parent="#accordion47" href="#collapseOne47"> /api/categorias/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne47" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab47">
+                <li class="active"><a href="#info47" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox47" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample47" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info47">
+                    <div class="well">
+                    Busca Um Determinado Categoria existente
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td></td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Categoria ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox47">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder=" - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/categorias/{id}" method="GET" name="form47" id="form47">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Categoria ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="47">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers47"></pre>
+                                <pre id="response47"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample47">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-warning">PUT</span> <a data-toggle="collapse" data-parent="#accordion48" href="#collapseOne48"> /api/categorias/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne48" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab48">
+                <li class="active"><a href="#info48" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox48" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample48" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info48">
+                    <div class="well">
+                    Actualiza um Categoria
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td></td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Categoria ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox48">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder=" - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/categorias/{id}" method="put" name="form48" id="form48">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Categoria ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="48">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers48"></pre>
+                                <pre id="response48"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample48">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <span class="label label-danger">DELETE</span> <a data-toggle="collapse" data-parent="#accordion49" href="#collapseOne49"> /api/categorias/{id}</a>
+        </h4>
+    </div>
+    <div id="collapseOne49" class="panel-collapse collapse">
+        <div class="panel-body">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" id="php-apidoctab49">
+                <li class="active"><a href="#info49" data-toggle="tab">Info</a></li>
+                <li><a href="#sandbox49" data-toggle="tab">Sandbox</a></li>
+                <li><a href="#sample49" data-toggle="tab">Sample output</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <div class="tab-pane active" id="info49">
+                    <div class="well">
+                    Elimina um Categoria
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Headers</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>Content-Type</td>
+    <td>application/json</td>
+    <td>Yes</td>
+    <td></td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Parameters</strong></div>
+                      <div class="panel-body">
+                        <table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Required</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+    <td>id</td>
+    <td>integer</td>
+    <td>Yes</td>
+    <td>Categoria ID</td>
+</tr>
+
+    </tbody>
+</table>
+
+                      </div>
+                    </div>
+                    <div class="panel panel-default">
+                      <div class="panel-heading"><strong>Body</strong></div>
+                      <div class="panel-body">
+                        
+                      </div>
+                    </div>
+                </div><!-- #info -->
+
+                <div class="tab-pane" id="sandbox49">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="col-md-6">
+        Headers
+        <hr/>
+        <div class="headers">
+        <div class="form-group">
+    <label class="control-label" for="Content-Type">Content-Type</label>
+    <input type="text" class="form-control input-sm" id="Content-Type" placeholder=" - Ex: " name="Content-Type">
+</div>
+
+        </div>
+</div>
+<div class="col-md-6">
+    <form enctype="application/x-www-form-urlencoded" role="form" action="/api/categorias/{id}" method="delete" name="form49" id="form49">
+
+        Parameters
+        <hr/>
+        <div class="form-group">
+    <label class="control-label" for="id">id</label>
+    <input type="integer" class="form-control input-sm" id="id" placeholder="Categoria ID - Ex: " name="id">
+</div>
+
+        <button type="submit" class="btn btn-success send" rel="49">Send</button>
+    </form>
+</div>
+
+                        </div>
+                        <div class="col-md-12">
+                            Response
+                            <hr>
+                            <div class="col-md-12" style="overflow-x:auto">
+                                <pre id="response_headers49"></pre>
+                                <pre id="response49"></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- #sandbox -->
+
+                <div class="tab-pane" id="sample49">
+                    <div class="row">
+                        <div class="col-md-12">
+                            
+                            
+                        </div>
+                    </div>
+                </div><!-- #sample -->
+
+            </div><!-- .tab-content -->
+        </div>
+    </div>
+</div>
 
         </div>
         <hr>
 
         <div class="row mt0 footer">
             <div class="col-md-6" align="left">
-                Generated on 2019-07-01, 21:49:05
+                Generated on 2019-07-01, 22:15:16
             </div>
             <div class="col-md-6" align="right">
                 <a href="https://github.com/calinrada/php-apidoc" target="_blank">php-apidoc v1.3.8</a>
