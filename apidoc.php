@@ -4,6 +4,7 @@ use Crada\Apidoc\Builder;
 use Crada\Apidoc\Exception;
 
 $classes = array(
+    'App\Http\Controllers\UserController',
     'App\Http\Controllers\ProdutoController',
     'App\Http\Controllers\MercadoController',
     'App\Http\Controllers\ProcuraController',

@@ -22,7 +22,18 @@ class UserController extends ModelController
     }
 
 
-
+    /**
+     * @ApiDescription (section = Contas, description="Cria uma conta como produtor")
+     * @ApiMethod(type="POST")
+     * @ApiRoute(name="/users/produtor")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="username", type="string", nullable=false, description="Username / Numero de Telefone")
+     * @ApiParams(name="password", type="string", nullable=false, description="Password")
+     * @ApiParams(name="nome", type="string", nullable=false, description="Nome do Utilizador")
+     * @ApiParams(name="foto", type="string ", nullable=false, description="Foto do Utilizador")
+     * @ApiParams(name="telefone", type="string", nullable=false, description="Numero de Telefone")
+     * @ApiParams(name="distritos_id", type="integer", nullable=false, description="Id do Distrito do produtor")
+     */
     public function createProdutor(Request $request){
 
         $user = $request->get('user');
@@ -77,6 +88,18 @@ class UserController extends ModelController
 
 
 
+    /**
+     * @ApiDescription (section = Contas, description="Cria uma conta como Revendedor")
+     * @ApiMethod(type="POST")
+     * @ApiRoute(name="/users/revendedor")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="username", type="string", nullable=false, description="Username / Numero de Telefone")
+     * @ApiParams(name="password", type="string", nullable=false, description="Password")
+     * @ApiParams(name="nome", type="string", nullable=false, description="Nome do Utilizador")
+     * @ApiParams(name="foto", type="string ", nullable=false, description="Foto do Utilizador")
+     * @ApiParams(name="telefone", type="string", nullable=false, description="Numero de Telefone")
+     * @ApiParams(name="mercados_id", type="integer", nullable=false, description="Id do Mercado do Revendedor")
+     */
     public function createRevendedor(Request $request){
         $user = $request->get('user');
         if(!$user)
@@ -142,6 +165,14 @@ class UserController extends ModelController
 
 
 
+    /**
+     * @ApiDescription (section = Contas, description="Efectuar um Login")
+     * @ApiMethod(type="POST")
+     * @ApiRoute(name="/login")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="username", type="string", nullable=false, description="Username / Numero de Telefone")
+     * @ApiParams(name="password", type="string", nullable=false, description="Password")
+     */
     public function login(Request $request){
 
         $this->validate($request, [
@@ -164,13 +195,24 @@ class UserController extends ModelController
 
 
 
+    /**
+     * @ApiDescription (section = Contas, description="Efectuar o Logout")
+     * @ApiMethod(type="POST")
+     * @ApiRoute(name="/logout")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="token", type="string", nullable=false, description="Token de Autenticacao")
+     */
     public function logout(Request $request){
         return response()->json(['logout'=> JWTAuth::invalidate($request->token)]);
     }
 
 
     /**
-     * return the user associated with the token
+     * @ApiDescription (section = Contas, description="Retorna o utilizador atraves do token")
+     * @ApiMethod(type="GET")
+     * @ApiRoute(name="/get-user-token/{token}")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="token", type="string", nullable=false, description="Token de Autenticacao")
      */
     public function getUserFromToken($token){
         $user = $this->getUserKind(JWTAuth::toUser($token));
@@ -178,10 +220,8 @@ class UserController extends ModelController
     }
 
 
-    /**
-     * Return the user Kind of the user: Agricultor, Revendedor ou Cadastrador
-     */
-    private function getUserKind($user){
+
+    public function getUserKind($user){
         if($user->produtor)
             return $user->produtor;
         if($user->revendedor)
@@ -213,9 +253,14 @@ class UserController extends ModelController
 
 
 
+    /**
+     * @ApiDescription (section = Contas, description="Verifica se um determinado número é valido / único ou não")
+     * @ApiMethod(type="GET")
+     * @ApiRoute(name="/user/verify-numbem/{numero}")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="numero", type="string", nullable=false, description="Numero do Utilizador")
+     */
     public function verifyNumber($numero){
-
-//        ['result' => true];
 
         if($numero){
             $user = User::where('username', $numero)->count();
@@ -226,6 +271,75 @@ class UserController extends ModelController
             return new \Exception("No Number Provided");
 
     }
+
+
+    /**
+     * @ApiDescription (section = Utilizadores, description="Retorna todos Utilizadores")
+     * @ApiMethod(type="get")
+     * @ApiRoute(name="/users")
+     * @ApiHeaders(name="Content-Type", type="application/json", descriptoin="Tipo de conteudo")
+     */
+    public function getAll(Request $request)
+    {
+        return parent::getAll($request); // TODO: Change the autogenerated stub
+    }
+
+    /**
+     * @ApiDescription (section = Utilizadores, description="Busca Uma Determinada Utilizadores existente")
+     * @ApiMethod(type="GET")
+     * @ApiParams(name="id", type="integer", nullable=false, description="Utilizadores ID")
+     * @ApiRoute(name="/users/{id}")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     */
+    public function get($id)
+    {
+        return parent::get($id);
+    }
+
+
+    /**
+     * @ApiDescription (section = Utilizadores, description="Cria uma nova Procura")
+     * @ApiMethod(type="POST")
+     * @ApiRoute(name="/users")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="username", type="string", nullable=false, description="Username / Numero de Telefone")
+     * @ApiParams(name="password", type="string", nullable=false, description="Password")
+     * @ApiParams(name="nome", type="string", nullable=false, description="Nome do Utilizador")
+     * @ApiParams(name="foto", type="string ", nullable=false, description="Foto do Utilizador")
+     */
+    public function store(Request $request)
+    {
+        return parent::store($request); // TODO: Change the autogenerated stub
+    }
+
+    /** @ApiDescription (section = Utilizadores, description="Actualiza uma Utilizadores")
+     * @ApiMethod(type="put")
+     * @ApiRoute(name="/users/{id}")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="id", type="integer", nullable=false, description="Utilizadores ID")
+     */
+    public function update(Request $object, $id)
+    {
+        return parent::update($object, $id); // TODO: Change the autogenerated stub
+    }
+
+
+    /** @ApiDescription (section = Utilizadores, description="Elimina uma Utilizadores")
+     * @ApiMethod(type="delete")
+     * @ApiRoute(name="/users/{id}")
+     * @ApiHeaders(name="Content-Type", type="application/json", description="Tipo de Conteudo")
+     * @ApiParams(name="id", type="integer", nullable=false, description="Utilizadores ID")
+     */
+    public function destroy(Request $objecto, $id)
+    {
+        return parent::destroy($objecto, $id); // TODO: Change the autogenerated stub
+    }
+
+
+
+
+
+
 
 
 
