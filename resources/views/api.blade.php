@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="php-apidoc - apid documenation generator">
     <meta name="author" content="Calin Rada">
-    <title>API Agri Documentação</title>
+    <title>API Agri</title>
     <link href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         body      { padding-top: 70px; margin-bottom: 15px; }
@@ -35,33 +35,33 @@
           </button>
           <a class="navbar-brand" href="#">API Agri</a>
         </div>
-        {{--<div class="navbar-collapse collapse">--}}
-            {{--<form class="navbar-form navbar-right">--}}
-                {{--<div class="form-group">--}}
-                    {{--Api key: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="Api key header with api key (key) and api key value (value) "><span class="glyphicon glyphicon-info-sign"></span></a>--}}
-                {{--</div>--}}
-                {{--<div class="form-group">--}}
-                    {{--<input type="text" class="form-control input-sm" placeholder="key" id="apikey_key">--}}
-                {{--</div>--}}
-                {{--<div class="form-group">--}}
-                    {{--<input type="text" class="form-control input-sm" placeholder="value" id="apikey_value">--}}
-                {{--</div>--}}
-                {{--<div class="form-group" style="margin-left: 10px;">--}}
-                    {{--Basic Auth: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="If needed"><span class="glyphicon glyphicon-info-sign"></span></a>--}}
-                {{--</div>--}}
-                {{--<div class="form-group">--}}
-                    {{--<input type="text" class="form-control input-sm" placeholder="Username" id="basic_auth_username">--}}
-                {{--</div>--}}
-                {{--<div class="form-group">--}}
-                    {{--<input type="text" class="form-control input-sm" placeholder="Password" id="basic_auth_password">--}}
-                {{--</div>--}}
-                {{--<div class="form-group">--}}
-                    {{--<button type="button" class="btn btn-success btn-sm tooltipP" data-toggle="tooltip" title="Save API key, Basic Auth data and API url in localstorage" id="save_auth_data">--}}
-                        {{--<span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>--}}
-                    {{--</button>--}}
-                {{--</div>--}}
-            {{--</form>--}}
-        {{--</div><!--/.nav-collapse -->--}}
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    Api key: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="Api key header with api key (key) and api key value (value) "><span class="glyphicon glyphicon-info-sign"></span></a>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="key" id="apikey_key">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="value" id="apikey_value">
+                </div>
+                <div class="form-group" style="margin-left: 10px;">
+                    Basic Auth: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="If needed"><span class="glyphicon glyphicon-info-sign"></span></a>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Username" id="basic_auth_username">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Password" id="basic_auth_password">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success btn-sm tooltipP" data-toggle="tooltip" title="Save API key, Basic Auth data and API url in localstorage" id="save_auth_data">
+                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
@@ -7006,7 +7006,7 @@
 
         <div class="row mt0 footer">
             <div class="col-md-6" align="left">
-                Generated on 2019-07-01, 22:15:16
+                Generated on 2019-07-02, 07:57:51
             </div>
             <div class="col-md-6" align="right">
                 <a href="https://github.com/calinrada/php-apidoc" target="_blank">php-apidoc v1.3.8</a>
