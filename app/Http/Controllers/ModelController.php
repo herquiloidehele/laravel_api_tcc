@@ -23,6 +23,11 @@ class  ModelController extends Controller implements InterfaceController
 
     public function getAll(Request $request) {
 
+        if($request->input('relations')){
+           $this->relactionships = [];
+        }
+
+
         if ($request->exists('pagination') and $request->get('pagination') > 0){
             return Auxiliar::retornarDados($this->objectNames, $this->object->with($this->relactionships)->orderBy('id','desc')
                 ->paginate($request->input('pagination')), 200);
@@ -42,6 +47,7 @@ class  ModelController extends Controller implements InterfaceController
 
     public function get($id)
     {
+
         if(!$id)
             return Auxiliar::retornarErros('id not found or undefined', 404);
         else{
