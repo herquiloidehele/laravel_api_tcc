@@ -10,7 +10,7 @@
 
             <!-- Branding Image -->
             <a class="navbar-brand" href="{{ url('/') }}">
-                <i class="text-info fa fa-home"></i> {{ config('app.name', 'Laravel') }}
+                <i class="text-info fa fa-home"></i> {{ config('app.name', 'API AGRI') }}
             </a>
         </div>
 

@@ -33,46 +33,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">API Agri</a>
+          <a class="navbar-brand" href="/">API Agri</a>
         </div>
         <div class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    Api key: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="Api key header with api key (key) and api key value (value) "><span class="glyphicon glyphicon-info-sign"></span></a>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control input-sm" placeholder="key" id="apikey_key">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control input-sm" placeholder="value" id="apikey_value">
-                </div>
-                <div class="form-group" style="margin-left: 10px;">
-                    Basic Auth: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="If needed"><span class="glyphicon glyphicon-info-sign"></span></a>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control input-sm" placeholder="Username" id="basic_auth_username">
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control input-sm" placeholder="Password" id="basic_auth_password">
-                </div>
-                <div class="form-group">
-                    <button type="button" class="btn btn-success btn-sm tooltipP" data-toggle="tooltip" title="Save API key, Basic Auth data and API url in localstorage" id="save_auth_data">
-                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
-                    </button>
-                </div>
-            </form>
-        </div><!--/.nav-collapse -->
+            <div class="navbar-right">
+                sdsd
+            </div>
+        </div>
       </div>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <h5>Api URL</h5>
-                <input id="apiUrl" type="text" class="form-control input-sm" placeholder="https://api.mydomain.tld">
-            </div>
-        </div>
-        <hr>
+
         <div class="panel-group" id="accordion">
             <h2>Contas</h2>
 <div class="panel panel-default">

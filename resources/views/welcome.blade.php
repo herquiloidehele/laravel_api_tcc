@@ -18,7 +18,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-light fixed-top" id="navidation-bar">
         <div class="container">
-            <a class="navbar-brand" href="#">API - AGRI</a>
+            <a class="navbar-brand" href="/">API - AGRI</a>
             <a class="btn btn-primary" href="#">Criar Conta</a>
         </div>
     </nav>
@@ -35,7 +35,7 @@
                     <form>
                         <div class="row">
                             <div class="col-12 ">
-                                <a href="#" class="mx-auto  btn  btn-lg btn-primary"> Documentação</a>
+                                <a href="/documentacao" class="mx-auto  btn  btn-lg btn-primary"> Documentação</a>
                             </div>
                         </div>
                     </form>
@@ -121,7 +121,7 @@
                 <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
                     <div class="form-row">
                         <div class="col-12 center-text">
-                            <a  class="btn btn-lg btn-primary">Documentação</a>
+                            <a href="/documentacao"  class="btn btn-lg btn-primary">Documentação</a>
                         </div>
                     </div>
                 </div>
@@ -158,12 +158,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="./js/script.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     </body>
 
         <script src="{{asset('js/script.js')}}"></script>
