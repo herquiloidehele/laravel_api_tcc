@@ -19,7 +19,7 @@
     <nav class="navbar navbar-light fixed-top" id="navidation-bar">
         <div class="container">
             <a class="navbar-brand" href="/">API - AGRI</a>
-            <a class="btn btn-primary" href="#">Criar Conta</a>
+            <a class="btn btn-primary" href="/register">Criar Conta</a>
         </div>
     </nav>
 

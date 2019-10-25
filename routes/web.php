@@ -19,3 +19,7 @@ Route::get('/documentacao', function(){
     return view('api');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
