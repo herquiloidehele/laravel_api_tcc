@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/simple-line-icons.css') }}" rel="stylesheet">
-        <link href="{{ asset('css/font-awesome/all.min.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/font-awesome/all.css') }}" rel="stylesheet">
         <link href="{{ asset('css/landing-page.css') }}" rel="stylesheet">
     </head>
 
@@ -19,7 +19,11 @@
     <nav class="navbar navbar-light fixed-top" id="navidation-bar">
         <div class="container">
             <a class="navbar-brand" href="/">API - AGRI</a>
-            <a class="btn btn-primary" href="/register">Criar Conta</a>
+            @guest
+                <a class="btn btn-primary" href="/register">Criar Conta</a>
+            @else
+                <a class="btn btn-primary" href="/register">Minha Conta</a>
+            @endguest
         </div>
     </nav>
 
