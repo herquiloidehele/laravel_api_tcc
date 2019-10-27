@@ -23,44 +23,56 @@
     </style>
 </head>
 <body>
-
-<nav class="navbar navbar-light navbar-fixed-top" id="navidation-bar" style="background-color: #f5f8fa">
-    <div class="container">
-        <a class="navbar-brand" href="/" style="color: #0a0a0a">API - AGRI</a>
-        <div class="navbar-content" style="margin-top: 0.5em">
-            @guest
-                    <a class=" btn btn-primary" href="/register">Criar Conta</a>
-            @else
-                    <a class="navbar-content btn btn-primary navbar-right" href="/register">Minha Conta</a>
-            @endguest
-        </div>
-    </div>
-</nav>
     <!-- Fixed navbar -->
-    {{--<div class="navbar navbar-default navbar-fixed-top" role="navigation">--}}
-      {{--<div class="container">--}}
-        {{--<div class="navbar-header">--}}
-          {{--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">--}}
-            {{--<span class="sr-only">Toggle navigation</span>--}}
-            {{--<span class="icon-bar"></span>--}}
-            {{--<span class="icon-bar"></span>--}}
-            {{--<span class="icon-bar"></span>--}}
-          {{--</button>--}}
-          {{--<a class="navbar-brand" href="/">API Agri</a>--}}
-            {{--<div class="navbar-right">--}}
-                {{--sdsd--}}
-            {{--</div>--}}
-        {{--</div>--}}
-        {{--<div class="navbar-collapse collapse">--}}
-            {{--<div class="navbar-right">--}}
-                {{--sdsd--}}
-            {{--</div>--}}
-        {{--</div>--}}
-      {{--</div>--}}
-    {{--</div>--}}
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">API Agri</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    Api key: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="Api key header with api key (key) and api key value (value) "><span class="glyphicon glyphicon-info-sign"></span></a>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="key" id="apikey_key">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="value" id="apikey_value">
+                </div>
+                <div class="form-group" style="margin-left: 10px;">
+                    Basic Auth: <a href="javascript:void(0);" class="tooltipP" data-toggle="tooltip" title="If needed"><span class="glyphicon glyphicon-info-sign"></span></a>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Username" id="basic_auth_username">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-sm" placeholder="Password" id="basic_auth_password">
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success btn-sm tooltipP" data-toggle="tooltip" title="Save API key, Basic Auth data and API url in localstorage" id="save_auth_data">
+                        <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span>
+                    </button>
+                </div>
+            </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
 
     <div class="container">
-
+        <div class="row">
+            <div class="col-md-12">
+                <h5>Api URL</h5>
+                <input id="apiUrl" type="text" class="form-control input-sm" placeholder="https://api.mydomain.tld">
+            </div>
+        </div>
+        <hr>
         <div class="panel-group" id="accordion">
             <h2>Contas</h2>
 <div class="panel panel-default">
@@ -6994,7 +7006,7 @@
 
         <div class="row mt0 footer">
             <div class="col-md-6" align="left">
-                Generated on 2019-07-02, 07:57:51
+                Generated on 2019-10-27, 01:01:07
             </div>
             <div class="col-md-6" align="right">
                 <a href="https://github.com/calinrada/php-apidoc" target="_blank">php-apidoc v1.3.8</a>
