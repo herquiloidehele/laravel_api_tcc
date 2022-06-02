@@ -21,7 +21,7 @@
     },
     "dependencies": {
         "@angular/common": "^5.2.9",
-        "@angular/core": "^5.2.9",
+        "@angular/core": "^11.0.5",
         "@auth0/angular-jwt": "^1.1.0",
         "rxjs": "^5.5.10",
         "zone.js": "^0.8.26"
